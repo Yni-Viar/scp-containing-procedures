@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://oul1a6svuvrj"]
+
+[ext_resource type="Shader" path="res://Shaders/MixShader/mix.gdshader" id="1_foqvm"]
+[ext_resource type="Texture2D" uid="uid://d0plbd101wmi1" path="res://Assets/ExternalModels/SCP/scp173/scp173NEO_low_Merged_PM3D_Sphere3D4_AlbedoTransparency.png" id="2_ifwr2"]
+[ext_resource type="Texture2D" uid="uid://1sgnh0lopypb" path="res://Assets/ExternalModels/SCP/scp173/Faces/face_1.png" id="3_v8vem"]
+[ext_resource type="Texture2D" uid="uid://bud04ou5nb8ut" path="res://Assets/ExternalModels/SCP/scp173/scp173NEO_low_Merged_PM3D_Sphere3D4_Normal.png" id="4_c3488"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_foqvm")
+shader_parameter/roughness = 0.5
+shader_parameter/metallic = null
+shader_parameter/albedo_a = ExtResource("2_ifwr2")
+shader_parameter/albedo_b = ExtResource("3_v8vem")
+shader_parameter/texture_normal = ExtResource("4_c3488")

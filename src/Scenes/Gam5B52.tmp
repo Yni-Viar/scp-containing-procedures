@@ -1,0 +1,149 @@
+[gd_scene load_steps=14 format=3 uid="uid://mu7j26by23js"]
+
+[ext_resource type="Script" path="res://Scripts/GameCore.gd" id="1_w6bkb"]
+[ext_resource type="Resource" uid="uid://dtootndbrxot5" path="res://Scripts/GameData/gamedata.tres" id="2_w817j"]
+[ext_resource type="Environment" uid="uid://cpjkvy5s2l8ae" path="res://DefaultGraphics.tres" id="5_u1dtw"]
+[ext_resource type="Script" path="res://addons/virtual_joystick/virtual_joystick_instantiator.gd" id="6_fpwju"]
+[ext_resource type="Texture2D" uid="uid://bmw4fxmnmwhov" path="res://Assets/HUD/arrow.png" id="7_bwdaw"]
+[ext_resource type="Script" path="res://Scripts/UI/PlayerUI.gd" id="8_7mmlb"]
+[ext_resource type="Script" path="res://MapGen/MapGen.gd" id="9_3ruab"]
+[ext_resource type="Script" path="res://Scripts/ObjectSystem.gd" id="9_qwyor"]
+[ext_resource type="Script" path="res://MapGen/MapGenRoomResource.gd" id="10_yrip0"]
+[ext_resource type="AudioStream" uid="uid://d6sswgcr7mfr" path="res://Sounds/Music/lcz_ambient.wav" id="11_d3ym0"]
+[ext_resource type="Resource" uid="uid://7prvjngodfs1" path="res://MapGen/site19.tres" id="11_j075c"]
+[ext_resource type="Script" path="res://Scripts/FPSCounter.gd" id="11_vy51m"]
+[ext_resource type="PackedScene" uid="uid://o6rnnciwmwvn" path="res://GDsh/InGameConsole.tscn" id="13_30ago"]
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_w6bkb")
+game_data = ExtResource("2_w817j")
+
+[node name="PlayerUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_7mmlb")
+
+[node name="Cursor" type="TextureRect" parent="PlayerUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_bwdaw")
+
+[node name="Counter" type="Label" parent="PlayerUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 26.0
+text = "FPS"
+script = ExtResource("11_vy51m")
+
+[node name="BossContainer" type="VBoxContainer" parent="PlayerUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_right = 320.0
+offset_bottom = 256.0
+grow_horizontal = 2
+
+[node name="PauseMenu" type="Control" parent="PlayerUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PlayerUI/PauseMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.237
+anchor_bottom = 1.0
+offset_right = 0.959961
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ExitButton" type="Button" parent="PlayerUI/PauseMenu/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.491
+anchor_top = 0.089
+anchor_right = 0.491
+anchor_bottom = 0.089
+offset_left = -191.896
+offset_top = -32.12
+offset_right = 192.104
+offset_bottom = 31.88
+text = "Exit"
+
+[node name="DevWarning" type="Label" parent="PlayerUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -634.5
+offset_top = -96.0
+offset_right = 634.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "PRERELEASE_WARN"
+horizontal_alignment = 1
+
+[node name="Virtual Joystick" type="Control" parent="PlayerUI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -312.0
+offset_right = 296.0
+grow_vertical = 0
+script = ExtResource("6_fpwju")
+
+[node name="FacilityGenerator" type="Node3D" parent="."]
+script = ExtResource("9_3ruab")
+rooms = Array[ExtResource("10_yrip0")]([ExtResource("11_j075c")])
+large_rooms = true
+
+[node name="Items" type="Node" parent="."]
+
+[node name="MapObjects" type="Node" parent="."]
+
+[node name="Ragdolls" type="Node3D" parent="."]
+
+[node name="NPCs" type="Node3D" parent="."]
+script = ExtResource("9_qwyor")
+
+[node name="Decals" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("5_u1dtw")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_d3ym0")
+volume_db = -10.0
+bus = &"Music"
+
+[node name="InGameConsole" parent="." instance=ExtResource("13_30ago")]
+visible = false
+
+[connection signal="pressed" from="PlayerUI/PauseMenu/Panel/ExitButton" to="PlayerUI" method="_on_exit_button_pressed"]
+[connection signal="generated" from="FacilityGenerator" to="." method="_on_facility_generator_generated"]

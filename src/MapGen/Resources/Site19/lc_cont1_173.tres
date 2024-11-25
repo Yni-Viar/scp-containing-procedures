@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MapGenRoom" load_steps=3 format=3 uid="uid://cyce2xtlyr7nk"]
+
+[ext_resource type="Script" path="res://MapGen/MapGenRoom.gd" id="1_w4wlj"]
+[ext_resource type="PackedScene" uid="uid://qneqldi123li" path="res://Assets/Rooms/room1/lc_cont_1_173.tscn" id="1_x8x7b"]
+
+[resource]
+script = ExtResource("1_w4wlj")
+name = "lc_cont1_173"
+prefab = ExtResource("1_x8x7b")
+spawn_chance = 90.0

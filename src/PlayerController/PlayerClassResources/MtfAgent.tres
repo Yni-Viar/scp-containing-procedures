@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PuppetClass" load_steps=3 format=3 uid="uid://kt10qm1d2rht"]
+
+[ext_resource type="PackedScene" uid="uid://d0euwilwx50wv" path="res://PlayerController/PlayerClassPrefab/mtf.tscn" id="1_fq7lc"]
+[ext_resource type="Script" path="res://PlayerController/PlayerClassResources/PuppetResource.gd" id="1_qg7uu"]
+
+[resource]
+script = ExtResource("1_qg7uu")
+puppet_class_name = "MTF_AGENT"
+speed = 3.0
+prefab = ExtResource("1_fq7lc")
+spawn_point_group = "AgentSpawn"
+initial_amount = 1
+automatic = false
+footstep_sounds = {
+"run": PackedStringArray("res://Sounds/Character/Human/Step/Run1.ogg", "res://Sounds/Character/Human/Step/Run2.ogg", "res://Sounds/Character/Human/Step/Run3.ogg", "res://Sounds/Character/Human/Step/Run4.ogg", "res://Sounds/Character/Human/Step/Run5.ogg", "res://Sounds/Character/Human/Step/Run6.ogg", "res://Sounds/Character/Human/Step/Run7.ogg", "res://Sounds/Character/Human/Step/Run8.ogg"),
+"walk": PackedStringArray("res://Sounds/Character/Human/Step/Step1.ogg", "res://Sounds/Character/Human/Step/Step2.ogg", "res://Sounds/Character/Human/Step/Step3.ogg", "res://Sounds/Character/Human/Step/Step4.ogg", "res://Sounds/Character/Human/Step/Step5.ogg", "res://Sounds/Character/Human/Step/Step6.ogg", "res://Sounds/Character/Human/Step/Step7.ogg", "res://Sounds/Character/Human/Step/Step8.ogg")
+}

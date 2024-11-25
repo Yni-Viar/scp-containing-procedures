@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://dudoqqr06mig7"]
+
+[ext_resource type="Script" path="res://Scripts/AppManager.gd" id="1_fc470"]
+[ext_resource type="PackedScene" uid="uid://b6010fhhdn46b" path="res://Scenes/MainMenu.tscn" id="2_rsifw"]
+[ext_resource type="FontFile" uid="uid://j45d6xc2rd07" path="res://Assets/Fonts/Home Video/HomeVideo-Regular.otf" id="3_q4bj1"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_fc470")
+metadata/_edit_vertical_guides_ = []
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainMenu" parent="CanvasLayer" instance=ExtResource("2_rsifw")]
+
+[node name="DevWarning" type="Label" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -634.5
+offset_top = -96.0
+offset_right = 634.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "PRERELEASE_WARN"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.501961, 0.501961, 0.501961, 0.501961)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -470.0
+offset_top = -95.0
+offset_right = 470.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_q4bj1")
+theme_override_font_sizes/font_size = 64
+text = "LOAD_TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1

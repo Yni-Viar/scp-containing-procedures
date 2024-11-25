@@ -1,0 +1,204 @@
+[gd_scene load_steps=17 format=3 uid="uid://djb7rqh6152e8"]
+
+[ext_resource type="Script" path="res://Scripts/UI/PlayerUI.gd" id="1_espdi"]
+[ext_resource type="Texture2D" uid="uid://bmw4fxmnmwhov" path="res://Assets/HUD/arrow.png" id="2_u4lmr"]
+[ext_resource type="Texture2D" uid="uid://dj66rmlusn18r" path="res://Assets/HUD/healthbar.png" id="3_f2u3d"]
+[ext_resource type="Texture2D" uid="uid://dytgmrs4piqfo" path="res://Assets/HUD/healthbar_unfilled.png" id="4_x8rdu"]
+[ext_resource type="Texture2D" uid="uid://b5pka5jiu0eq6" path="res://Assets/HUD/healthbar_filled.png" id="5_evs0n"]
+[ext_resource type="Script" path="res://Scripts/FPSCounter.gd" id="6_ly23t"]
+[ext_resource type="PackedScene" uid="uid://bkjiahck42ear" path="res://PlayerController/NPCScene.tscn" id="7_74x4d"]
+[ext_resource type="Resource" uid="uid://b82a218to832v" path="res://PlayerController/PlayerClassResources/DClass.tres" id="8_u06mf"]
+[ext_resource type="PackedScene" uid="uid://8ik28au1k20l" path="res://PlayerController/Player.tscn" id="9_y5hnx"]
+[ext_resource type="PackedScene" uid="uid://lwpadfmeew0q" path="res://Assets/Doors/gate.tscn" id="10_n3m7c"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_fd2v6"]
+vertices = PackedVector3Array(-2, 0.327689, -2, -2, 0.327689, 2, 2, 0.327689, 2, 2, 0.327689, -2)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+agent_height = 2.5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ds55k"]
+size = Vector2(5, 5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6t6bp"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_43bof"]
+vertices = PackedVector3Array(-2, 0.5, 3.28409, -2, 0.5, 7.28409, 2, 0.5, 7.28409, 2, 0.5, 3.28409)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+agent_height = 2.5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lhshc"]
+size = Vector2(5, 5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7uxud"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="PlayerUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_espdi")
+
+[node name="Cursor" type="TextureRect" parent="PlayerUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_u4lmr")
+
+[node name="HealthBarIcon" type="TextureRect" parent="PlayerUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.015
+anchor_top = 0.974
+anchor_right = 0.015
+anchor_bottom = 0.974
+offset_left = -12.8
+offset_top = -11.92
+offset_right = 11.2
+offset_bottom = 12.08
+grow_vertical = 0
+texture = ExtResource("3_f2u3d")
+
+[node name="HealthBar" type="TextureProgressBar" parent="PlayerUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029
+anchor_top = 0.963
+anchor_right = 0.171
+anchor_bottom = 0.985
+offset_left = 0.32
+offset_top = -0.0400391
+offset_right = -0.320007
+offset_bottom = 0.199951
+grow_vertical = 0
+allow_greater = true
+nine_patch_stretch = true
+stretch_margin_left = 8
+stretch_margin_top = 8
+stretch_margin_right = 8
+stretch_margin_bottom = 8
+texture_under = ExtResource("4_x8rdu")
+texture_progress = ExtResource("5_evs0n")
+
+[node name="Counter" type="Label" parent="PlayerUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 26.0
+text = "FPS"
+script = ExtResource("6_ly23t")
+
+[node name="BossContainer" type="VBoxContainer" parent="PlayerUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_right = 320.0
+offset_bottom = 256.0
+grow_horizontal = 2
+
+[node name="PauseMenu" type="Control" parent="PlayerUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PlayerUI/PauseMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.237
+anchor_bottom = 1.0
+offset_right = 0.959961
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ExitButton" type="Button" parent="PlayerUI/PauseMenu/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.491
+anchor_top = 0.089
+anchor_right = 0.491
+anchor_bottom = 0.089
+offset_left = -191.896
+offset_top = -32.12
+offset_right = 192.104
+offset_bottom = 31.88
+text = "Exit"
+
+[node name="DevWarning" type="Label" parent="PlayerUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -634.5
+offset_top = -96.0
+offset_right = 634.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "PRERELEASE_WARN"
+horizontal_alignment = 1
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.172311, 0)
+navigation_mesh = SubResource("NavigationMesh_fd2v6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.172311, 0)
+mesh = SubResource("PlaneMesh_ds55k")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_6t6bp")
+
+[node name="NavigationRegion3D2" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0435295)
+navigation_mesh = SubResource("NavigationMesh_43bof")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.28409)
+mesh = SubResource("PlaneMesh_lhshc")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D2/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D2/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_7uxud")
+
+[node name="NpcScene" parent="." instance=ExtResource("7_74x4d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19772, 1.10689, -0.768868)
+puppet_class = ExtResource("8_u06mf")
+
+[node name="Player" parent="." instance=ExtResource("9_y5hnx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59206, 3.02249, 3.99167)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.337276, 0.941406, 0, -0.941406, -0.337276, 0, 1.69358, 0)
+
+[node name="GateFrame" parent="." instance=ExtResource("10_n3m7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0418878, 0.0923289, 2.41796)
+
+[connection signal="pressed" from="PlayerUI/PauseMenu/Panel/ExitButton" to="PlayerUI" method="_on_exit_button_pressed"]

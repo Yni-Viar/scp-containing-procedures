@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://8ik28au1k20l"]
+
+[ext_resource type="Script" path="res://PlayerController/FreeLookCamera_MITLicense/FreeLookCamera.gd" id="1_jlrjq"]
+
+[node name="Spectator" type="Camera3D"]
+script = ExtResource("1_jlrjq")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -32)
+collision_mask = 3
