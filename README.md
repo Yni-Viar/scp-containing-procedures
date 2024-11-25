@@ -9,7 +9,7 @@ In a nutshell - this is a SCP Facility simulator.
 - [ ] SCP-650 npc and Containment Chamber
 - [ ] Foundation tasks, score + gameover
 - [ ] Chaos Insurgency event + exit
-- [ ] SCP-049 npc and Containmnet Chamber
+- [ ] SCP-049 npc and Containment Chamber
 - [ ] Web platform support (for avoiding some Godot bugs, such as Nahimic audio driver)
 ## License:
 This projects is dual-licensed.
