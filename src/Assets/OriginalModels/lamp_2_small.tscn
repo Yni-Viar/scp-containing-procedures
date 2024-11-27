@@ -146,11 +146,12 @@ transform = Transform3D(0.323052, 0, 0, 0, 0.323052, 0, 0, 0, 0.20465, 0, 0.0061
 mesh = SubResource("ArrayMesh_00h50")
 skeleton = NodePath("")
 
-[node name="LightSystemOmni" type="OmniLight3D" parent="."]
+[node name="LightSystemOmni" type="OmniLight3D" parent="." groups=["Lights"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.458164, 0)
 light_energy = 1.5
 light_indirect_energy = 1.5
 light_size = 0.1
+light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 28.0
 omni_range = 15.0

@@ -12,6 +12,8 @@ class_name FreeLookCamera
 @onready var _velocity = default_velocity
 @onready var raycast = $RayCast3D
 var selected_pawn: NpcPlayerScript
+## Workaround for touch screen
+var interact_busy: bool = false
 # End Yni's code
 
 func _input(event):
@@ -26,8 +28,6 @@ func _input(event):
 	
 	if event is InputEventMouseButton:
 		match event.button_index:
-			MOUSE_BUTTON_RIGHT:
-				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED if event.pressed else Input.MOUSE_MODE_VISIBLE)
 			MOUSE_BUTTON_WHEEL_UP: # increase fly velocity
 				_velocity = clamp(_velocity * speed_scale, min_speed, max_speed)
 			MOUSE_BUTTON_WHEEL_DOWN: # decrease fly velocity
@@ -48,14 +48,16 @@ func _physics_process(delta: float) -> void:
 	else:
 		translate(direction * _velocity * delta)
 	# THE CODE PART BELOW is made by Yni
-	if Input.is_action_just_pressed("click"):
-		if raycast.is_colliding():
-			var collider = raycast.get_collider()
-			if collider is NpcSelection:
-				selected_pawn = collider.get_pawn()
-			elif collider is InteractableNode:
-				collider.call("interact", self)
-			elif selected_pawn != null:
-				if selected_pawn is NpcPlayerScript:
-					if !selected_pawn.automatic:
-						selected_pawn.set_movement_target(raycast.get_collision_point())
+	if Input.is_action_pressed("interact") && raycast.is_colliding() && !interact_busy:
+		interact_busy = true
+		var collider = raycast.get_collider()
+		if collider is NpcSelection:
+			selected_pawn = collider.get_pawn()
+		elif collider is InteractableNode:
+			collider.call("interact", self)
+		elif selected_pawn != null:
+			if selected_pawn is NpcPlayerScript:
+				if !selected_pawn.automatic:
+					selected_pawn.set_movement_target(raycast.get_collision_point())
+	if Input.is_action_just_released("interact"):
+		interact_busy = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://cqh6tjpsub0jn"]
+[gd_scene load_steps=49 format=4 uid="uid://cqh6tjpsub0jn"]
 
 [ext_resource type="Texture2D" uid="uid://cdjajvgo1o0ov" path="res://Assets/RoomAssets/LCZ3.5/OfficeCeiling001_2K_Color.png" id="1_2sg0d"]
 [ext_resource type="Texture2D" uid="uid://di8wo3djqxdg5" path="res://Assets/RoomAssets/LCZ3.5/OfficeCeiling001_2K_Metalness-OfficeCeiling001_2K_Roughness.png" id="2_yiyrl"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dwpt2xs1rrv1" path="res://Assets/RoomAssets/LCZ3.5/beige_wall_001_nor_gl_2k.png" id="11_4f3mc"]
 [ext_resource type="Texture2D" uid="uid://dcyovsgw5v603" path="res://Assets/RoomAssets/LCZ3.5/beige_wall_001_rough_2k-1.png" id="12_sliv7"]
 [ext_resource type="PackedScene" uid="uid://bvmbksyl1hdmd" path="res://Assets/OriginalModels/lamp_2_small.tscn" id="13_w3fo2"]
+[ext_resource type="ArrayOccluder3D" uid="uid://blkcbc24bnqj" path="res://Assets/Rooms/room2/occ/lc_room_2_hallway.occ" id="14_0t1aj"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_harou"]
 vertices = PackedVector3Array(-9.7383, 0.393586, -9.7383, -9.7383, 0.393586, 9.7617, -8.7383, 0.393586, 9.7617, -8.4883, 0.393586, 9.2617, -8.4883, 0.393586, -9.2383, -8.7383, 0.393586, -9.7383, -3.7383, 0.393586, 9.2617, -3.7383, 0.393586, -9.2383, 1.7617, 0.393586, 9.7617, 2.5117, 0.393586, 9.2617, 2.7617, 0.393586, 7.2617, -1.7383, 0.393586, -9.7383, -2.4883, 0.393586, -9.2383, -2.7383, 0.393586, -7.2383, -2.4883, 0.393586, 9.2617, -1.7383, 0.393586, 9.7617, 2.5117, 0.393586, -9.2383, 1.7617, 0.393586, -9.7383, 8.2617, 0.393586, -9.2383, 8.2617, 0.393586, 9.2617, 8.5117, 0.393586, 9.7617, 9.7617, 0.393586, 9.7617, 9.7617, 0.393586, -9.7383, 8.5117, 0.393586, -9.7383, 3.7617, 0.393586, -9.2383, 3.7617, 0.393586, 9.2617)
@@ -689,3 +690,6 @@ end_position = Vector3(0, 0, 3)
 [node name="NavigationLink3D2" type="NavigationLink3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.64157)
 end_position = Vector3(0, 0, -3)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("14_0t1aj")

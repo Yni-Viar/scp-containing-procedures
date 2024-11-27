@@ -6,5 +6,5 @@
 script = ExtResource("1_jlrjq")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-target_position = Vector3(0, 0, -32)
-collision_mask = 3
+target_position = Vector3(0, 0, -64)
+collision_mask = 7

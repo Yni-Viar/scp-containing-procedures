@@ -36,7 +36,11 @@ func load_resource():
 	if settings_from_file != null:
 		setting_res = settings_from_file
 	else:
-		if RenderingServer.get_rendering_device() != null:
+		if OS.get_name() == "Android":
+			var res = load("res://Scripts/SettingsResource/Presets/OpenGL/Mobile.tres")
+			save_resource(res)
+			setting_res = res
+		elif RenderingServer.get_rendering_device() != null:
 			var res = load("res://Scripts/SettingsResource/Presets/RD/Medium.tres")
 			save_resource(res)
 			setting_res = res

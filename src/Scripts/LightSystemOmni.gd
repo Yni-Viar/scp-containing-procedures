@@ -12,6 +12,11 @@ func turn_lights_off():
 func turn_lights_on():
 	light_energy = max_light_energy
 
+func disable():
+	hide()
+
 func _ready():
 	if !Settings.setting_res.enable_light_shadows && shadow_enabled:
 		shadow_enabled = false
+	if !Settings.setting_res.enable_lighting:
+		disable()

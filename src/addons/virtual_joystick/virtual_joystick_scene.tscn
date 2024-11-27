@@ -18,6 +18,7 @@ action_left = "move_left"
 action_right = "move_right"
 action_up = "move_forward"
 action_down = "move_backward"
+sensitivity = 0.05
 
 [node name="Base" type="TextureRect" parent="."]
 layout_mode = 1

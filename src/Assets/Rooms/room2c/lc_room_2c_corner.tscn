@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://46htewkeotsw"]
+[gd_scene load_steps=41 format=4 uid="uid://46htewkeotsw"]
 
 [ext_resource type="Texture2D" uid="uid://b8pg4uioakn4r" path="res://Assets/RoomAssets/LCZ3.5/Tiles107_2K_Color.png" id="1_rs0dq"]
 [ext_resource type="Texture2D" uid="uid://dv0ipv0joknjs" path="res://Assets/RoomAssets/LCZ3.5/Tiles107_2K_Roughness.png" id="2_0penw"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dwpt2xs1rrv1" path="res://Assets/RoomAssets/LCZ3.5/beige_wall_001_nor_gl_2k.png" id="11_47hgu"]
 [ext_resource type="Texture2D" uid="uid://dcyovsgw5v603" path="res://Assets/RoomAssets/LCZ3.5/beige_wall_001_rough_2k-1.png" id="12_mh24d"]
 [ext_resource type="PackedScene" uid="uid://bvmbksyl1hdmd" path="res://Assets/OriginalModels/lamp_2_small.tscn" id="13_hwmam"]
+[ext_resource type="ArrayOccluder3D" uid="uid://t6vax6hhhuxq" path="res://Assets/Rooms/room2c/occ/lc_room_2c_corner.occ" id="14_65mym"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_am87t"]
 vertices = PackedVector3Array(-9.7383, 0.393586, 3.5117, -3.2383, 0.393586, 3.5117, -3.2383, 0.393586, 1.5117, 1.5117, 0.393586, -3.2383, 3.5117, 0.393586, -3.2383, 3.5117, 0.393586, -9.7383, -9.7383, 0.393586, -9.7383, 9.2617, 0.393586, -8.4883, 9.7617, 0.393586, -8.7383, 9.7617, 0.393586, -9.7383, 9.2617, 0.393586, -3.2383, -2.2383, 0.393586, 6.7617, -1.7383, 0.393586, 9.7617, 1.7617, 0.393586, 9.7617, 2.2617, 0.393586, 7.2617, 2.0117, 0.393586, 3.2617, -1.9883, 0.393586, 2.2617, 2.2617, 0.393586, -1.9883, 3.2617, 0.393586, 2.0117, 7.2617, 0.393586, 2.2617, 9.7617, 0.393586, 1.7617, 9.5117, 0.393586, -1.9883, 9.2617, 0.393586, 8.2617, 8.2617, 0.393586, 9.2617, 8.5117, 0.393586, 9.7617, 9.7617, 0.393586, 9.7617, 9.7617, 0.393586, 8.5117, 9.2617, 0.393586, 3.2617, 4.0117, 0.393586, 3.2617, 3.2617, 0.393586, 4.0117, 3.2617, 0.393586, 9.2617, -9.7383, 0.393586, 9.7617, -8.7383, 0.393586, 9.7617, -8.4883, 0.393586, 9.2617, -3.2383, 0.393586, 9.2617)
@@ -468,3 +469,6 @@ end_position = Vector3(0, 0, 3)
 [node name="NavigationLink3D2" type="NavigationLink3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.52403, 0, -0.147345)
 end_position = Vector3(3, 0, 0)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("14_65mym")

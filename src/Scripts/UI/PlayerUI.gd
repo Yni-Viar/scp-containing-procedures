@@ -14,15 +14,16 @@ func _process(delta):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
 		$Cursor.show()
-		#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		if !Settings.touchscreen:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		input_values("exitgame")
 	if Input.is_action_just_pressed("console"):
 		input_values("console")
-	if Input.is_action_just_pressed("human_inventory"):
-		input_values("inventory")
+	#if Input.is_action_just_pressed("human_inventory"):
+		#input_values("inventory")
 
 func input_values(state: String):
 	match state:
@@ -40,13 +41,13 @@ func input_values(state: String):
 			else:
 				$PauseMenu.hide()
 				special_screen = false
-		"inventory":
-			if !special_screen:
-				get_tree().root.get_node("Game/Player/InventoryUI").show()
-				special_screen = true
-			else:
-				get_tree().root.get_node("Game/Player/InventoryUI").hide()
-				special_screen = false
+		#"inventory":
+			#if !special_screen:
+				#get_tree().root.get_node("Game/Player/InventoryUI").show()
+				#special_screen = true
+			#else:
+				#get_tree().root.get_node("Game/Player/InventoryUI").hide()
+				#special_screen = false
 
 
 func _on_exit_button_pressed():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://chnnptw23qv0f"]
+[gd_scene load_steps=53 format=4 uid="uid://chnnptw23qv0f"]
 
 [ext_resource type="Texture2D" uid="uid://cdjajvgo1o0ov" path="res://Assets/RoomAssets/LCZ3.5/OfficeCeiling001_2K_Color.png" id="1_3cdg6"]
 [ext_resource type="Texture2D" uid="uid://di8wo3djqxdg5" path="res://Assets/RoomAssets/LCZ3.5/OfficeCeiling001_2K_Metalness-OfficeCeiling001_2K_Roughness.png" id="2_7lamc"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://delt0t2y8yrlr" path="res://Assets/ExternalModels/computer_2.tscn" id="15_eyx2m"]
 [ext_resource type="PackedScene" uid="uid://dcq4vbbnd0ldc" path="res://Assets/ExternalModels/keyboard.tscn" id="16_qf7d4"]
 [ext_resource type="PackedScene" uid="uid://bvmbksyl1hdmd" path="res://Assets/OriginalModels/lamp_2_small.tscn" id="17_gp81i"]
+[ext_resource type="ArrayOccluder3D" uid="uid://db1vcctyf28l7" path="res://Assets/Rooms/room2/occ/lc_room_2_offices.occ" id="18_ugfwj"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_g34jd"]
 vertices = PackedVector3Array(-9.7383, 0.268746, -9.7383, -9.7383, 0.268746, 9.7617, -8.4883, 0.268746, 9.5117, -8.4883, 0.268746, -9.4883, -0.7383, 0.268746, 9.7617, 1.7617, 0.268746, 9.7617, 2.0117, 0.268746, 9.2617, 0.5117, 0.268746, 8.0117, -0.9883, 0.268746, 7.2617, 7.2617, 0.268746, -5.9883, 7.2617, 0.268746, -6.9883, 0.7617, 0.268746, -6.9883, 0.5117, 0.268746, -5.7383, 7.2617, 0.268746, 9.2617, 7.2617, 0.268746, 8.2617, 0.5117, 0.268746, 0.2617, -0.7383, 0.268746, 0.0116997, 0.5117, 0.268746, 1.7617, 1.0117, 0.268746, 0.7617, 0.5117, 0.268746, -9.2383, -0.7383, 0.268746, -7.4883, 0.7617, 0.268746, 5.5117, -0.7383, 0.268746, 6.0117, 7.2617, 0.268746, 1.5117, 7.2617, 0.268746, 0.7617, -0.7383, 0.268746, -3.7383, 0.5117, 0.268746, -1.7383, 0.7617, 0.268746, -3.2383, -0.9883, 0.268746, -4.9883, -0.9883, 0.268746, 2.5117, -7.2383, 0.268746, 2.5117, -7.2383, 0.268746, 3.7617, -0.9883, 0.268746, 3.7617, -7.2383, 0.268746, -4.9883, -7.2383, 0.268746, -3.9883, -0.9883, 0.268746, -1.2383, -7.2383, 0.268746, -9.2383, 1.7617, 0.268746, -9.7383, -7.2383, 0.268746, -1.2383, -7.2383, 0.268746, -0.2383, -7.2383, 0.268746, -7.7383, 7.2617, 0.268746, 5.5117, 7.2617, 0.268746, 4.2617, 0.7617, 0.268746, 4.2617, -7.2383, 0.268746, 6.2617, -7.2383, 0.268746, 7.2617, 7.2617, 0.268746, -1.9883, 7.2617, 0.268746, -3.2383, 8.5117, 0.268746, -9.7383, 8.5117, 0.268746, 9.7617, 9.7617, 0.268746, 9.7617, 9.7617, 0.268746, -9.7383, 3.7617, 1.51875, 6.5117, 3.7617, 1.51875, 7.2617, 4.2617, 1.51875, 7.0117, 4.2617, 1.51875, 6.5117)
@@ -1000,3 +1001,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.83878, 0, -6.27002)
 
 [node name="entityspawn6" type="Marker3D" parent="." groups=["ScientistSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2628, 0, -6.27002)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("18_ugfwj")

@@ -14,15 +14,17 @@ func _ready():
 	$ScrollContainer/HBoxContainer/Page1/FogSet.button_pressed = Settings.setting_res.fog
 	$ScrollContainer/HBoxContainer/Page2/MusicSet.value = Settings.setting_res.music
 	$ScrollContainer/HBoxContainer/Page2/SoundSet.value = Settings.setting_res.sound
-	$ScrollContainer/HBoxContainer/Page1/FullscreenSet.button_pressed = Settings.setting_res.fullscreen
+	if OS.get_name() != "Android":
+		$ScrollContainer/HBoxContainer/Page1/WindowSizeSet.selected = Settings.setting_res.ui_window_size
+		$ScrollContainer/HBoxContainer/Page1/FullscreenSet.button_pressed = Settings.setting_res.fullscreen
 	$ScrollContainer/HBoxContainer/Page2/MouseSensSet.value = Settings.setting_res.mouse_sensitivity
 	# 9 is Window Size in pixels
 	$ScrollContainer/HBoxContainer/Page1/LanguageSet.selected = Settings.setting_res.ui_language
 	$ScrollContainer/HBoxContainer/Page1/GlowSet.button_pressed = Settings.setting_res.glow
 	
-	$ScrollContainer/HBoxContainer/Page1/WindowSizeSet.selected = Settings.setting_res.ui_window_size
-	#$ScrollContainer/VBoxContainer/GraphicDeviceSet.selected = Settings.renderer
-	graphic_device_check()
+	
+	$ScrollContainer/HBoxContainer/Page1/Lights.button_pressed = Settings.setting_res.enable_lighting
+	device_check()
 
 func _on_language_set_item_selected(index):
 	TranslationServer.set_locale(Settings.setting_res.available_languages[index])
@@ -118,12 +120,18 @@ func _on_glow_set_toggled(toggled_on):
 		Settings.setting_res.glow = false
 	#Settings.save_setting("glow", Settings.fullscreen)
 
-func graphic_device_check():
+func device_check():
+	if OS.get_name() == "Android":
+		$ScrollContainer/HBoxContainer/Page1/ResolutionLabel.hide()
+		$ScrollContainer/HBoxContainer/Page1/WindowSizeSet.hide()
+		$ScrollContainer/HBoxContainer/Page1/OverrideResolution.hide()
 	if RenderingServer.get_rendering_device() != null:
 		$ScrollContainer/HBoxContainer/Page1/VoxelGISet.disabled = false
 		$ScrollContainer/HBoxContainer/Page1/SSAOSet.disabled = false
 		$ScrollContainer/HBoxContainer/Page1/SSILSet.disabled = false
 		$ScrollContainer/HBoxContainer/Page1/SSRSet.disabled = false
+		$ScrollContainer/HBoxContainer/Page1/FogSet.disabled = false
+		$ScrollContainer/HBoxContainer/Page1/FogSet.show()
 		$ScrollContainer/HBoxContainer/Page1/VoxelGISet.show()
 		$ScrollContainer/HBoxContainer/Page1/SSAOSet.show()
 		$ScrollContainer/HBoxContainer/Page1/SSILSet.show()
@@ -144,6 +152,9 @@ func graphic_device_check():
 		$ScrollContainer/HBoxContainer/Page1/SSILSet.hide()
 		$ScrollContainer/HBoxContainer/Page1/SSRSet.hide()
 		$ScrollContainer/HBoxContainer/Page1/VSyncSet.hide()
+		$ScrollContainer/HBoxContainer/Page1/FogSet.button_pressed = false
+		$ScrollContainer/HBoxContainer/Page1/FogSet.disabled = true
+		$ScrollContainer/HBoxContainer/Page1/FogSet.hide()
 
 
 func _on_fog_set_toggled(toggled_on):
@@ -189,3 +200,9 @@ func _on_override_resolution_pressed() -> void:
 
 func add_new_resolution(x: String, y: String):
 	$ScrollContainer/HBoxContainer/Page1/WindowSizeSet.add_item(x + "x" + y)
+
+func _on_lights_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		Settings.setting_res.enable_lighting = true
+	else:
+		Settings.setting_res.enable_lighting = false

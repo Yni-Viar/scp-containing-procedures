@@ -18,11 +18,9 @@ grow_vertical = 2
 script = ExtResource("1_4i8vj")
 
 [node name="Back" type="TextureButton" parent="SettingsPanel"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 48.0
-offset_right = 152.0
-offset_bottom = 176.0
+layout_mode = 1
+offset_right = 128.0
+offset_bottom = 128.0
 theme = ExtResource("3_2qins")
 texture_normal = ExtResource("3_hs58d")
 texture_pressed = ExtResource("3_hs58d")
@@ -53,13 +51,13 @@ vertical_alignment = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.033
-anchor_top = 0.178
-anchor_right = 0.967
+anchor_top = 0.198
+anchor_right = 0.965
 anchor_bottom = 0.948
-offset_left = 0.639999
-offset_top = -0.240005
-offset_right = -0.640137
-offset_bottom = 0.159912
+offset_left = 0.984001
+offset_top = 7.69598
+offset_right = 2.31995
+offset_bottom = -0.304016
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -68,7 +66,7 @@ layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="Page1" type="VBoxContainer" parent="SettingsPanel/ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(768, 768)
+custom_minimum_size = Vector2(512, 512)
 layout_mode = 2
 
 [node name="LangLabel" type="Label" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page1"]
@@ -80,7 +78,7 @@ text = "LANGUAGE"
 [node name="LanguageWarning" type="Label" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page1"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 18
 text = "LANGUAGE_WARNING"
 
 [node name="LanguageSet" type="OptionButton" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page1"]
@@ -107,82 +105,89 @@ text = "RESOLUTION"
 [node name="WindowSizeSet" type="OptionButton" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page1"]
 layout_mode = 2
 theme = ExtResource("3_2qins")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 
 [node name="OverrideResolution" type="Button" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page1"]
 layout_mode = 2
 theme = ExtResource("3_2qins")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = "OVERRIDE_RESOLUTION"
 
 [node name="FullscreenSet" type="CheckButton" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page1"]
 layout_mode = 2
 theme = ExtResource("3_2qins")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = "FULLSCREEN_SET"
 
 [node name="VoxelGISet" type="CheckButton" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page1"]
 layout_mode = 2
 theme = ExtResource("3_2qins")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = "VOXEL_GI"
 
 [node name="SSAOSet" type="CheckButton" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page1"]
 layout_mode = 2
 theme = ExtResource("3_2qins")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = "SSAO"
 
 [node name="SSILSet" type="CheckButton" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page1"]
 layout_mode = 2
 theme = ExtResource("3_2qins")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = "SSIL"
 
 [node name="SSRSet" type="CheckButton" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page1"]
 layout_mode = 2
 theme = ExtResource("3_2qins")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = "SSR"
 
 [node name="FogSet" type="CheckButton" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page1"]
 layout_mode = 2
 theme = ExtResource("3_2qins")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = "FOG_SET"
 
 [node name="GlowSet" type="CheckButton" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page1"]
 layout_mode = 2
 theme = ExtResource("3_2qins")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 button_pressed = true
 text = "GLOW"
 
 [node name="LightShadows" type="CheckButton" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page1"]
 layout_mode = 2
 theme = ExtResource("3_2qins")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = "LIGHT_SHADOWS"
 
 [node name="Label" type="Label" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page1"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 18
 text = "LIGHT_SHADOWS_WARNING"
+
+[node name="Lights" type="CheckButton" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page1"]
+layout_mode = 2
+theme = ExtResource("3_2qins")
+text = "ENABLE_LIGHTS"
 
 [node name="ReflectionProbesSet" type="CheckButton" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page1"]
 layout_mode = 2
 theme = ExtResource("3_2qins")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 button_pressed = true
 text = "REFLECTION_PROBES"
 
 [node name="VSyncSet" type="CheckBox" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page1"]
 layout_mode = 2
 theme = ExtResource("3_2qins")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = "VSYNC"
 
 [node name="Page2" type="VBoxContainer" parent="SettingsPanel/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(512, 512)
 layout_mode = 2
 
 [node name="SoundsLabel" type="Label" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page2"]
@@ -265,6 +270,7 @@ As for now, \"Save\" button is deprecated."
 [connection signal="toggled" from="SettingsPanel/ScrollContainer/HBoxContainer/Page1/FogSet" to="SettingsPanel" method="_on_fog_set_toggled"]
 [connection signal="toggled" from="SettingsPanel/ScrollContainer/HBoxContainer/Page1/GlowSet" to="SettingsPanel" method="_on_glow_set_toggled"]
 [connection signal="toggled" from="SettingsPanel/ScrollContainer/HBoxContainer/Page1/LightShadows" to="SettingsPanel" method="_on_light_shadows_toggled"]
+[connection signal="toggled" from="SettingsPanel/ScrollContainer/HBoxContainer/Page1/Lights" to="SettingsPanel" method="_on_lights_toggled"]
 [connection signal="toggled" from="SettingsPanel/ScrollContainer/HBoxContainer/Page1/ReflectionProbesSet" to="SettingsPanel" method="_on_reflection_probes_set_toggled"]
 [connection signal="toggled" from="SettingsPanel/ScrollContainer/HBoxContainer/Page1/VSyncSet" to="SettingsPanel" method="_on_v_sync_set_toggled"]
 [connection signal="drag_ended" from="SettingsPanel/ScrollContainer/HBoxContainer/Page2/MusicSet" to="SettingsPanel" method="_on_music_set_drag_ended"]

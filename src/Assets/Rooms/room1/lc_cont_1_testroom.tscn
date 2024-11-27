@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://b61wqoib0cvdy"]
+[gd_scene load_steps=52 format=4 uid="uid://b61wqoib0cvdy"]
 
 [ext_resource type="Texture2D" uid="uid://c7euhyglo1q1j" path="res://Assets/RoomAssets/LCZ3.5/beige_wall_001_rough_2k.png" id="1_s0dg4"]
 [ext_resource type="Texture2D" uid="uid://dwpt2xs1rrv1" path="res://Assets/RoomAssets/LCZ3.5/beige_wall_001_nor_gl_2k.png" id="2_by3hs"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dcyovsgw5v603" path="res://Assets/RoomAssets/LCZ3.5/beige_wall_001_rough_2k-1.png" id="13_ttk2f"]
 [ext_resource type="PackedScene" uid="uid://bvmbksyl1hdmd" path="res://Assets/OriginalModels/lamp_2_small.tscn" id="14_qw4rw"]
 [ext_resource type="PackedScene" uid="uid://dk6afsf7jh72a" path="res://Assets/ExternalModels/office_desk_with_drawers.tscn" id="15_2t1or"]
+[ext_resource type="ArrayOccluder3D" uid="uid://b5b1khkhdeqt5" path="res://Assets/Rooms/room1/occ/lc_cont_1_testroom.occ" id="16_1w3r8"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_kbo1f"]
 vertices = PackedVector3Array(-9.5, 0.393586, 9.7617, -8.5, 0.393586, 9.7617, -8.5, 0.393586, -9.4883, -9.5, 0.393586, -9.7383, 8.25, 0.393586, -9.2383, 8.25, 0.393586, 9.5117, 9.5, 0.393586, 9.7617, 9.5, 0.393586, -9.7383, -5.25, 0.393586, -1.2383, -5, 0.393586, 0.0116997, 1.5, 0.393586, 0.0116997, -7.25, 0.393586, -9.2383, -7.25, 0.393586, -1.2383, 1.5, 0.393586, -9.2383, 4.5, 0.393586, -0.4883, 4.75, 0.393586, 0.2617, 5.5, 0.393586, 0.2617, 5.75, 0.393586, -0.4883, 7, 0.393586, -9.2383, 2.75, 0.393586, -9.2383, 2.75, 0.393586, -0.4883, 7, 0.393586, -0.4883, -7.75, 7.39359, -0.2383, -7.75, 7.39359, 0.2617, -6, 7.39359, 0.2617, -6, 7.39359, -0.2383, 4.5, 0.393586, 1.0117, 5.75, 0.393586, 1.0117, -5.25, 0.393586, 1.2617, -7.25, 0.393586, 1.2617, -7.25, 0.393586, 9.2617, 1.75, 0.393586, 1.2617, 7, 0.393586, 1.0117, -2, 0.393586, 9.2617, -1.75, 0.393586, 9.7617, 7, 0.393586, 9.2617)
@@ -645,3 +646,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.264, 0, -5.118)
 
 [node name="playerspawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37702, 0)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("16_1w3r8")

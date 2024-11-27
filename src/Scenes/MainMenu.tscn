@@ -27,6 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 1
 
 [node name="Foreground" type="TextureRect" parent="."]
 layout_mode = 1
@@ -36,51 +37,46 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_647vp")
+expand_mode = 1
 
 [node name="Title" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.012
-anchor_top = 0.022
-anchor_right = 0.305
-anchor_bottom = 0.978
-offset_left = 0.959999
-offset_top = 0.239998
-offset_right = 0.399963
-offset_bottom = -0.23999
-grow_horizontal = 2
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_right = 448.0
 grow_vertical = 2
 theme_override_constants/separation = 48
 
 [node name="Label" type="Label" parent="Title"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_lej4w")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 48
 text = "SCP: Containing
 Procedures"
 
 [node name="Play" type="Button" parent="Title"]
 layout_mode = 2
 theme = ExtResource("5_gi3lh")
-theme_override_font_sizes/font_size = 31
+theme_override_font_sizes/font_size = 24
 text = "PLAY"
 
 [node name="Settings" type="Button" parent="Title"]
 layout_mode = 2
 theme = ExtResource("5_gi3lh")
-theme_override_font_sizes/font_size = 31
+theme_override_font_sizes/font_size = 24
 text = "SETTINGS"
 
 [node name="Credits" type="Button" parent="Title"]
 layout_mode = 2
 theme = ExtResource("5_gi3lh")
-theme_override_font_sizes/font_size = 31
+theme_override_font_sizes/font_size = 24
 text = "CREDITS"
 
 [node name="Exit" type="Button" parent="Title"]
 layout_mode = 2
 theme = ExtResource("5_gi3lh")
-theme_override_font_sizes/font_size = 31
+theme_override_font_sizes/font_size = 24
 text = "EXIT"
 
 [node name="Settings" parent="." instance=ExtResource("6_0nqn5")]

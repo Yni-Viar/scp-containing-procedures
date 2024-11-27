@@ -25,6 +25,8 @@ func load_settings():
 	$WorldEnvironment.environment.ssil_enabled = Settings.setting_res.ssil
 	$WorldEnvironment.environment.ssr_enabled = Settings.setting_res.ssr
 	$WorldEnvironment.environment.glow_enabled = Settings.setting_res.glow
+	if !Settings.setting_res.enable_lighting:
+		$WorldEnvironment.environment.tonemap_exposure = 8.0
 	if !Settings.setting_res.reflection_probes:
 		for node in get_tree().get_nodes_in_group("ReflectionProbes"):
 			if node is ReflectionProbe:

@@ -12,7 +12,8 @@ func _ready():
 		_:
 			get_node("Background").texture = load("res://Assets/Menu/MainMenuBackgroundIndev.png")
 	
-	get_window().size = Settings.window_size[Settings.setting_res.ui_window_size]
+	if OS.get_name() != "Android":
+		get_window().size = Settings.window_size[Settings.setting_res.ui_window_size]
 	
 	AudioServer.set_bus_volume_db(0, linear_to_db(Settings.setting_res.sound))
 	if Settings.setting_res.sound < 0.01:
