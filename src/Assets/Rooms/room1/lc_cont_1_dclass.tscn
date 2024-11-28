@@ -237,6 +237,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2784, 0, 2.15383)
 [node name="entityspawn19" type="Marker3D" parent="." groups=["DClassSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2784, 0, 7.68543)
 
+[node name="entityspawn23" type="Marker3D" parent="." groups=["GuardSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.294168, 0, 7.68543)
+
 [node name="entityspawn2" type="Marker3D" parent="." groups=["DClassSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2784, 0, -2.88596)
 
@@ -266,6 +269,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2784, 4.1718, 2.15383)
 
 [node name="entityspawn20" type="Marker3D" parent="." groups=["DClassSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2784, 4.1718, 7.63331)
+
+[node name="entityspawn21" type="Marker3D" parent="." groups=["GuardSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.73956, 4.1718, 7.63331)
+
+[node name="entityspawn22" type="Marker3D" parent="." groups=["GuardSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.90795, 4.1718, 7.63331)
 
 [node name="entityspawn11" type="Marker3D" parent="." groups=["DClassSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2784, 4.1718, -2.88596)
