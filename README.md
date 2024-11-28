@@ -1,4 +1,4 @@
-# SCP: Conmtaining Procedures
+# SCP: Containing Procedures
 ## About game
 An SCP single-player game, where you control the Site.
 In a nutshell - this is a SCP Facility simulator.
