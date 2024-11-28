@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://mu7j26by23js"]
+[gd_scene load_steps=24 format=3 uid="uid://mu7j26by23js"]
 
 [ext_resource type="Script" path="res://Scripts/GameCore.gd" id="1_w6bkb"]
 [ext_resource type="Resource" uid="uid://dtootndbrxot5" path="res://Scripts/GameData/gamedata.tres" id="2_w817j"]
@@ -6,12 +6,15 @@
 [ext_resource type="Script" path="res://Scripts/UI/TouchscreenToggle.gd" id="6_eu7p5"]
 [ext_resource type="Texture2D" uid="uid://bmw4fxmnmwhov" path="res://Assets/HUD/arrow.png" id="7_bwdaw"]
 [ext_resource type="Script" path="res://Scripts/UI/PlayerUI.gd" id="8_7mmlb"]
+[ext_resource type="Texture2D" uid="uid://bhemwrx2xlq8c" path="res://Assets/HUD/Touch/open_map.png" id="8_131gn"]
 [ext_resource type="Script" path="res://Scripts/UI/TouchBar.gd" id="8_rr24o"]
 [ext_resource type="Script" path="res://MapGen/MapGen.gd" id="9_3ruab"]
 [ext_resource type="Texture2D" uid="uid://cnpfe7ywcwnqm" path="res://Assets/HUD/Touch/point_a_unit.png" id="9_gd86b"]
 [ext_resource type="Script" path="res://Scripts/ObjectSystem.gd" id="9_qwyor"]
+[ext_resource type="Texture2D" uid="uid://cxmnvd5xm22h5" path="res://Assets/HUD/Touch/open_map_click.png" id="9_vl0ry"]
 [ext_resource type="Script" path="res://Scripts/UI/TouchUIClick.gd" id="10_e4bn0"]
 [ext_resource type="Texture2D" uid="uid://k1uddjj347va" path="res://Assets/HUD/Touch/point_a_unit_click.png" id="10_kgdq5"]
+[ext_resource type="Texture2D" uid="uid://bcfqo37gvsf4d" path="res://Assets/HUD/Touch/open_map_disabled.png" id="10_rqfbe"]
 [ext_resource type="Script" path="res://MapGen/MapGenRoomResource.gd" id="10_yrip0"]
 [ext_resource type="Resource" uid="uid://7prvjngodfs1" path="res://MapGen/site19.tres" id="11_j075c"]
 [ext_resource type="Texture2D" uid="uid://i7frmo7y2knr" path="res://Assets/HUD/Touch/point_a_unit_disabled.png" id="11_qnc31"]
@@ -107,7 +110,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_xi0ky")
 script = ExtResource("8_rr24o")
 
-[node name="Tap" type="TextureButton" parent="PlayerUI/TouchUI"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerUI/TouchUI"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -116,10 +119,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -144.0
 offset_top = -144.0
-offset_right = -16.0
+offset_right = -12.0
 offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
+
+[node name="Map" type="TextureButton" parent="PlayerUI/TouchUI/HBoxContainer"]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("8_131gn")
+texture_pressed = ExtResource("9_vl0ry")
+texture_hover = ExtResource("8_131gn")
+texture_disabled = ExtResource("10_rqfbe")
+texture_focused = ExtResource("8_131gn")
+
+[node name="Tap" type="TextureButton" parent="PlayerUI/TouchUI/HBoxContainer"]
+layout_mode = 2
 texture_normal = ExtResource("9_gd86b")
 texture_pressed = ExtResource("10_kgdq5")
 texture_hover = ExtResource("9_gd86b")
@@ -136,6 +151,28 @@ offset_top = -40.0
 offset_right = 40.0
 grow_vertical = 0
 script = ExtResource("12_08sny")
+
+[node name="DesktopUI" type="Control" parent="PlayerUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PlayerUI/DesktopUI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "MAP_OPEN_TIP"
 
 [node name="PauseMenu" type="Control" parent="PlayerUI"]
 visible = false
@@ -166,7 +203,7 @@ offset_left = -112.992
 offset_top = -22.856
 offset_right = 111.008
 offset_bottom = 23.144
-text = "Exit"
+text = "EXIT"
 
 [node name="FacilityGenerator" type="Node3D" parent="."]
 script = ExtResource("9_3ruab")
@@ -197,7 +234,7 @@ bus = &"Music"
 [node name="InGameConsole" parent="." instance=ExtResource("13_30ago")]
 visible = false
 
-[connection signal="button_down" from="PlayerUI/TouchUI/Tap" to="PlayerUI/TouchUI/Tap" method="_on_button_down"]
-[connection signal="button_up" from="PlayerUI/TouchUI/Tap" to="PlayerUI/TouchUI/Tap" method="_on_button_up"]
+[connection signal="button_down" from="PlayerUI/TouchUI/HBoxContainer/Tap" to="PlayerUI/TouchUI/HBoxContainer/Tap" method="_on_button_down"]
+[connection signal="button_up" from="PlayerUI/TouchUI/HBoxContainer/Tap" to="PlayerUI/TouchUI/HBoxContainer/Tap" method="_on_button_up"]
 [connection signal="pressed" from="PlayerUI/PauseMenu/Panel/ExitButton" to="PlayerUI" method="_on_exit_button_pressed"]
 [connection signal="generated" from="FacilityGenerator" to="." method="_on_facility_generator_generated"]

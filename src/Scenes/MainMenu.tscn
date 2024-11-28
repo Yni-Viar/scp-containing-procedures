@@ -203,25 +203,6 @@ bbcode_enabled = true
 text = "[b]Code:[/b]"
 fit_content = true
 
-[node name="CreditsCode2" type="RichTextLabel" parent="CreditsPanel/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(1234, 0)
-layout_mode = 2
-theme_override_font_sizes/bold_italics_font_size = 24
-theme_override_font_sizes/italics_font_size = 24
-theme_override_font_sizes/mono_font_size = 24
-theme_override_font_sizes/normal_font_size = 24
-theme_override_font_sizes/bold_font_size = 24
-bbcode_enabled = true
-text = "[i]First person character (license - The Unlicense)[/i]
-
-- Originally made by [dzejpi](https://github.com/dzejpi/godot-3d-base-project),
- then I (Yni) merged some code from elmarcoh's FPS script (also public domain),
- and now I added some code.
-
-
-"
-fit_content = true
-
 [node name="CreditsCode3" type="RichTextLabel" parent="CreditsPanel/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1234, 0)
 layout_mode = 2
@@ -284,22 +265,6 @@ text = "[i]Dither shader (MIT License)[/i]
 
 Copyright (c) 2021 Sam Bigos
 This shader is under MIT license.
-
-"
-fit_content = true
-
-[node name="CreditsCode10" type="RichTextLabel" parent="CreditsPanel/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(1234, 0)
-layout_mode = 2
-theme_override_font_sizes/bold_italics_font_size = 24
-theme_override_font_sizes/italics_font_size = 24
-theme_override_font_sizes/mono_font_size = 24
-theme_override_font_sizes/normal_font_size = 24
-theme_override_font_sizes/bold_font_size = 24
-bbcode_enabled = true
-text = "[i]Recoil System (MIT License)
-
-- Copyright (c) 2024 AceSpectre
 
 "
 fit_content = true

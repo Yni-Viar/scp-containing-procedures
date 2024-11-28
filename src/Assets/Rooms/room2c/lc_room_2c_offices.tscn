@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://bvludt3pcnunj"]
+[gd_scene load_steps=44 format=4 uid="uid://bvludt3pcnunj"]
 
 [ext_resource type="Texture2D" uid="uid://b8pg4uioakn4r" path="res://Assets/RoomAssets/LCZ3.5/Tiles107_2K_Color.png" id="1_66sco"]
 [ext_resource type="Texture2D" uid="uid://dv0ipv0joknjs" path="res://Assets/RoomAssets/LCZ3.5/Tiles107_2K_Roughness.png" id="2_ij273"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" path="res://Assets/ExternalModels/SteelFrameShelves03.tscn" id="20_0424j"]
 [ext_resource type="ArrayOccluder3D" uid="uid://brc8dkakpbbsr" path="res://Assets/Rooms/room2c/occ/lc_room_2c_offices.occ" id="21_28klx"]
 [ext_resource type="PackedScene" uid="uid://3uxnw561tlh4" path="res://Assets/ExternalModels/plant.tscn" id="21_qf54h"]
+[ext_resource type="PackedScene" uid="uid://brw1pbnyucy41" path="res://Assets/OriginalModels/omnidotplush.tscn" id="23_lb14e"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_mmbpc"]
 vertices = PackedVector3Array(-9.7383, 0.393586, 3.5117, -3.2383, 0.393586, 3.5117, -3.2383, 0.393586, 1.5117, 1.5117, 0.393586, -3.2383, 3.5117, 0.393586, -3.2383, 3.5117, 0.393586, -9.7383, -9.7383, 0.393586, -9.7383, 9.2617, 0.393586, -8.4883, 9.7617, 0.393586, -8.7383, 9.7617, 0.393586, -9.7383, 9.2617, 0.393586, -3.2383, 1.7617, 0.393586, 9.7617, 2.2617, 0.393586, 9.2617, 2.5117, 0.393586, 6.2617, -2.2383, 0.393586, 6.7617, -1.7383, 0.393586, 9.7617, 5.0117, 0.393586, 6.5117, 5.0117, 0.393586, 9.2617, 7.7617, 0.393586, 9.2617, 9.2617, 0.393586, 7.7617, 9.2617, 0.393586, 4.7617, 5.7617, 0.393586, 4.7617, 5.5117, 0.393586, 2.7617, 9.2617, 0.393586, 2.5117, 9.7617, 0.393586, 1.7617, 9.5117, 0.393586, -1.9883, 2.2617, 0.393586, -1.9883, -1.9883, 0.393586, 2.2617, -9.7383, 0.393586, 9.7617, -8.7383, 0.393586, 9.7617, -8.4883, 0.393586, 9.2617, -3.2383, 0.393586, 9.2617)
@@ -399,3 +400,6 @@ occluder = ExtResource("21_28klx")
 
 [node name="Lamp4" parent="." instance=ExtResource("13_m47eb")]
 transform = Transform3D(-0.707107, -6.18172e-08, 0.707107, 8.74228e-08, -1, 0, 0.707107, 6.18172e-08, 0.707107, 4.58882, 6.60165, 4.46399)
+
+[node name="omnidotplush" parent="." instance=ExtResource("23_lb14e")]
+transform = Transform3D(-0.445042, 0, 0.89551, 0, 1, 0, -0.89551, 0, -0.445042, 8.67718, 2.66903, 3.42026)

@@ -61,7 +61,6 @@ folder_colors={
 "res://UI/": "orange",
 "res://Unused/": "green",
 "res://Unused/InventorySystem/": "yellow",
-"res://Unused/PlayerController/": "red",
 "res://addons/": "pink",
 "res://android/": "teal"
 }
