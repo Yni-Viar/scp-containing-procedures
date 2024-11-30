@@ -472,3 +472,6 @@ end_position = Vector3(3, 0, 0)
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("14_65mym")
+
+[node name="playerspawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.954907, 2.37702, 1.90126)

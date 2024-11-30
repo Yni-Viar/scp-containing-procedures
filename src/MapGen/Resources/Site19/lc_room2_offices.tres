@@ -9,8 +9,8 @@
 script = ExtResource("1_e7wly")
 name = "lc_room2_offices"
 prefab = ExtResource("1_0qkgp")
-icon_0_degrees = ExtResource("1_8xntr")
-icon_90_degrees = ExtResource("2_8315m")
-icon_180_degrees = ExtResource("1_8xntr")
-icon_270_degrees = ExtResource("2_8315m")
+icon_0_degrees = ExtResource("2_8315m")
+icon_90_degrees = ExtResource("1_8xntr")
+icon_180_degrees = ExtResource("2_8315m")
+icon_270_degrees = ExtResource("1_8xntr")
 spawn_chance = 40.0

@@ -539,3 +539,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2399, 0, 6.58473)
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("21_bbvlm")
+
+[node name="playerspawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37702, 0)

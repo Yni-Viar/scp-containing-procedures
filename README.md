@@ -7,7 +7,7 @@ In a nutshell - this is a SCP Facility simulator.
 - [x] SCP-173 npc and Containment Chamber
 - [x] Android support
 - [x] Optimization
-- [ ] Map view
+- [x] Map view
 - [ ] SCP-650 npc and Containment Chamber
 - [ ] Foundation tasks, score + gameover
 - [ ] Chaos Insurgency event + exit

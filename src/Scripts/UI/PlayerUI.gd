@@ -1,6 +1,7 @@
 extends Control
 
 var special_screen: bool = false
+var interact_busy: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,14 +17,15 @@ func _process(delta):
 		$Cursor.show()
 		if !Settings.touchscreen:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
-func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		input_values("exitgame")
 	if Input.is_action_just_pressed("console"):
 		input_values("console")
-	#if Input.is_action_just_pressed("human_inventory"):
-		#input_values("inventory")
+	if Input.is_action_pressed("map_open") && !interact_busy:
+		interact_busy = true
+		input_values("map")
+	if Input.is_action_just_released("map_open"):
+		interact_busy = false
 
 func input_values(state: String):
 	match state:
@@ -41,13 +43,13 @@ func input_values(state: String):
 			else:
 				$PauseMenu.hide()
 				special_screen = false
-		#"inventory":
-			#if !special_screen:
-				#get_tree().root.get_node("Game/Player/InventoryUI").show()
-				#special_screen = true
-			#else:
-				#get_tree().root.get_node("Game/Player/InventoryUI").hide()
-				#special_screen = false
+		"map":
+			if !special_screen:
+				get_tree().root.get_node("Game/PlayerUI/Map").show()
+				special_screen = true
+			else:
+				get_tree().root.get_node("Game/PlayerUI/Map").hide()
+				special_screen = false
 
 
 func _on_exit_button_pressed():

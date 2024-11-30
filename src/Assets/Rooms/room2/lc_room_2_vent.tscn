@@ -695,3 +695,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.382866, 0, -1.63395)
 
 [node name="entityspawn2" type="Marker3D" parent="." groups=["DClassSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.32674)
+
+[node name="playerspawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37702, 0)

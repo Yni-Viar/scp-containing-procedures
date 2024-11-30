@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dwpt2xs1rrv1" path="res://Assets/RoomAssets/LCZ3.5/beige_wall_001_nor_gl_2k.png" id="11_ric3s"]
 [ext_resource type="Texture2D" uid="uid://dcyovsgw5v603" path="res://Assets/RoomAssets/LCZ3.5/beige_wall_001_rough_2k-1.png" id="12_hj14s"]
 [ext_resource type="PackedScene" uid="uid://bvmbksyl1hdmd" path="res://Assets/OriginalModels/lamp_2_small.tscn" id="13_m47eb"]
-[ext_resource type="PackedScene" path="res://Assets/ExternalModels/Picture2.tscn" id="14_ofq2j"]
+[ext_resource type="PackedScene" uid="uid://crwduagwj35dk" path="res://Assets/ExternalModels/Picture2.tscn" id="14_ofq2j"]
 [ext_resource type="PackedScene" uid="uid://dk6afsf7jh72a" path="res://Assets/ExternalModels/office_desk_with_drawers.tscn" id="15_8io6o"]
 [ext_resource type="PackedScene" uid="uid://bub0kcwgvaqyn" path="res://Assets/ExternalModels/chair.tscn" id="16_le2qa"]
 [ext_resource type="PackedScene" uid="uid://delt0t2y8yrlr" path="res://Assets/ExternalModels/computer_2.tscn" id="17_cew55"]
@@ -403,3 +403,6 @@ transform = Transform3D(-0.707107, -6.18172e-08, 0.707107, 8.74228e-08, -1, 0, 0
 
 [node name="omnidotplush" parent="." instance=ExtResource("23_lb14e")]
 transform = Transform3D(-0.445042, 0, 0.89551, 0, 1, 0, -0.89551, 0, -0.445042, 8.67718, 2.66903, 3.42026)
+
+[node name="playerspawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.93648, 2.37702, 2.53712)
