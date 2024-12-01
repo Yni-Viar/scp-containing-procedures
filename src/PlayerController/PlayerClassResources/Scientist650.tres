@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="PuppetClass" load_steps=3 format=3 uid="uid://dgkljki2u50nx"]
 
-[ext_resource type="PackedScene" uid="uid://bonrbq0lk83c6" path="res://PlayerController/PlayerClassPrefab/scientist650.tscn" id="1_mwd27"]
+[ext_resource type="PackedScene" uid="uid://citkd65dmhf8b" path="res://PlayerController/PlayerClassPrefab/scientist.tscn" id="1_asw8n"]
 [ext_resource type="Script" path="res://PlayerController/PlayerClassResources/PuppetResource.gd" id="2_fp2sq"]
 
 [resource]
 script = ExtResource("2_fp2sq")
 puppet_class_name = "SCIENCE_PERSONNEL"
 speed = 3.0
-prefab = ExtResource("1_mwd27")
+prefab = ExtResource("1_asw8n")
 spawn_point_group = "Scientist650Spawn"
 initial_amount = 2
 automatic = false

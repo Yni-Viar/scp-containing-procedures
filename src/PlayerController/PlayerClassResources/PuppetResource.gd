@@ -12,3 +12,4 @@ class_name PuppetClass
 @export var fraction: int
 @export var apply_height_bugfix: bool = true
 @export var enable_wander: bool = true
+@export var inventory_item_size: int = 0

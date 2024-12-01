@@ -12,15 +12,11 @@ var raycast: RayCast3D
 var vision_entity: Array = []
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func on_start():
 	raycast = get_parent().get_node("RayCast3D")
 	if get_node_or_null("AnimationTree") != null:
 		get_node("AnimationTree").active = true
 	#get_parent().get_node("NpcSelection").set_collision_mask_value(3, true)
-	on_start()
-
-func on_start():
-	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):

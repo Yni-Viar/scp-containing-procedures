@@ -52,6 +52,7 @@ folder_colors={
 "res://MapGen/": "green",
 "res://Modules/tgpy.default-gamemode/Scenes/": "orange",
 "res://PlayerController/": "red",
+"res://PlayerController/PlayerInventory/": "yellow",
 "res://Scenes/": "orange",
 "res://Scripts/": "green",
 "res://Shaders/": "green",

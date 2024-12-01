@@ -57,6 +57,8 @@ collision_mask = 7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30394, 0)
 shape = SubResource("CylinderShape3D_0k5gs")
 
+[node name="Inventory" type="Node" parent="."]
+
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.14482, 0)
 target_position = Vector3(0, 0, -32)
