@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MapGenZone" load_steps=16 format=3 uid="uid://7prvjngodfs1"]
+[gd_resource type="Resource" script_class="MapGenZone" load_steps=17 format=3 uid="uid://7prvjngodfs1"]
 
 [ext_resource type="Script" path="res://MapGen/MapGenRoomResource.gd" id="1_mti3u"]
 [ext_resource type="Script" path="res://MapGen/MapGenRoom.gd" id="1_obfoh"]
@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://wc1esgdjfh2u" path="res://MapGen/Resources/Site19/lc_cont1_dclass.tres" id="8_636qo"]
 [ext_resource type="Resource" uid="uid://bla6b2yt4icpi" path="res://MapGen/Resources/Site19/lc_room2_offices.tres" id="10_f6hik"]
 [ext_resource type="Resource" uid="uid://bx5nj144uqlqs" path="res://MapGen/Resources/Site19/lc_room3.tres" id="10_lyern"]
+[ext_resource type="Resource" uid="uid://dl83ef3lsmvh2" path="res://MapGen/Resources/Site19/lc_cont2_650.tres" id="14_uxfll"]
 
 [resource]
 script = ExtResource("1_mti3u")
@@ -22,7 +23,7 @@ endrooms = Array[ExtResource("1_obfoh")]([ExtResource("3_oukqp")])
 endrooms_single = Array[ExtResource("1_obfoh")]([ExtResource("8_3udfn")])
 endrooms_single_large = Array[ExtResource("1_obfoh")]([ExtResource("8_636qo")])
 hallways = Array[ExtResource("1_obfoh")]([ExtResource("5_gpbd2"), ExtResource("6_ppfcp"), ExtResource("10_f6hik")])
-hallways_single = Array[ExtResource("1_obfoh")]([ExtResource("8_7fj7o")])
+hallways_single = Array[ExtResource("1_obfoh")]([ExtResource("8_7fj7o"), ExtResource("14_uxfll")])
 hallways_single_large = Array[ExtResource("1_obfoh")]([])
 corners = Array[ExtResource("1_obfoh")]([ExtResource("1_rpggd")])
 corners_single = Array[ExtResource("1_obfoh")]([ExtResource("3_fsbel")])

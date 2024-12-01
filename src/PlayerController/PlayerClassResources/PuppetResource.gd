@@ -11,3 +11,4 @@ class_name PuppetClass
 ## 0 is human, 1 is hostile SCP, 2 is vision SCP (like 650 and 173)
 @export var fraction: int
 @export var apply_height_bugfix: bool = true
+@export var enable_wander: bool = true

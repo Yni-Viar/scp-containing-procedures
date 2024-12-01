@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PuppetClass" load_steps=3 format=3 uid="uid://dgkljki2u50nx"]
+
+[ext_resource type="PackedScene" uid="uid://bonrbq0lk83c6" path="res://PlayerController/PlayerClassPrefab/scientist650.tscn" id="1_mwd27"]
+[ext_resource type="Script" path="res://PlayerController/PlayerClassResources/PuppetResource.gd" id="2_fp2sq"]
+
+[resource]
+script = ExtResource("2_fp2sq")
+puppet_class_name = "SCIENCE_PERSONNEL"
+speed = 3.0
+prefab = ExtResource("1_mwd27")
+spawn_point_group = "Scientist650Spawn"
+initial_amount = 2
+automatic = false
+footstep_sounds = {
+"run": PackedStringArray("res://Sounds/Character/Human/Step/Run1.ogg", "res://Sounds/Character/Human/Step/Run2.ogg", "res://Sounds/Character/Human/Step/Run3.ogg", "res://Sounds/Character/Human/Step/Run4.ogg", "res://Sounds/Character/Human/Step/Run5.ogg", "res://Sounds/Character/Human/Step/Run6.ogg", "res://Sounds/Character/Human/Step/Run7.ogg", "res://Sounds/Character/Human/Step/Run8.ogg"),
+"walk": PackedStringArray("res://Sounds/Character/Human/Step/Step1.ogg", "res://Sounds/Character/Human/Step/Step2.ogg", "res://Sounds/Character/Human/Step/Step3.ogg", "res://Sounds/Character/Human/Step/Step4.ogg", "res://Sounds/Character/Human/Step/Step5.ogg", "res://Sounds/Character/Human/Step/Step6.ogg", "res://Sounds/Character/Human/Step/Step7.ogg", "res://Sounds/Character/Human/Step/Step8.ogg")
+}
+fraction = 0
+apply_height_bugfix = true
+enable_wander = false

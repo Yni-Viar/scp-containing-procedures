@@ -8,7 +8,7 @@ In a nutshell - this is a SCP Facility simulator.
 - [x] Android support
 - [x] Optimization
 - [x] Map view
-- [ ] SCP-650 npc and Containment Chamber
+- [x] SCP-650 npc and Containment Chamber
 - [ ] Foundation tasks, score + gameover
 - [ ] Chaos Insurgency event + exit
 - [ ] SCP-049 npc and Containment Chamber

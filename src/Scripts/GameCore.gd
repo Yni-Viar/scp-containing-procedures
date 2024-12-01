@@ -47,6 +47,8 @@ func startup_spawn():
 	for puppet_res in game_data.puppet_classes:
 		var spawn_point_group = get_tree().get_nodes_in_group(puppet_res.spawn_point_group)
 		var used_spawns: Array[int] = []
+		if get_tree().get_nodes_in_group(puppet_res.spawn_point_group).size() == 0:
+			continue
 		for i in range(spawn_point_group.size()):
 			if i > puppet_res.initial_amount:
 				break

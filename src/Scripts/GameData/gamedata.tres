@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GameData" load_steps=8 format=3 uid="uid://dtootndbrxot5"]
+[gd_resource type="Resource" script_class="GameData" load_steps=10 format=3 uid="uid://dtootndbrxot5"]
 
 [ext_resource type="Script" path="res://Scripts/GameData/GameData.gd" id="1_d6yh1"]
 [ext_resource type="Script" path="res://PlayerController/PlayerClassResources/PuppetResource.gd" id="3_7lr8a"]
@@ -7,7 +7,9 @@
 [ext_resource type="Resource" uid="uid://dtxvxmwsol0hf" path="res://PlayerController/PlayerClassResources/Guard.tres" id="5_kjm05"]
 [ext_resource type="Resource" uid="uid://b82a218to832v" path="res://PlayerController/PlayerClassResources/DClass.tres" id="6_8wh7j"]
 [ext_resource type="Resource" uid="uid://dsgnaeqq7xe1k" path="res://PlayerController/PlayerClassResources/Scp173.tres" id="7_1fok3"]
+[ext_resource type="Resource" uid="uid://b78x487lxutqy" path="res://PlayerController/PlayerClassResources/Scp650.tres" id="7_yvqs6"]
+[ext_resource type="Resource" uid="uid://dgkljki2u50nx" path="res://PlayerController/PlayerClassResources/Scientist650.tres" id="8_2ihlr"]
 
 [resource]
 script = ExtResource("1_d6yh1")
-puppet_classes = Array[ExtResource("3_7lr8a")]([ExtResource("4_mk8jn"), ExtResource("5_enldi"), ExtResource("6_8wh7j"), ExtResource("5_kjm05"), ExtResource("7_1fok3")])
+puppet_classes = Array[ExtResource("3_7lr8a")]([ExtResource("4_mk8jn"), ExtResource("5_enldi"), ExtResource("6_8wh7j"), ExtResource("5_kjm05"), ExtResource("7_1fok3"), ExtResource("7_yvqs6"), ExtResource("8_2ihlr")])
