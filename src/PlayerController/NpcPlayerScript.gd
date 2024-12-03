@@ -7,6 +7,8 @@ class_name NpcPlayerScript
 @export var automatic: bool = false
 ## See PuppetResource description
 @export var fraction: int
+@export var health: float
+@export var current_health: float
 
 var puppet_mesh: BasePuppetScript
 
@@ -19,6 +21,8 @@ func _ready() -> void:
 	puppet_mesh = puppet_class.prefab.instantiate()
 	automatic = puppet_class.automatic
 	fraction = puppet_class.fraction
+	health = puppet_class.health
+	current_health = health
 	add_child(puppet_mesh)
 
 func set_movement_target(movement_target: Vector3):
@@ -52,3 +56,12 @@ func _physics_process(delta):
 
 func _on_velocity_computed(safe_velocity: Vector3) -> void:
 	global_position = global_position.move_toward(global_position + safe_velocity, movement_delta)
+
+func health_manage(health_to_add: float):
+	if current_health + health_to_add <= health:
+		current_health += health_to_add
+	else:
+		current_health = health
+	
+	if current_health <= 0:
+		get_tree().root.get_node("Game/NPCs").object_remover(name)

@@ -1,0 +1,237 @@
+[gd_scene load_steps=16 format=3 uid="uid://cxulbge1024do"]
+
+[ext_resource type="Script" path="res://Scripts/UI/PlayerUI.gd" id="1_3lqp3"]
+[ext_resource type="Texture2D" uid="uid://bmw4fxmnmwhov" path="res://Assets/HUD/arrow.png" id="2_3oytm"]
+[ext_resource type="Texture2D" uid="uid://dj66rmlusn18r" path="res://Assets/HUD/healthbar.png" id="3_yg1er"]
+[ext_resource type="Texture2D" uid="uid://dytgmrs4piqfo" path="res://Assets/HUD/healthbar_unfilled.png" id="4_o6s7w"]
+[ext_resource type="Texture2D" uid="uid://b5pka5jiu0eq6" path="res://Assets/HUD/healthbar_filled.png" id="5_odvde"]
+[ext_resource type="Script" path="res://Scripts/FPSCounter.gd" id="6_megin"]
+[ext_resource type="PackedScene" uid="uid://bkjiahck42ear" path="res://PlayerController/NPCScene.tscn" id="7_djgb1"]
+[ext_resource type="Script" path="res://Scripts/UI/InventoryUI.gd" id="7_ri1sy"]
+[ext_resource type="Resource" uid="uid://b82a218to832v" path="res://PlayerController/PlayerClassResources/DClass.tres" id="8_rlaxo"]
+[ext_resource type="PackedScene" uid="uid://8ik28au1k20l" path="res://PlayerController/Player.tscn" id="9_sdft4"]
+[ext_resource type="PackedScene" uid="uid://cmk1qm8xtuio8" path="res://DynamicObjects/InventoryItems/Prefabs/ItemScp018.tscn" id="11_46kds"]
+[ext_resource type="Script" path="res://Scripts/ObjectSystem.gd" id="12_pyp3s"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_fd2v6"]
+vertices = PackedVector3Array(-12.332, 0.274689, -12.332, -12.332, 0.274689, 12.418, 12.418, 0.274689, 12.418, 12.418, 0.274689, -12.332)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+agent_height = 2.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_v18m7"]
+flip_faces = true
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_a0nps"]
+data = PackedVector3Array(0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="Game" type="Node3D"]
+
+[node name="PlayerUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3lqp3")
+
+[node name="Cursor" type="TextureRect" parent="PlayerUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3oytm")
+
+[node name="HealthBarIcon" type="TextureRect" parent="PlayerUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.015
+anchor_top = 0.974
+anchor_right = 0.015
+anchor_bottom = 0.974
+offset_left = -12.8
+offset_top = -11.92
+offset_right = 11.2
+offset_bottom = 12.08
+grow_vertical = 0
+texture = ExtResource("3_yg1er")
+
+[node name="HealthBar" type="TextureProgressBar" parent="PlayerUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029
+anchor_top = 0.963
+anchor_right = 0.171
+anchor_bottom = 0.985
+offset_left = 0.32
+offset_top = -0.0400391
+offset_right = -0.320007
+offset_bottom = 0.199951
+grow_vertical = 0
+allow_greater = true
+nine_patch_stretch = true
+stretch_margin_left = 8
+stretch_margin_top = 8
+stretch_margin_right = 8
+stretch_margin_bottom = 8
+texture_under = ExtResource("4_o6s7w")
+texture_progress = ExtResource("5_odvde")
+
+[node name="Counter" type="Label" parent="PlayerUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 26.0
+text = "FPS"
+script = ExtResource("6_megin")
+
+[node name="BossContainer" type="VBoxContainer" parent="PlayerUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_right = 320.0
+offset_bottom = 256.0
+grow_horizontal = 2
+
+[node name="InventoryUI" type="Control" parent="PlayerUI"]
+visible = false
+layout_mode = 1
+anchor_left = 0.296
+anchor_top = 0.144
+anchor_right = 0.704
+anchor_bottom = 0.856
+offset_left = 0.119995
+offset_top = 0.319992
+offset_right = -0.120056
+offset_bottom = -0.320068
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="PlayerUI/InventoryUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.922
+offset_bottom = -0.0640259
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_ri1sy")
+
+[node name="UseItem" type="Button" parent="PlayerUI/InventoryUI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 197.0
+grow_vertical = 0
+text = "USE_ITEM"
+
+[node name="RemoveItem" type="Button" parent="PlayerUI/InventoryUI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -197.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "REMOVE_ITEM"
+
+[node name="PauseMenu" type="Control" parent="PlayerUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PlayerUI/PauseMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.237
+anchor_bottom = 1.0
+offset_right = 0.959961
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ExitButton" type="Button" parent="PlayerUI/PauseMenu/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.491
+anchor_top = 0.089
+anchor_right = 0.491
+anchor_bottom = 0.089
+offset_left = -191.896
+offset_top = -32.12
+offset_right = 192.104
+offset_bottom = 31.88
+text = "Exit"
+
+[node name="DevWarning" type="Label" parent="PlayerUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -634.5
+offset_top = -96.0
+offset_right = 634.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "PRERELEASE_WARN"
+horizontal_alignment = 1
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.172311, 0)
+navigation_mesh = SubResource("NavigationMesh_fd2v6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(26.1639, 0, 0, 0, 26.1639, 0, 0, 0, 26.1639, 0, 12.8567, 0)
+mesh = SubResource("BoxMesh_v18m7")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_a0nps")
+
+[node name="NpcScene" parent="." instance=ExtResource("7_djgb1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.198, 0, -0.769)
+puppet_class = ExtResource("8_rlaxo")
+
+[node name="Player" parent="." instance=ExtResource("9_sdft4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59206, 3.02249, 3.99167)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.815573, 0.527987, 0.236792, 0.26901, -0.708256, 0.652692, 0.512323, -0.468619, -0.719668, 0, 1.69358, 0)
+
+[node name="scp018" parent="." instance=ExtResource("11_46kds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.76382, 0.0617571, -2.1329)
+
+[node name="Items" type="Node3D" parent="."]
+script = ExtResource("12_pyp3s")
+types = 1
+
+[connection signal="item_clicked" from="PlayerUI/InventoryUI/ItemList" to="PlayerUI/InventoryUI/ItemList" method="_on_item_clicked"]
+[connection signal="button_down" from="PlayerUI/InventoryUI/UseItem" to="PlayerUI/InventoryUI/ItemList" method="_on_use_item_button_down"]
+[connection signal="button_up" from="PlayerUI/InventoryUI/UseItem" to="PlayerUI/InventoryUI/ItemList" method="_on_button_up"]
+[connection signal="button_down" from="PlayerUI/InventoryUI/RemoveItem" to="PlayerUI/InventoryUI/ItemList" method="_on_remove_item_button_down"]
+[connection signal="button_up" from="PlayerUI/InventoryUI/RemoveItem" to="PlayerUI/InventoryUI/ItemList" method="_on_button_up"]
+[connection signal="pressed" from="PlayerUI/PauseMenu/Panel/ExitButton" to="PlayerUI" method="_on_exit_button_pressed"]

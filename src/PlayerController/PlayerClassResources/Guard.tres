@@ -17,3 +17,6 @@ footstep_sounds = {
 }
 fraction = 0
 apply_height_bugfix = true
+enable_wander = true
+inventory_item_size = 8
+health = 100.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://mu7j26by23js"]
+[gd_scene load_steps=27 format=3 uid="uid://mu7j26by23js"]
 
 [ext_resource type="Script" path="res://Scripts/GameCore.gd" id="1_w6bkb"]
 [ext_resource type="Resource" uid="uid://dtootndbrxot5" path="res://Scripts/GameData/gamedata.tres" id="2_w817j"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://o6rnnciwmwvn" path="res://GDsh/InGameConsole.tscn" id="13_30ago"]
 [ext_resource type="PackedScene" uid="uid://8ik28au1k20l" path="res://PlayerController/Player.tscn" id="14_jqsvl"]
 [ext_resource type="Script" path="res://MapGen/Extensions/MapGenHud.gd" id="16_2k31s"]
+[ext_resource type="Script" path="res://Scripts/UI/InventoryUI.gd" id="16_ukffn"]
 [ext_resource type="Theme" uid="uid://4k2un7nm7xc6" path="res://UITheme.tres" id="17_wwvuy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xi0ky"]
@@ -175,6 +176,52 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "MAP_OPEN_TIP"
 
+[node name="InventoryUI" type="Control" parent="PlayerUI"]
+layout_mode = 1
+anchor_left = 0.296
+anchor_top = 0.144
+anchor_right = 0.704
+anchor_bottom = 0.856
+offset_left = 0.119995
+offset_top = 0.319992
+offset_right = -0.120056
+offset_bottom = -0.320068
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="PlayerUI/InventoryUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.922
+offset_bottom = -0.0640259
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_ukffn")
+
+[node name="UseItem" type="Button" parent="PlayerUI/InventoryUI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 197.0
+grow_vertical = 0
+text = "USE_ITEM"
+
+[node name="RemoveItem" type="Button" parent="PlayerUI/InventoryUI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -197.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "REMOVE_ITEM"
+
 [node name="Map" type="Panel" parent="PlayerUI"]
 visible = false
 layout_mode = 1
@@ -257,8 +304,15 @@ large_rooms = true
 
 [node name="Spectator" parent="." instance=ExtResource("14_jqsvl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 12.274, 32)
+default_velocity = null
+speed_scale = null
+boost_speed_multiplier = null
+max_speed = null
+min_speed = null
 
-[node name="Items" type="Node" parent="."]
+[node name="Items" type="Node3D" parent="."]
+script = ExtResource("9_qwyor")
+types = 1
 
 [node name="MapObjects" type="Node" parent="."]
 
@@ -283,6 +337,11 @@ visible = false
 [connection signal="button_up" from="PlayerUI/TouchUI/UIPanel/Map" to="PlayerUI/TouchUI/UIPanel" method="_on_map_button_up"]
 [connection signal="button_down" from="PlayerUI/TouchUI/UIPanel/Tap" to="PlayerUI/TouchUI/UIPanel" method="_on_tap_button_down"]
 [connection signal="button_up" from="PlayerUI/TouchUI/UIPanel/Tap" to="PlayerUI/TouchUI/UIPanel" method="_on_tap_button_up"]
+[connection signal="item_clicked" from="PlayerUI/InventoryUI/ItemList" to="PlayerUI/InventoryUI/ItemList" method="_on_item_clicked"]
+[connection signal="button_down" from="PlayerUI/InventoryUI/UseItem" to="PlayerUI/InventoryUI/ItemList" method="_on_use_item_button_down"]
+[connection signal="button_up" from="PlayerUI/InventoryUI/UseItem" to="PlayerUI/InventoryUI/ItemList" method="_on_button_up"]
+[connection signal="button_down" from="PlayerUI/InventoryUI/RemoveItem" to="PlayerUI/InventoryUI/ItemList" method="_on_remove_item_button_down"]
+[connection signal="button_up" from="PlayerUI/InventoryUI/RemoveItem" to="PlayerUI/InventoryUI/ItemList" method="_on_button_up"]
 [connection signal="button_down" from="PlayerUI/Map/CloseButton" to="PlayerUI/Map" method="_on_close_button_button_down"]
 [connection signal="pressed" from="PlayerUI/PauseMenu/Panel/ExitButton" to="PlayerUI" method="_on_exit_button_pressed"]
 [connection signal="generated" from="FacilityGenerator" to="." method="_on_facility_generator_generated"]

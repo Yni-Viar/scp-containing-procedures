@@ -17,17 +17,20 @@ func _process(delta):
 		$Cursor.show()
 		if !Settings.touchscreen:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	if Input.is_action_just_pressed("ui_cancel"):
-		input_values("exitgame")
 	if Input.is_action_just_pressed("console"):
 		input_values("console")
-	if Input.is_action_pressed("map_open") && !interact_busy:
-		interact_busy = true
-		input_values("map")
-	if Input.is_action_just_released("map_open"):
+	if !interact_busy:
+		if Input.is_action_pressed("ui_cancel"):
+			input_values("exitgame")
+		if Input.is_action_pressed("map_open"):
+			input_values("map")
+		if Input.is_action_pressed("inventory_open"):
+			input_values("inventory")
+	if Input.is_action_just_released("map_open") || Input.is_action_just_released("ui_cancel") || Input.is_action_just_released("inventory_open"):
 		interact_busy = false
 
 func input_values(state: String):
+	interact_busy = true
 	match state:
 		"console":
 			if !special_screen:
@@ -49,6 +52,14 @@ func input_values(state: String):
 				special_screen = true
 			else:
 				get_tree().root.get_node("Game/PlayerUI/Map").hide()
+				special_screen = false
+		"inventory":
+			if !special_screen:
+				$InventoryUI/ItemList.update_inventory(get_tree().root.get_node("Game/Player").selected_pawn.get_node("Inventory"))
+				get_tree().root.get_node("Game/PlayerUI/InventoryUI").show()
+				special_screen = true
+			else:
+				get_tree().root.get_node("Game/PlayerUI/InventoryUI").hide()
 				special_screen = false
 
 

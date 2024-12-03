@@ -47,17 +47,26 @@ func _physics_process(delta: float) -> void:
 		translate(direction * _velocity * delta * boost_speed_multiplier)
 	else:
 		translate(direction * _velocity * delta)
+	
 	# THE CODE PART BELOW is made by Yni
-	if Input.is_action_pressed("interact") && raycast.is_colliding() && !interact_busy:
-		interact_busy = true
-		var collider = raycast.get_collider()
-		if collider is NpcSelection:
-			selected_pawn = collider.get_pawn()
-		elif collider is InteractableNode:
-			collider.call("interact", self)
-		elif selected_pawn != null:
-			if selected_pawn is NpcPlayerScript:
-				if !selected_pawn.automatic:
-					selected_pawn.set_movement_target(raycast.get_collision_point())
+	if !interact_busy:
+		if Input.is_action_pressed("interact") && raycast.is_colliding():
+			interact("Point")
 	if Input.is_action_just_released("interact"):
 		interact_busy = false
+
+func interact(value: String):
+	interact_busy = true
+	match value:
+		"Point":
+			var collider = raycast.get_collider()
+			if collider is NpcSelection:
+				selected_pawn = collider.get_pawn()
+			elif collider is InteractableNode:
+				collider.call("interact", self)
+			elif collider is ItemPickable:
+				collider.call("interact", selected_pawn)
+			elif selected_pawn != null:
+				if selected_pawn is NpcPlayerScript:
+					if !selected_pawn.automatic:
+						selected_pawn.set_movement_target(raycast.get_collision_point())

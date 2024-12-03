@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bs17a2y6ad5f5"]
+
+[ext_resource type="Script" path="res://DynamicObjects/PlayerInventory/Item.gd" id="1_72sxy"]
+
+[resource]
+script = ExtResource("1_72sxy")
+id = 0
+name = "SCP-018"
+pickable_path = "res://DynamicObjects/InventoryItems/Prefabs/ItemScp018.tscn"
+pickup_sound_path = ""
+usage = 2
+upgrade_rough = Array[int]([])
+upgrade_coarse = Array[int]([])
+upgrade_one_to_one = Array[int]([])
+upgrade_fine = Array[int]([])
+upgrade_very_fine = Array[int]([])

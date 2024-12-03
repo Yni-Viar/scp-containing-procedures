@@ -14,3 +14,6 @@ automatic = true
 footstep_sounds = {}
 fraction = 2
 apply_height_bugfix = false
+enable_wander = true
+inventory_item_size = 0
+health = 10000.0
