@@ -177,6 +177,7 @@ grow_vertical = 0
 text = "MAP_OPEN_TIP"
 
 [node name="InventoryUI" type="Control" parent="PlayerUI"]
+visible = false
 layout_mode = 1
 anchor_left = 0.296
 anchor_top = 0.144

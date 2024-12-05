@@ -15,7 +15,7 @@ func _physics_process(delta):
 	if watching_puppets.size() == 0:
 		#Wait
 		timer += delta
-		if timer >= wait_seconds:
+		if timer >= wait_seconds && active_puppets.size() > 0:
 			var random_human: Node3D = active_puppets[rng.randi_range(0, active_puppets.size() - 1)]
 			#Action. We move SCP-650 to player's global position - offset (which is transform.basis.z) * how far SCP-650 will be from player
 			global_position = random_human.global_position - random_human.global_transform.basis.z * 2

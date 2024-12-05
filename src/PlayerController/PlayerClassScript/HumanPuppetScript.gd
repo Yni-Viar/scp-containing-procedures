@@ -39,24 +39,10 @@ func _physics_process(delta):
 				if !get_node("AnimationTree").get("parameters/items_blend/blend_amount") + 0.00001 > 1:
 					call("set_state", "items_blend", "blend_amount", 1)
 	
-	if raycast.is_colliding():
-		var collider = raycast.get_collider()
-		if collider is NpcSelection:
-			var selected_pawn = collider.get_pawn()
-			if selected_pawn != null:
-				var puppet_class = selected_pawn.puppet_class
-				if puppet_class.fraction == 2:
-					vision_entity.append(selected_pawn.get_node("Puppet"))
-					if !selected_pawn.get_node("Puppet").watching_puppets.has(get_parent()):
-						selected_pawn.get_node("Puppet").watching_puppets.append(get_parent())
-				elif vision_entity.size() > 0:
-					for entity in vision_entity:
-						entity.watching_puppets.clear()
-					vision_entity.clear()
-		elif vision_entity.size() > 0:
-			for entity in vision_entity:
-				entity.watching_puppets.clear()
-			vision_entity.clear()
+	if active_puppets.size() > 0 && state == States.IDLE:
+		var looking_object: Vector3 = active_puppets[0].global_position
+		looking_object.y = 0
+		look_at(looking_object)
 	on_update(delta)
 
 func on_update(delta):

@@ -54,8 +54,8 @@ func input_values(state: String):
 				get_tree().root.get_node("Game/PlayerUI/Map").hide()
 				special_screen = false
 		"inventory":
-			if !special_screen:
-				$InventoryUI/ItemList.update_inventory(get_tree().root.get_node("Game/Player").selected_pawn.get_node("Inventory"))
+			if !special_screen && get_tree().root.get_node_or_null("Game/Spectator").selected_pawn != null:
+				$InventoryUI/ItemList.update_inventory(get_tree().root.get_node("Game/Spectator").selected_pawn.get_node("Inventory"))
 				get_tree().root.get_node("Game/PlayerUI/InventoryUI").show()
 				special_screen = true
 			else:
