@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Test/test_gen.gd" id="1_24pej"]
 [ext_resource type="Script" path="res://MapGen/MapGen.gd" id="2_3l132"]
 [ext_resource type="Script" path="res://MapGen/MapGenRoomResource.gd" id="3_3lqct"]
-[ext_resource type="Resource" uid="uid://7prvjngodfs1" path="res://MapGen/site19.tres" id="4_tjhkd"]
+[ext_resource type="Resource" uid="uid://7prvjngodfs1" path="res://ResourcePacks/Site19/MapGen/site19.tres" id="4_tjhkd"]
 [ext_resource type="PackedScene" uid="uid://8ik28au1k20l" path="res://PlayerController/Player.tscn" id="5_05ukr"]
 
 [node name="Game" type="Node3D"]

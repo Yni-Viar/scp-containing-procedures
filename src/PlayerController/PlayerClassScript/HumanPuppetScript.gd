@@ -44,9 +44,38 @@ func _physics_process(delta):
 				call("set_state", "items_blend", "blend_amount", lerp(get_node("AnimationTree").get("parameters/items_blend/blend_amount"), 1.0, get_parent().character_speed * delta))
 	
 	if active_puppets.size() > 0 && state == States.IDLE:
-		var looking_object: Vector3 = active_puppets[0].global_position
+		var prev_entity_distance: float = 16777216
+		var index = 0
+		# Fixing scientist not looking at 650 - now people will look at the nearest object
+		for i in range(active_puppets.size()):
+			var entity_distance: float = active_puppets[i].global_position.distance_to(get_parent().global_position)
+			if entity_distance < prev_entity_distance || i == active_puppets.size() - 1:
+				prev_entity_distance = entity_distance
+				index = i
+		var looking_object: Vector3 = active_puppets[index].global_position
 		looking_object.y = 0
-		look_at(looking_object)
+		get_parent().look_at(looking_object)
+	
+	# My bad. How good is Git. I just thought, that it is unnecessary code.
+	# I was wrong. It handles watching at 173 and 650...
+	if raycast.is_colliding():
+		var collider = raycast.get_collider()
+		if collider is NpcSelection:
+			var selected_pawn = collider.get_pawn()
+			if selected_pawn != null:
+				var puppet_class = selected_pawn.puppet_class
+				if puppet_class.fraction == 2:
+					vision_entity.append(selected_pawn.get_node("Puppet"))
+					if !selected_pawn.get_node("Puppet").watching_puppets.has(get_parent()):
+						selected_pawn.get_node("Puppet").watching_puppets.append(get_parent())
+				elif vision_entity.size() > 0:
+					for entity in vision_entity:
+						entity.watching_puppets.clear()
+					vision_entity.clear()
+		elif vision_entity.size() > 0:
+			for entity in vision_entity:
+				entity.watching_puppets.clear()
+			vision_entity.clear()
 	on_update(delta)
 
 func on_update(delta):

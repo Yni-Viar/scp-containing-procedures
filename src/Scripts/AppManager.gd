@@ -13,4 +13,4 @@ func _ready():
 ## Start the game!
 func play():
 	$CanvasLayer/ColorRect.show()
-	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
+	get_tree().change_scene_to_file("res://ResourcePacks/Site19/Scenes/Game.tscn")
