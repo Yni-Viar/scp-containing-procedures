@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 		if velocity.x < 0.08 && velocity.y < 0.08 && velocity.z < 0.08:
 			velocity *= 2
 
-func use(player: Node3D) -> void:
+func use(player: Node3D, target_player: Node3D) -> void:
 	position.y = 1
 	velocity = -player.global_transform.basis.z * 0.125
 	apply_impulse(velocity, player.global_transform.basis.z * 2)

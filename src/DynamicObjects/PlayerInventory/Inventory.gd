@@ -41,15 +41,10 @@ func set_item(id: int, item: Item) -> bool:
 	update_inventory.emit()
 	return true
 ## Finds and removes item.
-func remove_item(item: Item) -> bool:
-	for i in range(size):
-		if inventory_storage[i] != null:
-			continue
-		elif inventory_storage[i] == item:
-			inventory_storage[i] = null
-			update_inventory.emit()
-			return true
-	return false
+func remove_item(id: int, drop: bool) -> void:
+	if drop:
+		get_tree().root.get_node("Game/Items").object_spawner(inventory_storage[id], get_parent().global_position)
+	set_item(id, null)
 
 func find_item(item_name: String) -> Item:
 	for inv in inventory_storage:

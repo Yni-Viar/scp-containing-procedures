@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_72sxy")
-id = 0
+id = 1
 name = "SCP-018"
 texture = ExtResource("2_n340g")
 pickable_path = "res://DynamicObjects/InventoryItems/Prefabs/ItemScp018.tscn"

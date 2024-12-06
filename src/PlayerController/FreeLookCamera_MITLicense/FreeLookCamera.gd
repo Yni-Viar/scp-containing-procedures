@@ -52,10 +52,12 @@ func _physics_process(delta: float) -> void:
 	if !interact_busy:
 		if Input.is_action_pressed("interact") && raycast.is_colliding():
 			interact("Point")
-	if Input.is_action_just_released("interact"):
+		if Input.is_action_pressed("interact_alt") && raycast.is_colliding():
+			interact("Item")
+	if Input.is_action_just_released("interact") || Input.is_action_just_released("interact_alt"):
 		interact_busy = false
 
-func interact(value: String):
+func interact(value: String) -> void:
 	interact_busy = true
 	match value:
 		"Point":
@@ -64,9 +66,19 @@ func interact(value: String):
 				selected_pawn = collider.get_pawn()
 			elif collider is InteractableNode:
 				collider.call("interact", self)
-			elif collider is ItemPickable:
-				collider.call("interact", selected_pawn)
 			elif selected_pawn != null:
 				if selected_pawn is NpcPlayerScript:
 					if !selected_pawn.automatic:
 						selected_pawn.set_movement_target(raycast.get_collision_point())
+						if collider is ItemPickable:
+							collider.call("interact", selected_pawn)
+		"Item":
+			var puppet: BasePuppetScript = selected_pawn.get_node("Puppet")
+			var item: ItemPickable
+			if puppet.get_node_or_null(puppet.armature_name + "/Skeleton3D/ItemAttachment/Marker3D") != null:
+				var puppet_hand: Marker3D = puppet.get_node(puppet.armature_name + "/Skeleton3D/ItemAttachment/Marker3D")
+				if puppet_hand.get_children().size() > 0:
+					item = puppet_hand.get_child(0)
+					var collider = raycast.get_collider()
+					if collider is NpcSelection:
+						item.call("use", selected_pawn, collider.get_parent())

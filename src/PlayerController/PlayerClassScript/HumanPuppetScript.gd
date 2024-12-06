@@ -4,7 +4,7 @@ extends BasePuppetScript
 class_name HumanPuppetScript
 
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
-enum SecondaryState {NONE, ITEM}
+enum SecondaryState {NONE, ITEM, CUFFED}
 
 @export var secondary_state: SecondaryState = SecondaryState.NONE
 
@@ -34,10 +34,14 @@ func _physics_process(delta):
 		match secondary_state:
 			SecondaryState.NONE:
 				if !get_node("AnimationTree").get("parameters/items_blend/blend_amount") - 0.00001 < 0:
-					call("set_state", "items_blend", "blend_amount", 0)
+					call("set_state", "items_blend", "blend_amount", lerp(get_node("AnimationTree").get("parameters/items_blend/blend_amount"), 0.0, get_parent().character_speed * delta))
 			SecondaryState.ITEM:
-				if !get_node("AnimationTree").get("parameters/items_blend/blend_amount") + 0.00001 > 1:
-					call("set_state", "items_blend", "blend_amount", 1)
+				call("set_state", "secondary_state", "transition_request", "item")
+			SecondaryState.CUFFED:
+				call("set_state", "secondary_state", "transition_request", "cuffed")
+		if secondary_state != SecondaryState.NONE:
+			if !get_node("AnimationTree").get("parameters/items_blend/blend_amount") + 0.00001 > 1:
+				call("set_state", "items_blend", "blend_amount", lerp(get_node("AnimationTree").get("parameters/items_blend/blend_amount"), 1.0, get_parent().character_speed * delta))
 	
 	if active_puppets.size() > 0 && state == States.IDLE:
 		var looking_object: Vector3 = active_puppets[0].global_position

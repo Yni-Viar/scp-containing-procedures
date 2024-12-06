@@ -73,18 +73,20 @@ func use_or_remove(usage: int):
 		pickable.freeze = false
 		pickable.position = inv.get_parent().global_position
 		get_tree().root.get_node("Game/Items").add_child(pickable)
-		pickable.call("use", inv.get_parent())
+		pickable.call("use", inv.get_parent(), inv.get_parent())
 	var puppet_mesh = inv.get_parent().get_node("Puppet")
 	if puppet_mesh.get_node_or_null(puppet_mesh.armature_name + "/Skeleton3D/ItemAttachment/Marker3D") != null:
 		var puppet_hand: Marker3D = puppet_mesh.get_node(puppet_mesh.armature_name + "/Skeleton3D/ItemAttachment/Marker3D")
-		if usage == 1 || usage == 2: # Use item, while holding in hand
-			pickable = get_child(0)
-			pickable.call("use", inv.get_parent())
-		if puppet_hand.get_children().size() > 0 && usage != 1:
-			for item in puppet_hand.get_children():
-				item.queue_free()
+		if puppet_hand.get_children().size() > 0:
+			if usage == 1 || usage == 2: # Use item, while holding in hand
+				pickable = puppet_hand.get_child(0)
+				pickable.call("use", inv.get_parent(), inv.get_parent())
+			if usage != 1:
+				for item in puppet_hand.get_children():
+					item.queue_free()
 	if usage == 0 || usage == 2 || usage == 3: #Remove the item from the inventory
 		if usage == 0:
-			get_tree().root.get_node("Game/Items").object_spawner(inv.inventory_storage[using_index], inv.get_parent().global_position)
-		inv.set_item(using_index, null)
+			inv.remove_item(using_index, true)
+		else:
+			inv.remove_item(using_index, false)
 		update_inventory(inv)

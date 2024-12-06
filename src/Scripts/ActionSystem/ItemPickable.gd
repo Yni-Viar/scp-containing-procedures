@@ -8,5 +8,5 @@ func interact(player: Node3D):
 		if player.get_node("Inventory").add_item(item):
 			queue_free()
 
-func use(player: Node3D) -> void:
+func use(player: Node3D, target_player: Node3D) -> void:
 	pass

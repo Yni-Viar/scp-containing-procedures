@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cxulbge1024do"]
+[gd_scene load_steps=17 format=3 uid="uid://cxulbge1024do"]
 
 [ext_resource type="Script" path="res://Scripts/UI/PlayerUI.gd" id="1_3lqp3"]
 [ext_resource type="Texture2D" uid="uid://bmw4fxmnmwhov" path="res://Assets/HUD/arrow.png" id="2_3oytm"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://8ik28au1k20l" path="res://PlayerController/Player.tscn" id="9_sdft4"]
 [ext_resource type="PackedScene" uid="uid://cmk1qm8xtuio8" path="res://DynamicObjects/InventoryItems/Prefabs/ItemScp018.tscn" id="11_46kds"]
 [ext_resource type="Script" path="res://Scripts/ObjectSystem.gd" id="12_pyp3s"]
+[ext_resource type="PackedScene" uid="uid://0wmneehv5nxx" path="res://DynamicObjects/InventoryItems/Prefabs/ItemDisarmer.tscn" id="13_cn34n"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_fd2v6"]
 vertices = PackedVector3Array(-12.332, 0.274689, -12.332, -12.332, 0.274689, 12.418, 12.418, 0.274689, 12.418, 12.418, 0.274689, -12.332)
@@ -216,7 +217,11 @@ shape = SubResource("ConcavePolygonShape3D_a0nps")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.198, 0, -0.769)
 puppet_class = ExtResource("8_rlaxo")
 
-[node name="Player" parent="." instance=ExtResource("9_sdft4")]
+[node name="NpcScene2" parent="." instance=ExtResource("7_djgb1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.55547, 0, 1.59181)
+puppet_class = ExtResource("8_rlaxo")
+
+[node name="Spectator" parent="." instance=ExtResource("9_sdft4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59206, 3.02249, 3.99167)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -228,6 +233,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.76382, 0.0617571, -2.1329)
 [node name="Items" type="Node3D" parent="."]
 script = ExtResource("12_pyp3s")
 types = 1
+
+[node name="disarmer" parent="." instance=ExtResource("13_cn34n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.41134, 0.575705, -2.32643)
 
 [connection signal="item_clicked" from="PlayerUI/InventoryUI/ItemList" to="PlayerUI/InventoryUI/ItemList" method="_on_item_clicked"]
 [connection signal="button_down" from="PlayerUI/InventoryUI/UseItem" to="PlayerUI/InventoryUI/ItemList" method="_on_use_item_button_down"]

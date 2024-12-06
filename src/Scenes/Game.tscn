@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://mu7j26by23js"]
+[gd_scene load_steps=30 format=3 uid="uid://mu7j26by23js"]
 
 [ext_resource type="Script" path="res://Scripts/GameCore.gd" id="1_w6bkb"]
 [ext_resource type="Resource" uid="uid://dtootndbrxot5" path="res://Scripts/GameData/gamedata.tres" id="2_w817j"]
@@ -19,8 +19,11 @@
 [ext_resource type="Resource" uid="uid://7prvjngodfs1" path="res://MapGen/site19.tres" id="11_j075c"]
 [ext_resource type="Texture2D" uid="uid://i7frmo7y2knr" path="res://Assets/HUD/Touch/point_a_unit_disabled.png" id="11_qnc31"]
 [ext_resource type="Script" path="res://Scripts/FPSCounter.gd" id="11_vy51m"]
+[ext_resource type="Texture2D" uid="uid://bxm4i7spthmmg" path="res://Assets/HUD/Touch/interact_with_item.png" id="12_4lmsk"]
 [ext_resource type="Script" path="res://addons/virtual_joystick/virtual_joystick_instantiator.gd" id="12_08sny"]
 [ext_resource type="PackedScene" uid="uid://o6rnnciwmwvn" path="res://GDsh/InGameConsole.tscn" id="13_30ago"]
+[ext_resource type="Texture2D" uid="uid://bvtr04ysk4jcq" path="res://Assets/HUD/Touch/interact_with_item_click.png" id="13_33s0i"]
+[ext_resource type="Texture2D" uid="uid://dc0d4vk4qiie1" path="res://Assets/HUD/Touch/interact_with_item_disabled.png" id="14_5ocpi"]
 [ext_resource type="PackedScene" uid="uid://8ik28au1k20l" path="res://PlayerController/Player.tscn" id="14_jqsvl"]
 [ext_resource type="Script" path="res://MapGen/Extensions/MapGenHud.gd" id="16_2k31s"]
 [ext_resource type="Script" path="res://Scripts/UI/InventoryUI.gd" id="16_ukffn"]
@@ -136,6 +139,14 @@ texture_hover = ExtResource("8_131gn")
 texture_disabled = ExtResource("10_rqfbe")
 texture_focused = ExtResource("8_131gn")
 
+[node name="TapWithItem" type="TextureButton" parent="PlayerUI/TouchUI/UIPanel"]
+layout_mode = 2
+texture_normal = ExtResource("12_4lmsk")
+texture_pressed = ExtResource("13_33s0i")
+texture_hover = ExtResource("12_4lmsk")
+texture_disabled = ExtResource("14_5ocpi")
+texture_focused = ExtResource("12_4lmsk")
+
 [node name="Tap" type="TextureButton" parent="PlayerUI/TouchUI/UIPanel"]
 layout_mode = 2
 texture_normal = ExtResource("9_gd86b")
@@ -208,6 +219,7 @@ anchor_bottom = 1.0
 offset_top = -40.0
 offset_right = 197.0
 grow_vertical = 0
+theme = ExtResource("17_wwvuy")
 text = "USE_ITEM"
 
 [node name="RemoveItem" type="Button" parent="PlayerUI/InventoryUI"]
@@ -221,6 +233,7 @@ offset_left = -197.0
 offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("17_wwvuy")
 text = "REMOVE_ITEM"
 
 [node name="Map" type="Panel" parent="PlayerUI"]
@@ -336,6 +349,8 @@ visible = false
 
 [connection signal="button_down" from="PlayerUI/TouchUI/UIPanel/Map" to="PlayerUI/TouchUI/UIPanel" method="_on_map_button_down"]
 [connection signal="button_up" from="PlayerUI/TouchUI/UIPanel/Map" to="PlayerUI/TouchUI/UIPanel" method="_on_map_button_up"]
+[connection signal="button_down" from="PlayerUI/TouchUI/UIPanel/TapWithItem" to="PlayerUI/TouchUI/UIPanel" method="_on_tap_with_item_button_down"]
+[connection signal="button_up" from="PlayerUI/TouchUI/UIPanel/TapWithItem" to="PlayerUI/TouchUI/UIPanel" method="_on_tap_with_item_button_up"]
 [connection signal="button_down" from="PlayerUI/TouchUI/UIPanel/Tap" to="PlayerUI/TouchUI/UIPanel" method="_on_tap_button_down"]
 [connection signal="button_up" from="PlayerUI/TouchUI/UIPanel/Tap" to="PlayerUI/TouchUI/UIPanel" method="_on_tap_button_up"]
 [connection signal="item_clicked" from="PlayerUI/InventoryUI/ItemList" to="PlayerUI/InventoryUI/ItemList" method="_on_item_clicked"]
