@@ -58,6 +58,7 @@ folder_colors={
 "res://ResourcePacks/Site19/MapGen/": "green",
 "res://ResourcePacks/Site19/PlayerController/": "red",
 "res://ResourcePacks/Site19/Scenes/": "orange",
+"res://ResourcePacks/Site19/Sounds/": "purple",
 "res://Scenes/": "orange",
 "res://Scripts/": "green",
 "res://Shaders/": "green",

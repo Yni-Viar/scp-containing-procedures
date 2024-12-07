@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6010fhhdn46b"]
+[gd_scene load_steps=10 format=3 uid="uid://b6010fhhdn46b"]
 
 [ext_resource type="Script" path="res://Scripts/UI/MainMenu.gd" id="1_xwo58"]
 [ext_resource type="Texture2D" uid="uid://boboxmvoqy61t" path="res://Assets/Menu/MainMenuForeground.png" id="2_647vp"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="3_lej4w"]
 [ext_resource type="Theme" uid="uid://4k2un7nm7xc6" path="res://UITheme.tres" id="5_gi3lh"]
 [ext_resource type="PackedScene" uid="uid://bjbe75eis8tu6" path="res://Scenes/Settings.tscn" id="6_0nqn5"]
+[ext_resource type="Script" path="res://Scripts/UI/StartupPanel.gd" id="6_b7otj"]
 [ext_resource type="Texture2D" uid="uid://cplgika3kesri" path="res://UI/back_button.png" id="10_h2lxg"]
 [ext_resource type="Texture2D" uid="uid://ccnlq2hm3wbsa" path="res://UI/back_button_disabled.png" id="11_uc1g4"]
 
@@ -55,12 +56,6 @@ theme_override_font_sizes/font_size = 48
 text = "SCP: Containing
 Procedures"
 
-[node name="Play" type="Button" parent="Title"]
-layout_mode = 2
-theme = ExtResource("5_gi3lh")
-theme_override_font_sizes/font_size = 24
-text = "PLAY"
-
 [node name="Settings" type="Button" parent="Title"]
 layout_mode = 2
 theme = ExtResource("5_gi3lh")
@@ -79,8 +74,67 @@ theme = ExtResource("5_gi3lh")
 theme_override_font_sizes/font_size = 24
 text = "EXIT"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="Title"]
+custom_minimum_size = Vector2(0, 256)
+layout_mode = 2
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/mono_font_size = 20
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+bbcode_enabled = true
+text = "[b]v.0.1.0 (Alpha)[/b]
+- You can now cuff players
+- Separated Site-19 content from the game core"
+
 [node name="Settings" parent="." instance=ExtResource("6_0nqn5")]
 visible = false
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = -0.022
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.05176e-05
+offset_top = 15.84
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("6_b7otj")
+
+[node name="ZonesToSearch" type="ItemList" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.711
+offset_bottom = 0.0799866
+grow_horizontal = 2
+
+[node name="Seed" type="LineEdit" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.481
+anchor_top = 0.933
+anchor_right = 0.481
+anchor_bottom = 0.933
+offset_left = -160.192
+offset_top = -23.76
+offset_right = 159.808
+offset_bottom = 24.24
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Seed"
+
+[node name="Play" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 584.0
+offset_top = 648.0
+offset_right = 816.0
+offset_bottom = 698.0
+theme = ExtResource("5_gi3lh")
+theme_override_font_sizes/font_size = 24
+text = "PLAY"
 
 [node name="CreditsPanel" type="Panel" parent="."]
 visible = false
@@ -314,8 +368,9 @@ text = "[i]Sounds and music[/i]
 "
 fit_content = true
 
-[connection signal="pressed" from="Title/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Title/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Title/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Title/Exit" to="." method="_on_exit_pressed"]
+[connection signal="item_selected" from="Panel/ZonesToSearch" to="Panel" method="_on_zones_to_search_item_selected"]
+[connection signal="pressed" from="Panel/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CreditsPanel/CreditsBack" to="." method="_on_credits_back_pressed"]

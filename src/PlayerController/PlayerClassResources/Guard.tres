@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="PuppetClass" load_steps=3 format=3 uid="uid://dtxvxmwsol0hf"]
+[gd_resource type="Resource" script_class="PuppetClass" load_steps=5 format=3 uid="uid://dtxvxmwsol0hf"]
 
 [ext_resource type="PackedScene" uid="uid://cqc1hcylhqdxi" path="res://PlayerController/PlayerClassPrefab/guard.tscn" id="1_32mue"]
 [ext_resource type="Script" path="res://PlayerController/PlayerClassResources/PuppetResource.gd" id="1_ud8hk"]
+[ext_resource type="Script" path="res://DynamicObjects/PlayerInventory/Item.gd" id="1_xkbmu"]
+[ext_resource type="Resource" uid="uid://djdbc6vnvky4u" path="res://DynamicObjects/InventoryItems/ItemDisarmer.tres" id="2_qngga"]
 
 [resource]
 script = ExtResource("1_ud8hk")
@@ -20,3 +22,5 @@ apply_height_bugfix = true
 enable_wander = true
 inventory_item_size = 8
 health = 100.0
+team = 1
+initial_items = Array[ExtResource("1_xkbmu")]([ExtResource("2_qngga")])

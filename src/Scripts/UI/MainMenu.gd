@@ -38,7 +38,7 @@ func _ready():
 
 
 func _on_play_pressed():
-	get_parent().get_parent().play()
+	get_parent().get_parent().play($Panel.selected_item, $Panel/Seed.text)
 
 
 func _on_settings_pressed():

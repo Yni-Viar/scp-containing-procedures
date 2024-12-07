@@ -14,3 +14,8 @@ class_name PuppetClass
 @export var enable_wander: bool = true
 @export var inventory_item_size: int = 0
 @export var health: float = 100
+## Only for humans currently.
+## 0 is none team, 1 is Foundation personnel, 2 is Class-D personnel,
+## 3 is Chaos Insurgency
+@export var team: int = 0
+@export var initial_items: Array[Item] = []

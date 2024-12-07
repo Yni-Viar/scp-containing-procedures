@@ -1,14 +1,17 @@
 extends Node3D
+class_name GameCore
 
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 @export var game_data: GameData
-@export var current_ambient: String = "res://Sounds/Music/lcz_ambient.wav"
+@export var seed: String = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$BackgroundMusic.stream = load(current_ambient)
+	$BackgroundMusic.stream = load(game_data.ambient_path)
 	$BackgroundMusic.play()
 	load_settings()
+	if !(seed.is_empty() || seed == null):
+		$FacilityGenerator.rng_seed = hash(seed)
 	$FacilityGenerator.prepare_generation()
 
 
@@ -39,7 +42,7 @@ func load_settings():
 
 func _on_facility_generator_generated() -> void:
 	if get_node_or_null("FacilityGenerator/lc_cont1_testroom/playerspawn") != null:
-		$Spectator.global_position = get_node("FacilityGenerator/lc_cont1_testroom/playerspawn").global_position
+		$Spectator.global_position = get_node("FacilityGenerator/" + game_data.room_to_spawn + "/playerspawn").global_position
 	startup_spawn()
 
 
@@ -57,3 +60,7 @@ func startup_spawn():
 				continue
 			$NPCs.object_spawner(puppet_res, spawn_point_group[random_number].global_position)
 			used_spawns.append(random_number)
+
+func alert(message: String):
+	var window: AcceptDialog = load("res://Assets/HUD/CustomAcceptDialog.tscn").instantiate()
+	window.dialog_text = message

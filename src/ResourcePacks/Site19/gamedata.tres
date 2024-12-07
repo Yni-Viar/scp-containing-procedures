@@ -17,3 +17,5 @@
 script = ExtResource("1_d6yh1")
 puppet_classes = Array[ExtResource("3_7lr8a")]([ExtResource("4_mk8jn"), ExtResource("5_enldi"), ExtResource("6_8wh7j"), ExtResource("5_kjm05"), ExtResource("7_1fok3"), ExtResource("7_yvqs6"), ExtResource("8_2ihlr")])
 items = Array[ExtResource("1_0myyv")]([ExtResource("2_cul63"), ExtResource("3_g0d7u")])
+ambient_path = "res://Sounds/Music/lcz_ambient.wav"
+room_to_spawn = "lc_cont1_testroom"

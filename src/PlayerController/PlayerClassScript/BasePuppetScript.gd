@@ -15,6 +15,8 @@ func _ready() -> void:
 		get_parent().get_node("VisionArea").connect("body_exited", on_vision_area_body_exited)
 	# Inventory items
 	get_parent().get_node("Inventory").size = get_parent().puppet_class.inventory_item_size
+	for item in get_parent().puppet_class.initial_items:
+		get_parent().get_node("Inventory").add_item(item)
 	on_start()
 
 func on_start():

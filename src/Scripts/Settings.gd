@@ -52,3 +52,40 @@ func load_resource():
 func save_resource(res):
 	ResourceStorage.save_resource("user://Settings.bin", res)
 	emit_signal("settings_saved")
+
+func get_current_dir() -> String:
+	var current_dir: String = ""
+	if OS.get_name() == "Android":
+		if OS.is_debug_build():
+			var dir: DirAccess
+			current_dir = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/.SCP_AssetPack/"
+			if !dir.dir_exists(current_dir):
+				dir.make_dir(current_dir)
+		else:
+			current_dir = OS.get_user_data_dir()
+	else:
+		current_dir = OS.get_executable_path().get_base_dir()
+	return current_dir
+
+func load_resource_pack(resource_name: String) -> bool:
+	
+	if ProjectSettings.load_resource_pack(get_current_dir() + "/" + resource_name, false):
+		return true
+	else:
+		return false
+
+func check_resource_packs() -> Array[String]:
+	var packs: Array[String] = []
+	var dir = DirAccess.open(get_current_dir())
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if dir.current_is_dir():
+				continue
+			elif file_name.ends_with(".pck") && file_name != "SCPContainingProcedures.pck":
+				packs.append(file_name.rstrip(".pck"))
+			file_name = dir.get_next()
+	else:
+		print("An error occurred when trying to access the path.")
+	return packs

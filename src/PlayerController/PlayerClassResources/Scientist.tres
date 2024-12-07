@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="PuppetClass" load_steps=3 format=3 uid="uid://djwl3byjplu2v"]
+[gd_resource type="Resource" script_class="PuppetClass" load_steps=4 format=3 uid="uid://djwl3byjplu2v"]
 
 [ext_resource type="Script" path="res://PlayerController/PlayerClassResources/PuppetResource.gd" id="1_8ufov"]
 [ext_resource type="PackedScene" uid="uid://citkd65dmhf8b" path="res://PlayerController/PlayerClassPrefab/scientist.tscn" id="1_a3ar7"]
+[ext_resource type="Script" path="res://DynamicObjects/PlayerInventory/Item.gd" id="1_ey6tr"]
 
 [resource]
 script = ExtResource("1_8ufov")
@@ -20,3 +21,5 @@ apply_height_bugfix = true
 enable_wander = true
 inventory_item_size = 4
 health = 100.0
+team = 1
+initial_items = Array[ExtResource("1_ey6tr")]([])
