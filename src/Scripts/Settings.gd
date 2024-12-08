@@ -24,6 +24,8 @@ var window_size: Array[Vector2i] = [Vector2i(1920, 1080), Vector2i(1600, 900), V
 
 var touchscreen: bool = false
 
+var _check_dir: String = ""
+
 func _init():
 	load_resource()
 	# Add custom windows sizes.
@@ -53,39 +55,61 @@ func save_resource(res):
 	ResourceStorage.save_resource("user://Settings.bin", res)
 	emit_signal("settings_saved")
 
-func get_current_dir() -> String:
-	var current_dir: String = ""
+func get_current_dirs() -> Array[String]:
+	var current_dir: Array[String] = []
 	if OS.get_name() == "Android":
 		if OS.is_debug_build():
-			var dir: DirAccess
-			current_dir = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/.SCP_AssetPack/"
-			if !dir.dir_exists(current_dir):
-				dir.make_dir(current_dir)
+			current_dir.append(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/.SCP_AssetPack/")
+			var dir: DirAccess = DirAccess.open(current_dir[0])
+			if !dir.dir_exists(current_dir[0]):
+				dir.make_dir(current_dir[0])
 		else:
-			current_dir = OS.get_user_data_dir()
+			current_dir.append(OS.get_user_data_dir())
 	else:
-		current_dir = OS.get_executable_path().get_base_dir()
+		current_dir.append(OS.get_executable_path().get_base_dir())
+		current_dir.append(OS.get_user_data_dir())
 	return current_dir
 
 func load_resource_pack(resource_name: String) -> bool:
 	
-	if ProjectSettings.load_resource_pack(get_current_dir() + "/" + resource_name, false):
+	if ProjectSettings.load_resource_pack(_check_dir + "/" + resource_name, false):
 		return true
 	else:
 		return false
-
+## You must call this function before load_resource_pack, because of dependence
 func check_resource_packs() -> Array[String]:
 	var packs: Array[String] = []
-	var dir = DirAccess.open(get_current_dir())
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if dir.current_is_dir():
-				continue
-			elif file_name.ends_with(".pck") && file_name != "SCPContainingProcedures.pck":
-				packs.append(file_name.rstrip(".pck"))
-			file_name = dir.get_next()
+	if OS.has_feature("editor") || OS.get_name() == "Web":
+		var dir = DirAccess.open("res://ResourcePacks/")
+		if dir:
+			dir.list_dir_begin()
+			var file_name = dir.get_next()
+			while file_name != "":
+				if !dir.current_is_dir():
+					continue
+				packs.append(file_name)
+				file_name = dir.get_next()
+			dir.list_dir_end()
+		else:
+			print("An error occurred when trying to access the path.")
 	else:
-		print("An error occurred when trying to access the path.")
+		for d in get_current_dirs():
+			var dir = DirAccess.open(d)
+			if dir:
+				dir.list_dir_begin()
+				var file_name = dir.get_next()
+				while file_name != "":
+					if dir.current_is_dir():
+						file_name = dir.get_next()
+						continue
+					elif file_name.ends_with(".pck") && file_name != "SCPContainingProcedures.pck":
+						packs.append(file_name.rstrip(".pck"))
+					file_name = dir.get_next()
+				dir.list_dir_end()
+			else:
+				print("An error occurred when trying to access the path.")
+			if packs.size() > 0:
+				_check_dir = d
+				return packs
+			_check_dir = d
 	return packs

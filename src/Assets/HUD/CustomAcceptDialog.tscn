@@ -5,6 +5,7 @@
 
 [node name="AcceptDialog" type="AcceptDialog"]
 title = "Tip"
+position = Vector2i(32, 64)
 visible = true
 theme = ExtResource("1_0da1b")
 dialog_hide_on_ok = false

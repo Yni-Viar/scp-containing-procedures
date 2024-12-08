@@ -63,4 +63,5 @@ func startup_spawn():
 
 func alert(message: String):
 	var window: AcceptDialog = load("res://Assets/HUD/CustomAcceptDialog.tscn").instantiate()
-	window.dialog_text = message
+	window.dialog_text = message + "\n[ESC - Hide]"
+	add_child(window)

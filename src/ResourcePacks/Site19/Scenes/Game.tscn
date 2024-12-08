@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://mu7j26by23js"]
+[gd_scene load_steps=31 format=3 uid="uid://mu7j26by23js"]
 
 [ext_resource type="Script" path="res://Scripts/GameCore.gd" id="1_w6bkb"]
 [ext_resource type="Resource" uid="uid://dtootndbrxot5" path="res://ResourcePacks/Site19/gamedata.tres" id="2_w817j"]
+[ext_resource type="Texture2D" uid="uid://cxl2ep43rjmq8" path="res://Assets/HUD/CameraFeed.png" id="4_ab6uc"]
 [ext_resource type="Environment" uid="uid://cpjkvy5s2l8ae" path="res://DefaultGraphics.tres" id="5_u1dtw"]
 [ext_resource type="Script" path="res://Scripts/UI/TouchscreenToggle.gd" id="6_eu7p5"]
 [ext_resource type="Texture2D" uid="uid://bmw4fxmnmwhov" path="res://Assets/HUD/arrow.png" id="7_bwdaw"]
@@ -43,6 +44,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("8_7mmlb")
+
+[node name="CameraFeed" type="TextureRect" parent="PlayerUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_ab6uc")
 
 [node name="Cursor" type="TextureRect" parent="PlayerUI"]
 layout_mode = 1

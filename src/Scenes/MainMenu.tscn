@@ -74,19 +74,6 @@ theme = ExtResource("5_gi3lh")
 theme_override_font_sizes/font_size = 24
 text = "EXIT"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Title"]
-custom_minimum_size = Vector2(0, 256)
-layout_mode = 2
-theme_override_font_sizes/bold_italics_font_size = 20
-theme_override_font_sizes/italics_font_size = 20
-theme_override_font_sizes/mono_font_size = 20
-theme_override_font_sizes/normal_font_size = 20
-theme_override_font_sizes/bold_font_size = 20
-bbcode_enabled = true
-text = "[b]v.0.1.0 (Alpha)[/b]
-- You can now cuff players
-- Separated Site-19 content from the game core"
-
 [node name="Settings" parent="." instance=ExtResource("6_0nqn5")]
 visible = false
 
@@ -107,34 +94,61 @@ script = ExtResource("6_b7otj")
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 0.711
-offset_bottom = 0.0799866
+anchor_bottom = 0.444
+offset_bottom = 0.319977
 grow_horizontal = 2
 
 [node name="Seed" type="LineEdit" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.481
-anchor_top = 0.933
-anchor_right = 0.481
-anchor_bottom = 0.933
-offset_left = -160.192
-offset_top = -23.76
-offset_right = 159.808
-offset_bottom = 24.24
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -24.0
+offset_right = 160.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "Seed"
 
 [node name="Play" type="Button" parent="Panel"]
 layout_mode = 2
-offset_left = 584.0
-offset_top = 648.0
-offset_right = 816.0
-offset_bottom = 698.0
+anchor_left = 0.851
+anchor_top = 0.5
+anchor_right = 0.851
+anchor_bottom = 0.5
+offset_left = -116.032
+offset_top = -24.0
+offset_right = 115.968
+offset_bottom = 26.0
 theme = ExtResource("5_gi3lh")
 theme_override_font_sizes/font_size = 24
 text = "PLAY"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+custom_minimum_size = Vector2(0, 256)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -416.0
+offset_top = -312.0
+offset_right = 416.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/mono_font_size = 20
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+bbcode_enabled = true
+text = "[b]v.0.1.0 (Alpha)[/b]
+- You can now cuff players
+- Separated Site-19 content from the game core"
 
 [node name="CreditsPanel" type="Panel" parent="."]
 visible = false
