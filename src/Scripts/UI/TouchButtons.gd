@@ -1,5 +1,6 @@
 extends HBoxContainer
-
+## Touch screen controls
+## Created by Yni, licensed under MIT License
 
 
 func _on_tap_button_down() -> void:

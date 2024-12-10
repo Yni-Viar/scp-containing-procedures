@@ -1,4 +1,6 @@
 extends VisionScpPuppetScript
+## SCP-173 puppet script
+## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
 class_name Scp173PuppetScript
 
 
@@ -21,7 +23,7 @@ func on_start() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
+func on_update(delta: float) -> void:
 	scp_173_blink(delta)
 	# If is watching, set velocity to zero, else - go to player.
 	if (is_blinking && watching_puppets.size() > 0 && current_human != null) || (watching_puppets.size() == 0 && current_human != null):
@@ -36,13 +38,14 @@ func _physics_process(delta: float) -> void:
 					get_tree().root.get_node("Game/NPCs").object_remover(selected_pawn.name)
 					active_puppets.erase(current_human)
 					current_human = null
-
+## Blink mechanic
 func scp_173_blink(delta: float):
-	# for blink-based games
+	# If blink timer > 0 - then wait
 	if blink_timer > 0:
 		blink_timer -= delta
 	else:
 		is_blinking = true
+		# Navigate to the human near you
 		if active_puppets.size() > 0:
 			current_human = active_puppets[rng.randi_range(0, active_puppets.size() - 1)]
 		else:
@@ -50,12 +53,12 @@ func scp_173_blink(delta: float):
 		await get_tree().create_timer(0.3).timeout
 		blink_timer = blink_timer_default
 		is_blinking = false
-
+## Movement control
 func scp_173_movement():
 	if state == States.IDLE:
 		player_direction = global_position.direction_to(current_human.global_position)
 		get_parent().set_movement_target(get_parent().global_position + get_parent().character_speed * player_direction)
-
+## Set face on spawn
 func set_face():
 	var tex: ShaderMaterial = load("res://ResourcePacks/Site19/Assets/Materials/scp173.tres")
 	tex.set_shader_parameter("albedo_b", load("res://ResourcePacks/Site19/Assets/ExternalModels/scp173/Faces/face_" + str(rng.randi_range(1, faces)) + ".png"))

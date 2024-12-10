@@ -1,4 +1,6 @@
 extends ItemPickable
+## Disarmer item script
+## Created by Yni, licensed under MIT License
 
 var cuffed_players: Array[NpcPlayerScript] = []
 var prev_position: Vector3

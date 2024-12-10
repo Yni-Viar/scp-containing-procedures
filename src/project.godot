@@ -86,7 +86,7 @@ Scp173Spawn=""
 Lights=""
 GuardSpawn=""
 Scp650Spawn=""
-Scientist650Spawn=""
+ScientistStaticSpawn=""
 
 [input]
 

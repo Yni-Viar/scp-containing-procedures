@@ -1,4 +1,6 @@
 extends Control
+## Player UI
+## Created by Yni, licensed under MIT License
 
 var special_screen: bool = false
 var interact_busy: bool = false

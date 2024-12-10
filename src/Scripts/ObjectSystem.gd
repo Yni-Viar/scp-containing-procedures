@@ -1,4 +1,6 @@
 extends Node3D
+## Object management system
+## Created by Yni, licensed under MIT License (inspired from Xandromeda's script for SCP:SO)
 class_name ObjectSystem
 
 enum Types {ENTITY, ITEM, MAPOBJECT}

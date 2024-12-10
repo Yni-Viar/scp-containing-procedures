@@ -1,4 +1,6 @@
 extends VisionScpPuppetScript
+## SCP-650 puppet script
+## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
 
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 @export var wait_seconds: float = 5
@@ -10,7 +12,7 @@ func on_start() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func on_update(delta):
 	#If is not watching
 	if watching_puppets.size() == 0:
 		#Wait

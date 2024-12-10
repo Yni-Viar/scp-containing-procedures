@@ -1,9 +1,12 @@
 extends Node
+## Simple inventory
+## Created by Yni, licensed under CC0
 class_name Inventory
 
 signal update_inventory
-
+## Where the items are contained
 @export var inventory_storage: Array[Item] = []
+## Inventory size
 @export var size: int:
 	set(val):
 		size = val
@@ -45,7 +48,7 @@ func remove_item(id: int, drop: bool) -> void:
 	if drop:
 		get_tree().root.get_node("Game/Items").object_spawner(inventory_storage[id], get_parent().global_position)
 	set_item(id, null)
-
+## Finds item by name
 func find_item(item_name: String) -> Item:
 	for inv in inventory_storage:
 		if inv.name == item_name:

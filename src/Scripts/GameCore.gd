@@ -1,4 +1,6 @@
 extends Node3D
+## Main game scene script.
+## Created by Yni, licensed under MIT License
 class_name GameCore
 
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
@@ -19,6 +21,7 @@ func _ready():
 func _process(delta):
 	pass
 
+## Quits from the game
 func quit():
 	Settings.first_start = true
 	get_tree().change_scene_to_file("res://Scenes/Main.tscn")

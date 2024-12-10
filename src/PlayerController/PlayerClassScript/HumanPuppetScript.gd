@@ -19,7 +19,8 @@ func on_start():
 	#get_parent().get_node("NpcSelection").set_collision_mask_value(3, true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func on_update(delta):
+	# Change animation state
 	if get_node_or_null("AnimationTree") != null:
 		match state:
 			States.IDLE:
@@ -43,6 +44,7 @@ func _physics_process(delta):
 			if !get_node("AnimationTree").get("parameters/items_blend/blend_amount") + 0.00001 > 1:
 				call("set_state", "items_blend", "blend_amount", lerp(get_node("AnimationTree").get("parameters/items_blend/blend_amount"), 1.0, get_parent().character_speed * delta))
 	
+	# Look at enemy
 	if active_puppets.size() > 0 && state == States.IDLE:
 		var prev_entity_distance: float = 16777216
 		var index = 0
@@ -76,18 +78,19 @@ func _physics_process(delta):
 			for entity in vision_entity:
 				entity.watching_puppets.clear()
 			vision_entity.clear()
-	on_update(delta)
+	on_update_human(delta)
 
-func on_update(delta):
+func on_update_human(delta):
 	pass
 
 ## Set animation to an entity via Animation Tree.
 func set_state(animation_name: String, action_name: String, amount):
 	get_node("AnimationTree").set("parameters/" + animation_name + "/" + action_name, amount)
 
-func set_anim_state(animation_name: String):
-	$AnimationPlayer.play(animation_name)
+#func set_anim_state(animation_name: String):
+	#$AnimationPlayer.play(animation_name)
 
+## Playing footsteps
 func footstep(key: String):
 	get_parent().get_node("WalkSounds").stream = load(get_parent().puppet_class.footstep_sounds[key][rng.randi_range(0, get_parent().puppet_class.footstep_sounds[key].size() - 1)])
 	get_parent().get_node("WalkSounds").play()

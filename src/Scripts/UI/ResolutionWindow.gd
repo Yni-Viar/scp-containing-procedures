@@ -1,4 +1,6 @@
 extends IngameWindow
+## Resolution settings
+## Created by Yni, licensed under MIT License
 class_name AddResolutionSetting
 
 # Called when the node enters the scene tree for the first time.

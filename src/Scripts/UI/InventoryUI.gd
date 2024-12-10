@@ -1,4 +1,6 @@
 extends ItemList
+## Inventory UI
+## Created by Yni, licensed under CC0
 
 var interact_busy: bool = false
 var inv: Inventory
@@ -17,6 +19,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+## Updates item list, by removing previous content, and ading new.
+## Do NOT call this in process - it may cause lag.
 func update_inventory(inventory: Inventory):
 	clear()
 	inv = inventory

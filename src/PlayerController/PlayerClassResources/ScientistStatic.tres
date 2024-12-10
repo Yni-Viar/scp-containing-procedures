@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="PuppetClass" load_steps=4 format=3 uid="uid://dgkljki2u50nx"]
 
-[ext_resource type="Script" path="res://DynamicObjects/PlayerInventory/Item.gd" id="1_4j5ka"]
-[ext_resource type="PackedScene" uid="uid://citkd65dmhf8b" path="res://PlayerController/PlayerClassPrefab/scientist.tscn" id="1_asw8n"]
-[ext_resource type="Script" path="res://PlayerController/PlayerClassResources/PuppetResource.gd" id="2_fp2sq"]
+[ext_resource type="Script" path="res://DynamicObjects/PlayerInventory/Item.gd" id="1_i0o0t"]
+[ext_resource type="PackedScene" uid="uid://citkd65dmhf8b" path="res://PlayerController/PlayerClassPrefab/scientist.tscn" id="2_q2vbb"]
+[ext_resource type="Script" path="res://PlayerController/PlayerClassResources/PuppetResource.gd" id="3_tdcas"]
 
 [resource]
-script = ExtResource("2_fp2sq")
+script = ExtResource("3_tdcas")
 puppet_class_name = "SCIENCE_PERSONNEL"
 speed = 3.0
-prefab = ExtResource("1_asw8n")
-spawn_point_group = "Scientist650Spawn"
+prefab = ExtResource("2_q2vbb")
+spawn_point_group = "ScientistStaticSpawn"
 initial_amount = 2
 automatic = false
 footstep_sounds = {
@@ -22,4 +22,4 @@ enable_wander = false
 inventory_item_size = 4
 health = 100.0
 team = 1
-initial_items = Array[ExtResource("1_4j5ka")]([])
+initial_items = Array[ExtResource("1_i0o0t")]([])

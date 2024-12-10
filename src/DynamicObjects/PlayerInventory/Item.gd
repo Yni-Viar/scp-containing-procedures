@@ -1,5 +1,5 @@
 extends Resource
-## Made by Yni, licensed under Unlicense.
+## Made by Yni, licensed under CC0.
 class_name Item
 
 enum Usage {NORMAL, ONE_TIME, ONE_TIME_DROP}

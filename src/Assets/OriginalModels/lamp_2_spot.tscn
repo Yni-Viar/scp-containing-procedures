@@ -1,21 +1,21 @@
-[gd_scene load_steps=14 format=4 uid="uid://bvmbksyl1hdmd"]
+[gd_scene load_steps=14 format=4 uid="uid://dum6lw6pjpba0"]
 
-[ext_resource type="Texture2D" uid="uid://1vy1n0obgprs" path="res://Assets/OriginalModels/Lamp/lamp_base.png" id="1_aj8b1"]
-[ext_resource type="Texture2D" uid="uid://c1sb77h0uya8m" path="res://Assets/OriginalModels/Lamp/lamp_metal-lamp_rough.png" id="2_wy2mg"]
-[ext_resource type="Texture2D" uid="uid://cjue664kqeq8k" path="res://Assets/OriginalModels/Lamp/lamp_nor.png" id="3_dm33k"]
-[ext_resource type="Script" path="res://Scripts/LightSystemOmni.gd" id="4_r7rpy"]
+[ext_resource type="Texture2D" uid="uid://1vy1n0obgprs" path="res://Assets/OriginalModels/Lamp/lamp_base.png" id="1_evrlf"]
+[ext_resource type="Texture2D" uid="uid://c1sb77h0uya8m" path="res://Assets/OriginalModels/Lamp/lamp_metal-lamp_rough.png" id="2_h74ky"]
+[ext_resource type="Texture2D" uid="uid://cjue664kqeq8k" path="res://Assets/OriginalModels/Lamp/lamp_nor.png" id="3_3atr5"]
+[ext_resource type="Script" path="res://Scripts/LightSystemOmni.gd" id="4_d74q1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27svx"]
 resource_name = "Material.002"
 cull_mode = 2
-albedo_texture = ExtResource("1_aj8b1")
+albedo_texture = ExtResource("1_evrlf")
 metallic = 1.0
-metallic_texture = ExtResource("2_wy2mg")
+metallic_texture = ExtResource("2_h74ky")
 metallic_texture_channel = 2
-roughness_texture = ExtResource("2_wy2mg")
+roughness_texture = ExtResource("2_h74ky")
 roughness_texture_channel = 1
 normal_enabled = true
-normal_texture = ExtResource("3_dm33k")
+normal_texture = ExtResource("3_3atr5")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_t4t6d"]
 _surfaces = [{
@@ -146,14 +146,15 @@ transform = Transform3D(0.323052, 0, 0, 0, 0.323052, 0, 0, 0, 0.20465, 0, 0.0061
 mesh = SubResource("ArrayMesh_00h50")
 skeleton = NodePath("")
 
-[node name="LightSystemOmni" type="OmniLight3D" parent="." groups=["Lights"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.458164, 0)
-light_energy = 2.0
-light_indirect_energy = 2.0
+[node name="LightSystemSpot" type="SpotLight3D" parent="." groups=["Lights"]]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.0115447, 0)
+light_energy = 4.0
+light_indirect_energy = 4.0
 light_size = 0.1
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 16.0
-distance_fade_length = 8.0
-omni_range = 15.0
-script = ExtResource("4_r7rpy")
+distance_fade_length = 12.0
+spot_range = 78.7682
+spot_angle = 88.5702
+script = ExtResource("4_d74q1")

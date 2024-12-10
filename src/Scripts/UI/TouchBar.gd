@@ -1,4 +1,6 @@
 extends Panel
+## Touch screen controls
+## Created by Yni, licensed under MIT License
 
 var player_head: FreeLookCamera
 

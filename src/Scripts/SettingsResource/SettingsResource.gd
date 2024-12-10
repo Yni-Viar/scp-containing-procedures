@@ -39,5 +39,3 @@ class_name SettingsResource
 @export var enable_light_shadows: bool = false
 ## Enable lighting (mostly for mobile)
 @export var enable_lighting: bool = true
-## Field of view
-@export_range(70.0, 80.0) var camera_field_of_view: float

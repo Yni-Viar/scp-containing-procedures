@@ -1,5 +1,6 @@
 extends Node3D
 ## Used from Godot docs tutorial
+## Created by Godot Engine contributors, licensed under MIT License
 class_name NpcPlayerScript
 
 @export var puppet_class: PuppetClass
@@ -56,7 +57,7 @@ func _physics_process(delta):
 
 func _on_velocity_computed(safe_velocity: Vector3) -> void:
 	global_position = global_position.move_toward(global_position + safe_velocity, movement_delta)
-
+## Health management
 func health_manage(health_to_add: float):
 	if current_health + health_to_add <= health:
 		current_health += health_to_add

@@ -1,4 +1,6 @@
 extends Panel
+## Checks packs availability
+## Created by Yni, licensed under MIT License
 
 var selected_item: String = ""
 

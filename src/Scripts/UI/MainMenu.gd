@@ -1,4 +1,6 @@
 extends Control
+## Main menu script
+## Created by Yni, licensed under MIT License
 
 var play_info_toggle: bool
 # Called when the node enters the scene tree for the first time.

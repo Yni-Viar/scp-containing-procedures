@@ -11,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://b82a218to832v" path="res://PlayerController/PlayerClassResources/DClass.tres" id="6_8wh7j"]
 [ext_resource type="Resource" uid="uid://dsgnaeqq7xe1k" path="res://ResourcePacks/Site19/PlayerController/PlayerClassResources/Scp173.tres" id="7_1fok3"]
 [ext_resource type="Resource" uid="uid://b78x487lxutqy" path="res://ResourcePacks/Site19/PlayerController/PlayerClassResources/Scp650.tres" id="7_yvqs6"]
-[ext_resource type="Resource" uid="uid://dgkljki2u50nx" path="res://PlayerController/PlayerClassResources/Scientist650.tres" id="8_2ihlr"]
+[ext_resource type="Resource" uid="uid://dgkljki2u50nx" path="res://PlayerController/PlayerClassResources/ScientistStatic.tres" id="8_2ihlr"]
 
 [resource]
 script = ExtResource("1_d6yh1")
