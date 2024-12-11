@@ -4,6 +4,7 @@ extends BasePuppetScript
 class_name HumanPuppetScript
 
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
+
 enum SecondaryState {NONE, ITEM, CUFFED}
 
 @export var secondary_state: SecondaryState = SecondaryState.NONE
@@ -19,7 +20,7 @@ func on_start():
 	#get_parent().get_node("NpcSelection").set_collision_mask_value(3, true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func on_update(delta):
+func _physics_process(delta: float) -> void:
 	# Change animation state
 	if get_node_or_null("AnimationTree") != null:
 		match state:

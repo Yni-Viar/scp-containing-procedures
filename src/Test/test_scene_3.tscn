@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cxulbge1024do"]
+[gd_scene load_steps=18 format=3 uid="uid://cxulbge1024do"]
 
 [ext_resource type="Script" path="res://Scripts/UI/PlayerUI.gd" id="1_3lqp3"]
 [ext_resource type="Texture2D" uid="uid://bmw4fxmnmwhov" path="res://Assets/HUD/arrow.png" id="2_3oytm"]
@@ -10,7 +10,8 @@
 [ext_resource type="Script" path="res://Scripts/UI/InventoryUI.gd" id="7_ri1sy"]
 [ext_resource type="Resource" uid="uid://b82a218to832v" path="res://PlayerController/PlayerClassResources/DClass.tres" id="8_rlaxo"]
 [ext_resource type="PackedScene" uid="uid://8ik28au1k20l" path="res://PlayerController/Player.tscn" id="9_sdft4"]
-[ext_resource type="PackedScene" uid="uid://cmk1qm8xtuio8" path="res://DynamicObjects/InventoryItems/Prefabs/ItemScp018.tscn" id="11_46kds"]
+[ext_resource type="Resource" uid="uid://kt10qm1d2rht" path="res://PlayerController/PlayerClassResources/MtfAgent.tres" id="10_g0fi8"]
+[ext_resource type="PackedScene" uid="uid://cmk1qm8xtuio8" path="res://ResourcePacks/Site19/DynamicObjects/InventoryItems/Prefabs/ItemScp018.tscn" id="11_46kds"]
 [ext_resource type="Script" path="res://Scripts/ObjectSystem.gd" id="12_pyp3s"]
 [ext_resource type="PackedScene" uid="uid://0wmneehv5nxx" path="res://DynamicObjects/InventoryItems/Prefabs/ItemDisarmer.tscn" id="13_cn34n"]
 
@@ -220,6 +221,10 @@ puppet_class = ExtResource("8_rlaxo")
 [node name="NpcScene2" parent="." instance=ExtResource("7_djgb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.55547, 0, 1.59181)
 puppet_class = ExtResource("8_rlaxo")
+
+[node name="NpcScene3" parent="." instance=ExtResource("7_djgb1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.55547, 0, -6.02599)
+puppet_class = ExtResource("10_g0fi8")
 
 [node name="Spectator" parent="." instance=ExtResource("9_sdft4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59206, 3.02249, 3.99167)

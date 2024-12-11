@@ -638,7 +638,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07451, 0, 4.19238)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.60873)
 end_position = Vector3(0, 0, 3)
 
-[node name="entityspawn2" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn2" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.264, 0, -5.118)
 
 [node name="playerspawn" type="Marker3D" parent="."]

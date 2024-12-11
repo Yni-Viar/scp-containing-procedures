@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bf4jphfua16vt" path="res://Assets/ExternalModels/monitor.tscn" id="14_kjtda"]
 [ext_resource type="PackedScene" uid="uid://delt0t2y8yrlr" path="res://Assets/ExternalModels/computer_2.tscn" id="15_eyx2m"]
 [ext_resource type="PackedScene" uid="uid://dcq4vbbnd0ldc" path="res://Assets/ExternalModels/keyboard.tscn" id="16_qf7d4"]
-[ext_resource type="PackedScene" uid="uid://dum6lw6pjpba0" path="res://Assets/OriginalModels/lamp_2_spot.tscn" id="18_8w222"]
+[ext_resource type="PackedScene" uid="uid://bvmbksyl1hdmd" path="res://Assets/OriginalModels/lamp_2_small.tscn" id="18_ia20v"]
 [ext_resource type="ArrayOccluder3D" uid="uid://db1vcctyf28l7" path="res://ResourcePacks/Site19/Assets/Rooms/room2/occ/lc_room_2_offices.occ" id="18_ugfwj"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_g34jd"]
@@ -934,66 +934,66 @@ end_position = Vector3(0, 0, 3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.64157)
 end_position = Vector3(0, 0, -3)
 
-[node name="entityspawn" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.31256, 0, 1.18182)
 
-[node name="entityspawn2" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn2" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73539, 0, 1.18182)
 
-[node name="entityspawn7" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn7" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.31256, 0, 4.83899)
 
-[node name="entityspawn8" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn8" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73539, 0, 4.83899)
 
-[node name="entityspawn9" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn9" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.31256, 0, 8.56809)
 
-[node name="entityspawn10" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn10" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73539, 0, 8.56809)
 
-[node name="entityspawn11" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn11" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48032, 0, 6.67181)
 
-[node name="entityspawn12" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn12" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05749, 0, 6.67181)
 
-[node name="entityspawn13" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn13" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48032, 0, 2.97232)
 
-[node name="entityspawn14" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn14" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05749, 0, 2.97232)
 
-[node name="entityspawn15" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn15" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48032, 0, -0.626334)
 
-[node name="entityspawn16" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn16" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05749, 0, -0.626334)
 
-[node name="entityspawn17" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn17" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48032, 0, -4.51901)
 
-[node name="entityspawn18" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn18" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05749, 0, -4.51901)
 
-[node name="entityspawn19" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn19" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48032, 0, -8.44326)
 
-[node name="entityspawn20" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn20" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05749, 0, -8.44326)
 
 [node name="entityspawn21" type="Marker3D" parent="." groups=["AgentSpawn"]]
 
-[node name="entityspawn3" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn3" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73539, 0, -2.32024)
 
-[node name="entityspawn4" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn4" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.83878, 0, -2.32024)
 
-[node name="entityspawn5" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn5" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.83878, 0, -6.27002)
 
-[node name="entityspawn6" type="Marker3D" parent="." groups=["ScientistSpawn"]]
+[node name="entityspawn6" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2628, 0, -6.27002)
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
@@ -1002,5 +1002,5 @@ occluder = ExtResource("18_ugfwj")
 [node name="playerspawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.42009, 0)
 
-[node name="Lamp2" parent="." instance=ExtResource("18_8w222")]
+[node name="Lamp2" parent="." instance=ExtResource("18_ia20v")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 6.601, 0)

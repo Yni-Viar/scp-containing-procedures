@@ -3,7 +3,6 @@ extends VisionScpPuppetScript
 ## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
 class_name Scp173PuppetScript
 
-
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 var faces: int = 10
 @export var invincibility: bool = false
@@ -23,7 +22,7 @@ func on_start() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func on_update(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	scp_173_blink(delta)
 	# If is watching, set velocity to zero, else - go to player.
 	if (is_blinking && watching_puppets.size() > 0 && current_human != null) || (watching_puppets.size() == 0 && current_human != null):

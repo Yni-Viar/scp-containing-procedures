@@ -12,7 +12,7 @@ func on_start() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func on_update(delta):
+func _physics_process(delta: float) -> void:
 	#If is not watching
 	if watching_puppets.size() == 0:
 		#Wait
