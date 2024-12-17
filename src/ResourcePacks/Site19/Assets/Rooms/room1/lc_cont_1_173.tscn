@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://qneqldi123li"]
+[gd_scene load_steps=58 format=4 uid="uid://qneqldi123li"]
 
 [ext_resource type="Texture2D" uid="uid://c7euhyglo1q1j" path="res://ResourcePacks/Site19/Assets/RoomAssets/LCZ3.5/beige_wall_001_rough_2k.png" id="1_q4o7k"]
 [ext_resource type="Texture2D" uid="uid://dwpt2xs1rrv1" path="res://ResourcePacks/Site19/Assets/RoomAssets/LCZ3.5/beige_wall_001_nor_gl_2k.png" id="2_aft7k"]
@@ -18,15 +18,13 @@
 [ext_resource type="Texture2D" uid="uid://btxr8137lnlwf" path="res://Assets/Doors/Gate/Metal032_2K_Roughness.png" id="18_o3jpx"]
 [ext_resource type="Texture2D" uid="uid://c1bmwla273g6e" path="res://Assets/Doors/Gate/Metal032_2K_NormalGL.png" id="19_qae0u"]
 [ext_resource type="Script" path="res://Scripts/ButtonSystem/DoorQuickOpener.gd" id="20_0q7v2"]
-[ext_resource type="PackedScene" uid="uid://bngdit3quroxp" path="res://Assets/Rooms/passages/site_19_wall_cb.tscn" id="21_5mddf"]
-[ext_resource type="PackedScene" uid="uid://dmganqbajxt5y" path="res://Assets/Rooms/passages/site_19_wall_no_vents.tscn" id="22_kbeog"]
+[ext_resource type="MeshLibrary" uid="uid://3c3mdx2n53ak" path="res://Assets/Tiles/site_modular.tres" id="22_tn177"]
 [ext_resource type="Script" path="res://ResourcePacks/Site19/Assets/Rooms/room1/TaskScript/Scp173Task.gd" id="23_kfeuy"]
 [ext_resource type="Script" path="res://Scripts/ScpAcceptableArea.gd" id="23_qadag"]
-[ext_resource type="ArrayOccluder3D" uid="uid://crk5vsftpf7c" path="res://ResourcePacks/Site19/Assets/Rooms/room1/occ/lc_cont_1_173.occ" id="24_2dq85"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_3jjqi"]
-vertices = PackedVector3Array(8.25, 0.342224, -9.2383, 8.25, 0.342224, 9.2617, 9.5, 0.342224, 9.7617, 9.5, 0.342224, -9.7383, 4.5, 0.342224, -0.4883, 4.75, 0.342224, 0.2617, 5.5, 0.342224, 0.2617, 5.75, 0.342224, -0.4883, 7, 0.342224, -9.2383, 3.25, 0.342224, -9.2383, 3.25, 0.342224, -0.4883, 7, 0.342224, -0.4883, -8.5, 0.342224, -8.4883, -8.5, 0.342224, -1.2383, 1.5, 0.342224, -1.2383, 1.5, 0.342224, -8.4883, -8.75, 7.84222, -0.2383, -8.75, 7.84222, 0.2617, 2.25, 7.84222, 0.2617, 2.25, 7.84222, -0.2383, 5.75, 0.342224, 1.0117, 4.5, 0.342224, 1.0117, 7, 0.342224, 1.0117, 2.25, 0.342224, 1.2617, 2.25, 0.342224, 9.2617, 7, 0.342224, 9.2617, -2, 0.342224, 9.2617, -1.75, 0.342224, 9.7617, 1.75, 0.342224, 9.7617, -8.5, 0.342224, 1.2617, -8.5, 0.342224, 9.2617)
-polygons = [PackedInt32Array(0, 3, 1), PackedInt32Array(1, 3, 2), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(7, 4, 9), PackedInt32Array(7, 9, 8), PackedInt32Array(4, 10, 9), PackedInt32Array(8, 11, 7), PackedInt32Array(15, 14, 12), PackedInt32Array(12, 14, 13), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17), PackedInt32Array(6, 20, 5), PackedInt32Array(5, 20, 21), PackedInt32Array(20, 22, 23), PackedInt32Array(23, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(23, 21, 20), PackedInt32Array(27, 26, 28), PackedInt32Array(28, 26, 24), PackedInt32Array(24, 26, 23), PackedInt32Array(30, 29, 26), PackedInt32Array(26, 29, 23)]
+vertices = PackedVector3Array(8.75, 0.342224, -9.74, 8.75, 0.342224, 9.76, 9.5, 0.342224, 9.76, 9.5, 0.342224, -9.74, 4.5, 0.342224, -0.49, 4.75, 0.342224, 0.26, 5.5, 0.342224, 0.26, 5.75, 0.342224, -0.49, 6.75, 0.342224, -9.24, 3.25, 0.342224, -9.24, 3.25, 0.342224, -0.49, 6.75, 0.342224, -0.49, -8.5, 0.342224, -8.49, -8.5, 0.342224, -0.99, 1.5, 0.342224, -1.24, 1.5, 0.342224, -8.49, 4.5, 0.342224, 1.01, 5.75, 0.342224, 1.01, 3, 0.342224, 1.26, -8.5, 0.342224, 1.26, -8.5, 0.342224, 9.76, 6.75, 0.342224, 9.76, 6.75, 0.342224, 1.01)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(7, 4, 8), PackedInt32Array(8, 4, 9), PackedInt32Array(4, 10, 9), PackedInt32Array(8, 11, 7), PackedInt32Array(15, 14, 12), PackedInt32Array(12, 14, 13), PackedInt32Array(6, 17, 5), PackedInt32Array(5, 17, 16), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 21), PackedInt32Array(18, 16, 17), PackedInt32Array(17, 22, 18), PackedInt32Array(18, 22, 21)]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_myvs3"]
 resource_name = "Background.006"
@@ -492,6 +490,15 @@ end_position = Vector3(0, 0, 1.805)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94171, 0)
 max_distance = 24.0
 
+[node name="GridMap" type="GridMap" parent="NavigationRegion3D"]
+mesh_library = ExtResource("22_tn177")
+cell_size = Vector3(5.12, 2.16, 5.12)
+bake_navigation = true
+data = {
+"cells": PackedInt32Array(65537, 1, 0, 65537, 0, 0, 65537, 65535, 0, 65537, 65534, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConcavePolygonShape3D_5gr4h")
 
@@ -560,10 +567,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.27628, 0, -7.53968)
 [node name="entityspawn3" type="Marker3D" parent="." groups=["Scp173Spawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.926471, 0, -6.25798)
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.26026, 0)
-occluder = ExtResource("24_2dq85")
-
 [node name="ReflectionProbe2" type="ReflectionProbe" parent="." groups=["ReflectionProbes"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.476349, 3.73728, -0.0644445)
 size = Vector3(17.271, 7.75, 20.0128)
@@ -573,18 +576,6 @@ interior = true
 
 [node name="playerspawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37702, 5.97172)
-
-[node name="Site19_Wall_CB" parent="." instance=ExtResource("21_5mddf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.76874, 0.0922694, 7.69777)
-
-[node name="Site19_Wall_CB2" parent="." instance=ExtResource("21_5mddf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.76874, 0.0922694, 2.58122)
-
-[node name="Site19_Wall_NoVents" parent="." instance=ExtResource("22_kbeog")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.77365, 0.0226007, -2.53341)
-
-[node name="Site19_Wall_NoVents2" parent="." instance=ExtResource("22_kbeog")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.77365, 0.0226007, -7.66851)
 
 [node name="TaskArea" type="Area3D" parent="."]
 collision_layer = 3

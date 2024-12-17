@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://bvludt3pcnunj"]
+[gd_scene load_steps=38 format=4 uid="uid://bvludt3pcnunj"]
 
 [ext_resource type="Texture2D" uid="uid://b8pg4uioakn4r" path="res://ResourcePacks/Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Color.png" id="1_66sco"]
 [ext_resource type="Texture2D" uid="uid://dv0ipv0joknjs" path="res://ResourcePacks/Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Roughness.png" id="2_ij273"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://bf4jphfua16vt" path="res://Assets/ExternalModels/monitor.tscn" id="18_j2tu7"]
 [ext_resource type="PackedScene" uid="uid://dcq4vbbnd0ldc" path="res://Assets/ExternalModels/keyboard.tscn" id="19_sou2j"]
 [ext_resource type="PackedScene" path="res://Assets/ExternalModels/SteelFrameShelves03.tscn" id="20_0424j"]
-[ext_resource type="ArrayOccluder3D" uid="uid://brc8dkakpbbsr" path="res://ResourcePacks/Site19/Assets/Rooms/room2c/occ/lc_room_2c_offices.occ" id="21_28klx"]
 [ext_resource type="PackedScene" uid="uid://3uxnw561tlh4" path="res://Assets/ExternalModels/plant.tscn" id="21_qf54h"]
 [ext_resource type="PackedScene" uid="uid://brw1pbnyucy41" path="res://Assets/OriginalModels/omnidotplush.tscn" id="23_lb14e"]
 
@@ -311,10 +310,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.793, 0, 5.782)
 
 [node name="entityspawn2" type="Marker3D" parent="." groups=["ScientistSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.939, 0, 2.804)
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-transform = Transform3D(-0.707107, -6.18172e-08, 0.707107, 8.74228e-08, -1, 0, 0.707107, 6.18172e-08, 0.707107, 4.58882, 6.60165, 4.46399)
-occluder = ExtResource("21_28klx")
 
 [node name="Lamp4" parent="." instance=ExtResource("13_m47eb")]
 transform = Transform3D(-0.707107, -6.18172e-08, 0.707107, 8.74228e-08, -1, 0, 0.707107, 6.18172e-08, 0.707107, 4.58882, 6.60165, 4.46399)

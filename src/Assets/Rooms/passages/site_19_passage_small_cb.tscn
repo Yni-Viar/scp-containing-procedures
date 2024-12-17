@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://q2tdo2cgx0jc"]
+[gd_scene load_steps=8 format=4 uid="uid://q2tdo2cgx0jc"]
 
 [ext_resource type="Texture2D" uid="uid://cv5cqhwy3nssg" path="res://Assets/Rooms/passages/LCZ_Modular/beige_wall_001_rough_2k.png" id="1_bcvs1"]
 [ext_resource type="Texture2D" uid="uid://oeg7v3jx04je" path="res://Assets/Rooms/passages/LCZ_Modular/beige_wall_001_nor_gl_2k.png" id="2_ndftm"]
-[ext_resource type="ArrayOccluder3D" uid="uid://cc47mdx4lyet5" path="res://Assets/Rooms/passages/occ/site_19_passage_small_cb.occ" id="3_qr8gt"]
 [ext_resource type="PackedScene" uid="uid://dpxo7rltb4wmc" path="res://Assets/Doors/door.tscn" id="4_ol3y6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_msw4x"]
@@ -62,8 +61,5 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_beilw")
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-occluder = ExtResource("3_qr8gt")
 
 [node name="door" parent="." instance=ExtResource("4_ol3y6")]
