@@ -64,6 +64,17 @@ func startup_spawn():
 			$NPCs.object_spawner(puppet_res, spawn_point_group[random_number].global_position)
 			used_spawns.append(random_number)
 
+func finish_game(condition: int, message: String):
+	match condition:
+		0:
+			$PlayerUI/WinCondition/End.text = "You won!"
+		1:
+			$PlayerUI/WinCondition/End.text = "Stalemate"
+		2:
+			$PlayerUI/WinCondition/End.text = "Game over"
+	$PlayerUI/WinCondition/Notes.text = message
+	$PlayerUI.input_values("endgame")
+
 func alert(message: String):
 	var window: AcceptDialog = load("res://Assets/HUD/CustomAcceptDialog.tscn").instantiate()
 	window.dialog_text = message + "\n[ESC - Hide]"

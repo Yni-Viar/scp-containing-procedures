@@ -9,3 +9,4 @@ class_name GameData
 @export var items: Array[Item]
 @export var ambient_path: String
 @export var room_to_spawn: String
+@export var tasks: Array[FoundationTaskResource]

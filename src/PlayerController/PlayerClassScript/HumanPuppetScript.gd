@@ -9,20 +9,24 @@ enum SecondaryState {NONE, ITEM, CUFFED}
 
 @export var secondary_state: SecondaryState = SecondaryState.NONE
 
+var cuffed_players: Array[NpcPlayerScript] = []
 var raycast: RayCast3D
 var vision_entity: Array = []
+var cuffed_follow_timeout: bool = false
+var has_animtree: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func on_start():
 	raycast = get_parent().get_node("RayCast3D")
 	if get_node_or_null("AnimationTree") != null:
 		get_node("AnimationTree").active = true
+		has_animtree = true
 	#get_parent().get_node("NpcSelection").set_collision_mask_value(3, true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	# Change animation state
-	if get_node_or_null("AnimationTree") != null:
+	if has_animtree && get_parent().visible_on_screen:
 		match state:
 			States.IDLE:
 				if !get_node("AnimationTree").get("parameters/state_machine/blend_amount") - 0.00001 < -1:
@@ -95,3 +99,10 @@ func set_state(animation_name: String, action_name: String, amount):
 func footstep(key: String):
 	get_parent().get_node("WalkSounds").stream = load(get_parent().puppet_class.footstep_sounds[key][rng.randi_range(0, get_parent().puppet_class.footstep_sounds[key].size() - 1)])
 	get_parent().get_node("WalkSounds").play()
+
+func target_follow():
+	cuffed_follow_timeout = true
+	for player in cuffed_players:
+		player.set_movement_target(global_position)
+	await get_tree().create_timer(2.5).timeout
+	cuffed_follow_timeout = false

@@ -21,7 +21,7 @@ func _ready():
 	# 9 is Window Size in pixels
 	$ScrollContainer/HBoxContainer/Page1/LanguageSet.selected = Settings.setting_res.ui_language
 	$ScrollContainer/HBoxContainer/Page1/GlowSet.button_pressed = Settings.setting_res.glow
-	
+	$ScrollContainer/HBoxContainer/Page1/PuppetWanderingSet.button_pressed = Settings.setting_res.enable_wandering
 	
 	$ScrollContainer/HBoxContainer/Page1/Lights.button_pressed = Settings.setting_res.enable_lighting
 	device_check()
@@ -206,3 +206,10 @@ func _on_lights_toggled(toggled_on: bool) -> void:
 		Settings.setting_res.enable_lighting = true
 	else:
 		Settings.setting_res.enable_lighting = false
+
+
+func _on_puppet_wandering_set_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		Settings.setting_res.enable_wandering = true
+	else:
+		Settings.setting_res.enable_wandering = false

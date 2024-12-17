@@ -5007,6 +5007,7 @@ _data = {
 [node name="Puppet" type="Node3D"]
 script = ExtResource("1_b0s8h")
 armature_name = "SCP173_Rig"
+enable_vision_scan = true
 
 [node name="SCP173_Rig" type="Node3D" parent="."]
 transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0, 0)

@@ -9,15 +9,18 @@ In a nutshell - this is a SCP Facility simulator.
 - [x] Optimization
 - [x] Map view
 - [x] SCP-650 npc and Containment Chamber
-- [ ] Foundation tasks, score + gameover
-- [ ] Chaos Insurgency event + exit
+- [x] Foundation tasks and gameover
+- [ ] Score
 - [ ] SCP-049 npc and Containment Chamber
-- [ ] Web platform support (for avoiding some Godot bugs, such as Nahimic audio driver)
-- [ ] Items: food, water, SCP-109, SCP-241, SCP-1079.
+- [ ] SCP-914 minigame
 - [ ] SCP-131 npc
-- [ ] SCP-062 Containment Chamber
-- [ ] SCP-009 Containment Chamber
+- [ ] Web platform support (for avoiding some Godot bugs, such as Nahimic audio driver)
+- [ ] Items: food, water, SCP-109, SCP-241, SCP-1079, SCP-348, SCP-832.
+- [ ] SCP-999 npc
+- [ ] SCP-266 Containment Chamber
+- [ ] SCP-409 Containment Chamber
 - [ ] SCP-812 Containment Chamber
+- [ ] Chaos Insurgency event, MTF call + exit
 
 ## License:
 This projects is dual-licensed.

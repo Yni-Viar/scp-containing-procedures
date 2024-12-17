@@ -22,4 +22,4 @@ vsync = true
 reflection_probes = true
 enable_light_shadows = false
 enable_lighting = false
-camera_field_of_view = 75.0
+enable_wandering = true

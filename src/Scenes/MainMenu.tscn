@@ -148,7 +148,11 @@ theme_override_font_sizes/bold_font_size = 20
 bbcode_enabled = true
 text = "[b]v.0.1.0 (Alpha)[/b]
 - You can now cuff players
-- Separated Site-19 content from the game core"
+- Separated Site-19 content from the game core
+- Added wandering to humans (no longer stay still)
+- Reworked some rooms
+- The game is now playable, since the tasks subsystem got implemented. Currently, there is only 1 SCP-173 task...
+- Implemented gameovers."
 
 [node name="CreditsPanel" type="Panel" parent="."]
 visible = false
@@ -361,6 +365,8 @@ bbcode_enabled = true
 text = "[i]Models[/i]
 
 MTF, Class-D and Scientist models are made by PurpleGoop and DrPri (CC-BY-SA 4.0)
+SCP-173 model is made by Aruspice (model, textures), Shakles (rig, animation), PixelPuffin (concept art) (CC-BY-SA 3.0 with SCP-Wiki exception)
+SCP-650 model is made by Shadowscale(model, textures)
 Also there are some CC0 assets.
 "
 fit_content = true
@@ -376,7 +382,9 @@ theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
 text = "[i]Sounds and music[/i]
 - Robot vacuum cleaner.ogg by Eelke -- https://freesound.org/s/383372/ -- License: Attribution 4.0
-- Elevator.ogg, EquatorialComplex.ogg - Kevin MacLeod - License CC-BY 3.0
+- Elevator.ogg - Kevin MacLeod - License CC-BY 3.0
+- Used some Kenney.nl sounds, which are CC0
+- Neck Snap, DoorOpen and footsteps are made by SCP: Godot project (MIT License)
 
 
 "

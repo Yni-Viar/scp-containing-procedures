@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="FoundationTaskResource" load_steps=2 format=3 uid="uid://cqabqpmdvcgot"]
+
+[ext_resource type="Script" path="res://Scripts/FoundationTasks/FoundationTaskResource.gd" id="1_68jbj"]
+
+[resource]
+script = ExtResource("1_68jbj")
+internal_name = "S19_CLEAN_173"
+public_name = "Clean SCP-173 substance, using Class-D"

@@ -12,10 +12,11 @@ var is_blinking: bool = false
 var current_human: Node3D
 var raycast: RayCast3D
 var player_direction: Vector3
+var movement_reset: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func on_start() -> void:
-	raycast = get_parent().get_node("RayCast3D")
+	raycast = get_parent().get_node("RayCastLow")
 	#get_parent().get_node("ActionArea").connect("body_entered", on_action_area_body_entered)
 	#get_parent().get_node("ActionArea").connect("body_exited", on_action_area_body_exited)
 	set_face()
@@ -32,11 +33,12 @@ func _physics_process(delta: float) -> void:
 			if collider is NpcSelection:
 				var selected_pawn = collider.get_pawn()
 				if selected_pawn.fraction == 0:
-					get_parent().get_node("InteractSound").stream = load("res://Sounds/Character/Scp173/NeckSnap.ogg")
+					get_parent().get_node("InteractSound").stream = load("res://ResourcePacks/Site19/Sounds/Characters/Scp173/NeckSnap.ogg")
 					get_parent().get_node("InteractSound").play()
 					get_tree().root.get_node("Game/NPCs").object_remover(selected_pawn.name)
 					active_puppets.erase(current_human)
 					current_human = null
+					movement_reset = false
 ## Blink mechanic
 func scp_173_blink(delta: float):
 	# If blink timer > 0 - then wait
@@ -44,8 +46,9 @@ func scp_173_blink(delta: float):
 		blink_timer -= delta
 	else:
 		is_blinking = true
+		movement_reset = false
 		# Navigate to the human near you
-		if active_puppets.size() > 0:
+		if active_puppets.size() > 0 && !active_puppets.has(current_human):
 			current_human = active_puppets[rng.randi_range(0, active_puppets.size() - 1)]
 		else:
 			current_human = null
@@ -54,9 +57,9 @@ func scp_173_blink(delta: float):
 		is_blinking = false
 ## Movement control
 func scp_173_movement():
-	if state == States.IDLE:
-		player_direction = global_position.direction_to(current_human.global_position)
-		get_parent().set_movement_target(get_parent().global_position + get_parent().character_speed * player_direction)
+	if state == States.IDLE && !movement_reset:
+		get_parent().set_movement_target(current_human.global_position + current_human.global_transform.basis.z * 2)
+		movement_reset = true
 ## Set face on spawn
 func set_face():
 	var tex: ShaderMaterial = load("res://ResourcePacks/Site19/Assets/Materials/scp173.tres")

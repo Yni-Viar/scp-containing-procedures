@@ -39,7 +39,7 @@ func _ready() -> void:
 	automatic = puppet_class.automatic
 	fraction = puppet_class.fraction
 	health = puppet_class.health
-	wandering = puppet_class.enable_wander
+	wandering = puppet_class.enable_wander && Settings.setting_res.enable_wandering
 	if wandering:
 		while wandering_rotator == 0:
 			wandering_rotator = rng.randi_range(-15, 15)
@@ -61,7 +61,7 @@ func _physics_process(delta):
 			puppet_mesh.state = puppet_mesh.States.IDLE
 			idle = true
 			return
-		if navigation_agent.is_navigation_finished() || !navigation_agent.is_target_reachable():
+		if navigation_agent.is_navigation_finished() || (!navigation_agent.is_target_reachable() && wandering):
 			puppet_mesh.state = puppet_mesh.States.IDLE
 			idle = true
 			if !navigation_agent.is_target_reachable() && wandering:

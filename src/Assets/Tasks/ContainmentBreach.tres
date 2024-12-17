@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="FoundationTaskResource" load_steps=2 format=3 uid="uid://bp8cegqorffdc"]
+
+[ext_resource type="Script" path="res://Scripts/FoundationTasks/FoundationTaskResource.gd" id="1_ch3tl"]
+
+[resource]
+script = ExtResource("1_ch3tl")
+internal_name = "EVENT_CB"
+public_name = "Containment Breach occured! You need to return escaped SCP back to their containment!"

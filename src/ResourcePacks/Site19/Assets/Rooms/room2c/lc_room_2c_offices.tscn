@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://bvludt3pcnunj"]
+[gd_scene load_steps=39 format=4 uid="uid://bvludt3pcnunj"]
 
 [ext_resource type="Texture2D" uid="uid://b8pg4uioakn4r" path="res://ResourcePacks/Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Color.png" id="1_66sco"]
 [ext_resource type="Texture2D" uid="uid://dv0ipv0joknjs" path="res://ResourcePacks/Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Roughness.png" id="2_ij273"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://4vt75jeyrq3g" path="res://ResourcePacks/Site19/Assets/RoomAssets/LCZ3.5/SheetMetal001_2K-PNG_NormalGL.png" id="9_kgnal"]
 [ext_resource type="Texture2D" uid="uid://c7euhyglo1q1j" path="res://ResourcePacks/Site19/Assets/RoomAssets/LCZ3.5/beige_wall_001_rough_2k.png" id="10_prn2p"]
 [ext_resource type="Texture2D" uid="uid://dwpt2xs1rrv1" path="res://ResourcePacks/Site19/Assets/RoomAssets/LCZ3.5/beige_wall_001_nor_gl_2k.png" id="11_ric3s"]
-[ext_resource type="Texture2D" uid="uid://dcyovsgw5v603" path="res://ResourcePacks/Site19/Assets/RoomAssets/LCZ3.5/beige_wall_001_rough_2k-1.png" id="12_hj14s"]
 [ext_resource type="PackedScene" uid="uid://bvmbksyl1hdmd" path="res://Assets/OriginalModels/lamp_2_small.tscn" id="13_m47eb"]
 [ext_resource type="PackedScene" uid="uid://crwduagwj35dk" path="res://Assets/ExternalModels/Picture2.tscn" id="14_ofq2j"]
 [ext_resource type="PackedScene" uid="uid://dk6afsf7jh72a" path="res://Assets/ExternalModels/office_desk_with_drawers.tscn" id="15_8io6o"]
@@ -220,82 +219,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hjufs")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo5me"]
-resource_name = "Background.003"
-cull_mode = 2
-albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
-metallic_texture = ExtResource("12_hj14s")
-metallic_texture_channel = 2
-roughness_texture = ExtResource("12_hj14s")
-roughness_texture_channel = 1
-normal_enabled = true
-normal_texture = ExtResource("11_ric3s")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3p3us"]
-resource_name = "Background.002"
-cull_mode = 2
-albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
-metallic_texture = ExtResource("12_hj14s")
-metallic_texture_channel = 2
-roughness_texture = ExtResource("12_hj14s")
-roughness_texture_channel = 1
-normal_enabled = true
-normal_texture = ExtResource("11_ric3s")
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_oxxbu"]
-_surfaces = [{
-"aabb": AABB(-8, -0.00311089, 8, 17.9355, 7, 1.93549),
-"format": 34896613377,
-"index_count": 87,
-"index_data": PackedByteArray("BQACAAAABQAEAAIABwABAAMABwAGAAEACAAHAAMAAgAEAAkAAgAMAA0AAgALAAwACgACAAkAAgAKAAsADgADAA8AAwAQAAgAEQADAA4AAwARABAAAgAUABMAEgACAA0AAgASABQAAwAaAA8AAwAbABoAFQACABMAFgACABUAAwAYABsAAwAZABgAFgADAAIAFwADABYAAwAcABkAAwAXABwAAwAdAB4AAwABAB0A"),
-"name": "Background.003",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 31,
-"vertex_data": PackedByteArray("AAAAAP//AABe5AAA/v8AAAAA/////wAAXuT///7/AAAOT5Y2/v8AAA5PAAD+/wAAUJUAAP7/AABQlZc2/v8AAFCVgGP+/wAADk+AY/7/AAAOTw9o/v8AAK9PLnX+/wAAjFGkgf7/AAA4VJyL/v8AAM+SdoH+/wAAGpCMi/7/AABQlb5n/v8AAK6U7nT+/wAAjFTSjP7/AABUXL+b/v8AAIhYKJb+/wAATl0unf7/AACgYouh/v8AADpoBaP+/wAA/IYmnf7/AACjgYmh/v8AAMuPs4z+/wAAyYsWlv7/AAABfAWj/v8AAP//AAAAAAAA/////wAAAAA=")
-}, {
-"aabb": AABB(9.93548, -0.00311089, -8, 1e-05, 7, 16),
-"format": 34896613377,
-"index_count": 81,
-"index_data": PackedByteArray("BQACAAAABQAEAAIABwABAAMABwAGAAEACAAHAAMAAgAEAAkAAgAMAA0AAgALAAwACgACAAkAAgAKAAsADgADAA8AAwAQAAgAEQADAA4AAwARABAAAgAUABMAEgACAA0AAgASABQAAwAaAA8AAwAbABoAFQACABMAFgACABUAAwAYABsAAwAZABgAFgADAAIAFwADABYAAwAcABkAAwAXABwA"),
-"name": "Background.002",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 29,
-"vertex_data": PackedByteArray("p2EAAP//AAAAAAAAAAAAAKdh/////wAAAAD//wAAAADTMJY2YKcAANMwAABgpwAA0zAAAJ5YAADTMJc2nlgAANMwgGOeWAAA0zCAY2CnAADTMA9oYKcAANMwLnWrpgAA0zCkgZWkAADTMJyLlaEAANMwdoFtWwAA0zCMi3ZeAADTML5nnlgAANMw7nRUWQAA0zDSjDihAADTML+bf5gAANMwKJbAnAAA0zAunWeXAADTMIuhcJEAANMwBaMpiwAA0zAmna1oAADTMImhrG4AANMws4zOXgAA0zAWlkxjAADTMAWj/XQAAA==")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_0t1a0"]
-resource_name = "lc_room2c_offices_Plane_003"
-_surfaces = [{
-"aabb": AABB(-8, -0.00311089, 8, 17.9355, 7, 1.93549),
-"attribute_data": PackedByteArray("AAD//wAA7C4AAOwuzt/+/87f7C7O3+wuuS+ptwAAqbcAAEx3uS9Md/1WTHf9Vp+3+Vqet3FmB7dVcU+1C3rZsi1xmHn9eRJ8/XkSfLJaTHc5ZuF3GnuNsieId6tEg+2uaImTqjiNtKWDjpOgYYlqhDaNUIn/elp8NIMFgIOOeI4AAP//zt/+/w=="),
-"format": 34896613399,
-"index_count": 87,
-"index_data": PackedByteArray("BwADAAAABwAGAAMACQABAAQACQAIAAEACgAJAAQAAwAGAAsAAwAOAA8AAwANAA4ADAADAAsAAwAMAA0AEAAEABIABAATAAoAFAAEABAABAAUABMAAwAXABYAFQADAA8AAwAVABcABAAdABEABAAeAB0AGAADABYAGQADABgABAAbAB4ABAAcABsAGQAEAAMAGgAEABkABAAfABwABAAaAB8ABQAgACEABQACACAA"),
-"material": SubResource("StandardMaterial3D_eo5me"),
-"name": "Background.003",
-"primitive": 3,
-"uv_scale": Vector4(0.992875, 2.42937, 0, 0),
-"vertex_count": 34,
-"vertex_data": PackedByteArray("AAAAAP////9e5AAA/v///17kAAD+/1QWAAD///////9e5P///v///17k///+/1QWDk+WNv7///8OTwAA/v///1CVAAD+////UJWXNv7///9QlYBj/v///w5PgGP+////Dk8PaP7///+vTy51/v///4xRpIH+////OFSci/7////PknaB/v///xqQjIv+////GpCMi/7///9Qlb5n/v///66U7nT+////jFTSjP7///9UXL+b/v///4hYKJb+////Tl0unf7///+gYouh/v///zpoBaP+/////IYmnf7///+jgYmh/v///8uPs4z+////yYsWlv7///8BfAWj/v//////AAAAAFQW/////wAAVBb/v/+//7//v/rK+sr9vwDA/7//v/rK+sr6vwTA/7//v/+//7//v/+//7//v+u/E8DrvxLA678SwOu/EsAKwPO//7//v/+//7//v/+//7//v/+//78mwNi/CsDzvybA2L//v/+//7//v/+//7//v/+//7//v/+//7//v/+//7//v/rK+sr6yvrK")
-}, {
-"aabb": AABB(9.93548, -0.00311089, -8, 1e-05, 7, 16),
-"attribute_data": PackedByteArray("AAD//wAA7C7O3/7/zt/sLrkvqbcAAKm3AABMd7kvTHf9Vkx3/Vaft/lanrdxZge3VXFPtQt62bItcZh5/XkSfP15EnyyWkx3OWbhdxp7jbIniHerRIPtrmiJk6o4jbSlg46ToGGJaoQ2jVCJ/3pafDSDBYCDjniO"),
-"format": 34896613399,
-"index_count": 81,
-"index_data": PackedByteArray("BQACAAAABQAEAAIABwABAAMABwAGAAEACAAHAAMAAgAEAAkAAgAMAA0AAgALAAwACgACAAkAAgAKAAsADgADABAAAwARAAgAEgADAA4AAwASABEAAgAVABQAEwACAA0AAgATABUAAwAbAA8AAwAcABsAFgACABQAFwACABYAAwAZABwAAwAaABkAFwADAAIAGAADABcAAwAdABoAAwAYAB0A"),
-"material": SubResource("StandardMaterial3D_3p3us"),
-"name": "Background.002",
-"primitive": 3,
-"uv_scale": Vector4(0.992875, 2.42937, 0, 0),
-"vertex_count": 30,
-"vertex_data": PackedByteArray("p2EAAP//VNUAAAAAAABU1adh/////1PVAAD//wAAVNXTMJY2YKdQ1dMwAABgp1TV0zAAAJ5YVNXTMJc2nlhU1dMwgGOeWFTV0zCAY2CnRdXTMA9oYKdG1dMwLnWrpkbV0zCkgZWkRtXTMJyLlaFd1dMwdoFtW1TV0zCMi3ZeVNXTMIyLdl5U1dMwvmeeWFTV0zDudFRZVNXTMNKMOKFx1dMwv5t/mFzV0zAolsCccdXTMC6dZ5dU1dMwi6FwkVTV0zAFoymLVNXTMCadrWhU1dMwiaGsblTV0zCzjM5eVNXTMBaWTGNU1dMwBaP9dFTVVNVU1VTVVNVT1VXVVNVU1VDVVtVU1VTVVNVU1VTVVNVU1VTVQtVd1UPVXdVD1V3VQ9Vd1V7VT9VU1VTVVNVU1VTVVNVU1VTVVNVU1XfVQ9Ve1U/Vd9VD1VTVVNVU1VTVVNVU1VTVVNVU1VTVVNVU1VTVVNVU1VTV")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_oxxbu")
-
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bl67p"]
 data = PackedVector3Array(-10.2383, 0, 10.2383, 10.2383, 0, -10.2383, 10.2383, 0, 10.2383, -10.2383, 0, 10.2383, -10.2383, 0, -10.2383, 10.2383, 0, -10.2383)
 
@@ -328,11 +251,6 @@ skeleton = NodePath("")
 transform = Transform3D(0, 1, -4.37114e-08, 1, 0, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, -2.4311, 0.893586, 7.08189)
 visibility_range_end = 192.0
 mesh = SubResource("ArrayMesh_khhj1")
-skeleton = NodePath("")
-
-[node name="DoorPath_002" type="MeshInstance3D" parent="NavigationRegion3D"]
-visibility_range_end = 192.0
-mesh = SubResource("ArrayMesh_0t1a0")
 skeleton = NodePath("")
 
 [node name="office-desk-with-drawers" parent="NavigationRegion3D" instance=ExtResource("15_8io6o")]

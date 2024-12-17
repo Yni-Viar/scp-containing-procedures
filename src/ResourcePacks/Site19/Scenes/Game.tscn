@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://mu7j26by23js"]
+[gd_scene load_steps=33 format=3 uid="uid://mu7j26by23js"]
 
 [ext_resource type="Script" path="res://Scripts/GameCore.gd" id="1_w6bkb"]
 [ext_resource type="Resource" uid="uid://dtootndbrxot5" path="res://ResourcePacks/Site19/gamedata.tres" id="2_w817j"]
@@ -29,12 +29,17 @@
 [ext_resource type="Script" path="res://MapGen/Extensions/MapGenHud.gd" id="16_2k31s"]
 [ext_resource type="Script" path="res://Scripts/UI/InventoryUI.gd" id="16_ukffn"]
 [ext_resource type="Theme" uid="uid://4k2un7nm7xc6" path="res://UITheme.tres" id="17_wwvuy"]
+[ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="23_2c3ra"]
+[ext_resource type="Script" path="res://Scripts/FoundationTasks/FoundationTaskManager.gd" id="28_0euyq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xi0ky"]
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_w6bkb")
 game_data = ExtResource("2_w817j")
+
+[node name="FoundationTask" type="Node" parent="."]
+script = ExtResource("28_0euyq")
 
 [node name="PlayerUI" type="Control" parent="."]
 layout_mode = 3
@@ -100,6 +105,17 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "PRERELEASE_WARN"
 horizontal_alignment = 1
+
+[node name="TasksContainer" type="VBoxContainer" parent="PlayerUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.089
+anchor_right = 0.05
+anchor_bottom = 0.089
+offset_top = -0.0800018
+offset_right = 512.0
+offset_bottom = 319.92
 
 [node name="TouchUI" type="Control" parent="PlayerUI"]
 visible = false
@@ -318,6 +334,60 @@ offset_right = 111.008
 offset_bottom = 23.144
 text = "EXIT"
 
+[node name="WinCondition" type="Panel" parent="PlayerUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="End" type="Label" parent="PlayerUI/WinCondition"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.267
+anchor_right = 0.5
+anchor_bottom = 0.267
+offset_left = -448.0
+offset_top = -64.24
+offset_right = 448.0
+offset_bottom = 63.76
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("23_2c3ra")
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Notes" type="Label" parent="PlayerUI/WinCondition"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.533
+anchor_right = 0.5
+anchor_bottom = 0.533
+offset_left = -448.0
+offset_top = -127.76
+offset_right = 448.0
+offset_bottom = 128.24
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ExitButton" type="Button" parent="PlayerUI/WinCondition"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.097
+anchor_right = 0.5
+anchor_bottom = 0.097
+offset_left = -112.0
+offset_top = 474.16
+offset_right = 112.0
+offset_bottom = 520.16
+text = "EXIT"
+
 [node name="FacilityGenerator" type="Node3D" parent="."]
 script = ExtResource("9_3ruab")
 rooms = Array[ExtResource("10_yrip0")]([ExtResource("11_j075c")])
@@ -354,6 +424,7 @@ bus = &"Music"
 [node name="InGameConsole" parent="." instance=ExtResource("13_30ago")]
 visible = false
 
+[connection signal="task_done" from="FoundationTask" to="PlayerUI" method="_on_foundation_task_task_done"]
 [connection signal="button_down" from="PlayerUI/TouchUI/UIPanel/Map" to="PlayerUI/TouchUI/UIPanel" method="_on_map_button_down"]
 [connection signal="button_up" from="PlayerUI/TouchUI/UIPanel/Map" to="PlayerUI/TouchUI/UIPanel" method="_on_map_button_up"]
 [connection signal="button_down" from="PlayerUI/TouchUI/UIPanel/TapWithItem" to="PlayerUI/TouchUI/UIPanel" method="_on_tap_with_item_button_down"]
@@ -367,5 +438,6 @@ visible = false
 [connection signal="button_up" from="PlayerUI/InventoryUI/RemoveItem" to="PlayerUI/InventoryUI/ItemList" method="_on_button_up"]
 [connection signal="button_down" from="PlayerUI/Map/CloseButton" to="PlayerUI/Map" method="_on_close_button_button_down"]
 [connection signal="pressed" from="PlayerUI/PauseMenu/Panel/ExitButton" to="PlayerUI" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="PlayerUI/WinCondition/ExitButton" to="PlayerUI" method="_on_exit_button_pressed"]
 [connection signal="generated" from="FacilityGenerator" to="." method="_on_facility_generator_generated"]
 [connection signal="generated" from="FacilityGenerator" to="PlayerUI/Map" method="_on_facility_generator_generated"]

@@ -39,3 +39,5 @@ class_name SettingsResource
 @export var enable_light_shadows: bool = false
 ## Enable lighting (mostly for mobile)
 @export var enable_lighting: bool = true
+## Enable human puppet wandering
+@export var enable_wandering: bool = true

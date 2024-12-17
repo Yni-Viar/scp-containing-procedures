@@ -17,7 +17,7 @@ footstep_sounds = {
 "walk": PackedStringArray("res://Sounds/Character/Human/Step/Step1.ogg", "res://Sounds/Character/Human/Step/Step2.ogg", "res://Sounds/Character/Human/Step/Step3.ogg", "res://Sounds/Character/Human/Step/Step4.ogg", "res://Sounds/Character/Human/Step/Step5.ogg", "res://Sounds/Character/Human/Step/Step6.ogg", "res://Sounds/Character/Human/Step/Step7.ogg", "res://Sounds/Character/Human/Step/Step8.ogg")
 }
 fraction = 0
-apply_height_bugfix = true
+apply_height_bugfix = false
 enable_wander = false
 inventory_item_size = 2
 health = 100.0

@@ -29,5 +29,5 @@ func on_vision_area_body_entered(body: Node3D):
 
 func on_vision_area_body_exited(body: Node3D):
 	if body is NpcSelection:
-		if body.get_parent().fraction == vision_class_detect:
+		if active_puppets.has(body):
 			active_puppets.erase(body)
