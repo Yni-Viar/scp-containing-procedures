@@ -46,13 +46,14 @@ func _ready() -> void:
 	current_health = health
 	add_child(puppet_mesh)
 
-func set_movement_target(movement_target: Vector3):
+func set_movement_target(movement_target: Vector3, hold: bool):
 	navigation_agent.set_target_position(movement_target)
 	puppet_mesh.state = puppet_mesh.States.WALKING
 	if puppet_class.apply_height_bugfix:
 		puppet_mesh.position.y = -0.4
 	idle = false
-	hold_still()
+	if hold:
+		hold_still()
 
 func _physics_process(delta):
 	if !idle:
@@ -99,11 +100,8 @@ func health_manage(health_to_add: float):
 func wander(delta: float):
 	# If wander_action, the npc will walk as much as possible, also generate new rotation
 	if wander_action:
-		while true:
-			wandering_rotator = rng.randi_range(-15, 15)
-			if wandering_rotator != 0:
-				break
-		set_movement_target(global_position - global_transform.basis.z * 2)
+		wandering_rotator = rng.randi_range(-15, 15)
+		set_movement_target(global_position - global_transform.basis.z * 2, false)
 		# set the destination with a new rotation degrees
 		wandering_destination = roundi(rotation_degrees.y + wandering_rotator)
 	else:

@@ -69,7 +69,7 @@ func interact(value: String) -> void:
 			elif selected_pawn != null:
 				if selected_pawn is NpcPlayerScript:
 					if !selected_pawn.automatic:
-						selected_pawn.set_movement_target(raycast.get_collision_point())
+						selected_pawn.set_movement_target(raycast.get_collision_point(), true)
 						if collider is ItemPickable:
 							collider.call("interact", selected_pawn)
 		"Item":

@@ -103,6 +103,6 @@ func footstep(key: String):
 func target_follow():
 	cuffed_follow_timeout = true
 	for player in cuffed_players:
-		player.set_movement_target(global_position)
+		player.set_movement_target(global_position, true)
 	await get_tree().create_timer(2.5).timeout
 	cuffed_follow_timeout = false
