@@ -1,0 +1,465 @@
+[gd_scene load_steps=22 format=3 uid="uid://chnnptw23qv0f"]
+
+[ext_resource type="Texture2D" uid="uid://cdjajvgo1o0ov" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/OfficeCeiling001_2K_Color.png" id="1_3cdg6"]
+[ext_resource type="Texture2D" uid="uid://di8wo3djqxdg5" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/OfficeCeiling001_2K_Metalness-OfficeCeiling001_2K_Roughness.png" id="2_7lamc"]
+[ext_resource type="Texture2D" uid="uid://bk25fkxh1rj1d" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/OfficeCeiling001_2K_NormalGL.png" id="3_t12d6"]
+[ext_resource type="Texture2D" uid="uid://b8pg4uioakn4r" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Color.png" id="4_khxi2"]
+[ext_resource type="Texture2D" uid="uid://dv0ipv0joknjs" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Roughness.png" id="5_l6ir2"]
+[ext_resource type="Texture2D" uid="uid://dqs80ucj4ltoe" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_NormalGL.png" id="6_220nd"]
+[ext_resource type="MeshLibrary" uid="uid://3c3mdx2n53ak" path="res://Assets/Tiles/site_modular.tres" id="11_pfv60"]
+[ext_resource type="PackedScene" uid="uid://dk6afsf7jh72a" path="res://Assets/ExternalModels/office_desk_with_drawers.tscn" id="13_emqxm"]
+[ext_resource type="PackedScene" uid="uid://bf4jphfua16vt" path="res://Assets/ExternalModels/monitor.tscn" id="14_kjtda"]
+[ext_resource type="PackedScene" uid="uid://delt0t2y8yrlr" path="res://Assets/ExternalModels/computer_2.tscn" id="15_eyx2m"]
+[ext_resource type="PackedScene" uid="uid://dcq4vbbnd0ldc" path="res://Assets/ExternalModels/keyboard.tscn" id="16_qf7d4"]
+[ext_resource type="PackedScene" uid="uid://bvmbksyl1hdmd" path="res://Assets/OriginalModels/lamp_2_small.tscn" id="18_ia20v"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_g34jd"]
+vertices = PackedVector3Array(8.0117, 0.268746, -1.74, 8.2617, 0.268746, -2.24, 8.0117, 0.268746, -3.49, 0.5117, 0.268746, -3.49, 0.5117, 0.268746, -1.74, -7.9883, 0.268746, -9.74, -8.2383, 0.268746, -7.99, -8.2383, 0.268746, -7.49, -0.7383, 0.268746, -7.49, 0.7617, 0.268746, -9.49, -0.9883, 0.268746, -4.99, -7.9883, 0.268746, -4.99, -7.9883, 0.268746, -3.99, -0.9883, 0.268746, -3.99, -0.9883, 0.268746, -1.24, 0.7617, 0.268746, 4.26, 0.5117, 0.268746, 1.76, -0.7383, 0.268746, 2.26, -0.7383, 0.268746, 6.01, 0.5117, 0.268746, 8.01, 0.7617, 0.268746, 5.51, -7.9883, 0.268746, -1.24, -7.9883, 0.268746, -0.24, -0.9883, 0.268746, -0.24, 0.5117, 0.268746, 0.26, -7.9883, 0.268746, 6.26, -7.9883, 0.268746, 7.26, -0.9883, 0.268746, 7.26, -0.9883, 0.268746, 3.76, -0.7383, 0.268746, 9.76, 8.0117, 0.268746, 1.76, 8.0117, 0.268746, 0.51, 1.0117, 0.268746, 0.76, -8.2383, 0.268746, 2.26, -7.9883, 0.268746, 3.76, 8.0117, 0.268746, -9.24, 8.0117, 0.268746, -9.74, 8.0117, 0.268746, 5.51, 8.0117, 0.268746, 4.01, 0.7617, 0.268746, -6.99, 8.0117, 0.268746, 9.76, 8.0117, 0.268746, 8.26, 0.7617, 0.268746, -5.99, 8.0117, 0.268746, -5.74, 8.0117, 0.268746, -7.24, 3.7617, 1.51875, 6.51, 3.7617, 1.51875, 7.26, 4.2617, 1.51875, 7.01, 4.2617, 1.51875, 6.51)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(6, 5, 7), PackedInt32Array(7, 5, 8), PackedInt32Array(8, 5, 9), PackedInt32Array(13, 12, 10), PackedInt32Array(10, 12, 11), PackedInt32Array(4, 14, 3), PackedInt32Array(3, 14, 13), PackedInt32Array(3, 13, 8), PackedInt32Array(13, 10, 8), PackedInt32Array(16, 15, 17), PackedInt32Array(17, 15, 20), PackedInt32Array(17, 20, 18), PackedInt32Array(18, 20, 19), PackedInt32Array(23, 22, 14), PackedInt32Array(14, 22, 21), PackedInt32Array(4, 24, 14), PackedInt32Array(14, 24, 23), PackedInt32Array(23, 24, 16), PackedInt32Array(23, 16, 17), PackedInt32Array(26, 25, 27), PackedInt32Array(27, 25, 18), PackedInt32Array(18, 28, 17), PackedInt32Array(18, 19, 27), PackedInt32Array(27, 19, 29), PackedInt32Array(31, 30, 32), PackedInt32Array(32, 30, 16), PackedInt32Array(28, 34, 17), PackedInt32Array(17, 34, 33), PackedInt32Array(16, 24, 32), PackedInt32Array(36, 35, 9), PackedInt32Array(20, 15, 37), PackedInt32Array(37, 15, 38), PackedInt32Array(5, 36, 9), PackedInt32Array(9, 39, 8), PackedInt32Array(8, 39, 3), PackedInt32Array(41, 40, 19), PackedInt32Array(19, 40, 29), PackedInt32Array(39, 44, 42), PackedInt32Array(42, 44, 43), PackedInt32Array(39, 42, 3), PackedInt32Array(48, 47, 45), PackedInt32Array(45, 47, 46)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktjsw"]
+resource_name = "Material.004"
+cull_mode = 2
+albedo_texture = ExtResource("1_3cdg6")
+metallic = 1.0
+metallic_texture = ExtResource("2_7lamc")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_7lamc")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_t12d6")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vxarj"]
+_surfaces = [{
+"aabb": AABB(-10, 6.99613, -10, 20, 1e-05, 20),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0),
+"name": "Material.004",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hv5c7"]
+resource_name = "lc_room2_offices_Plane_005"
+_surfaces = [{
+"aabb": AABB(-10, 6.99613, -10, 20, 1e-05, 20),
+"attribute_data": PackedByteArray(50, 51, 255, 255, 255, 255, 255, 255, 50, 51, 50, 51, 255, 255, 50, 51),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_ktjsw"),
+"name": "Material.004",
+"primitive": 3,
+"uv_scale": Vector4(5, 5, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 255, 63, 255, 255, 0, 0, 255, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_vxarj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bs0r8"]
+resource_name = "Material.013"
+cull_mode = 2
+albedo_texture = ExtResource("4_khxi2")
+metallic_texture = ExtResource("5_l6ir2")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("5_l6ir2")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("6_220nd")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_nwhm4"]
+_surfaces = [{
+"aabb": AABB(-10.2383, 3.75556e-07, -10.2383, 20.4766, 1e-05, 20.4766),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Material.013",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6xns2"]
+resource_name = "lc_room2_offices_Plane_008"
+_surfaces = [{
+"aabb": AABB(-10.2383, 3.75556e-07, -10.2383, 20.4766, 1e-05, 20.4766),
+"attribute_data": PackedByteArray(61, 50, 255, 255, 254, 255, 255, 255, 61, 50, 61, 50, 255, 255, 61, 50),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_bs0r8"),
+"name": "Material.013",
+"primitive": 3,
+"uv_scale": Vector4(5.09532, 5.09532, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 254, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_nwhm4")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ed6n8"]
+data = PackedVector3Array(-10, 6.9961, 10, 10, 6.9961, -10, -10, 6.9961, -10, -10, 6.9961, 10, 10, 6.9961, 10, 10, 6.9961, -10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mv7n6"]
+data = PackedVector3Array(-10.2383, 0, 10.2383, 10.2383, 0, -10.2383, 10.2383, 0, 10.2383, -10.2383, 0, 10.2383, -10.2383, 0, -10.2383, 10.2383, 0, -10.2383)
+
+[node name="lc_room2_offices" type="StaticBody3D"]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_g34jd")
+
+[node name="Ceiling" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.394915, 0)
+visibility_range_end = 192.0
+mesh = SubResource("ArrayMesh_hv5c7")
+skeleton = NodePath("")
+
+[node name="Floor_001" type="MeshInstance3D" parent="NavigationRegion3D"]
+visibility_range_end = 192.0
+mesh = SubResource("ArrayMesh_6xns2")
+skeleton = NodePath("")
+
+[node name="office-desk-with-drawers" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.74743, 4.76837e-07, 6.88905)
+
+[node name="27-inch-monitor-with-movable-mount" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5325, 1.2719, 6.16235)
+
+[node name="Computer2" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.97698, 1.2719, 6.87331)
+
+[node name="ddskeyboard" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.53667, 1.2719, 7.13471)
+
+[node name="office-desk-with-drawers2" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.33737, 4.76837e-07, 6.88905)
+
+[node name="27-inch-monitor-with-movable-mount2" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.12244, 1.2719, 6.16235)
+
+[node name="Computer3" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56692, 1.2719, 6.87331)
+
+[node name="ddskeyboard2" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.12661, 1.2719, 7.13471)
+
+[node name="office-desk-with-drawers3" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.33737, 4.76837e-07, 2.97924)
+
+[node name="27-inch-monitor-with-movable-mount3" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.12244, 1.2719, 2.25254)
+
+[node name="Computer4" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56692, 1.2719, 2.96351)
+
+[node name="ddskeyboard3" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.12661, 1.2719, 3.2249)
+
+[node name="office-desk-with-drawers4" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.68864, 4.76837e-07, 2.97924)
+
+[node name="27-inch-monitor-with-movable-mount4" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.47371, 1.2719, 2.25254)
+
+[node name="Computer5" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.91818, 1.2719, 2.96351)
+
+[node name="ddskeyboard4" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47788, 1.2719, 3.2249)
+
+[node name="office-desk-with-drawers5" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.68864, 4.76837e-07, -0.665994)
+
+[node name="27-inch-monitor-with-movable-mount5" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.47371, 1.2719, -1.39269)
+
+[node name="Computer6" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.91818, 1.2719, -0.681728)
+
+[node name="ddskeyboard5" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47788, 1.2719, -0.420335)
+
+[node name="office-desk-with-drawers6" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.45496, 4.76837e-07, -0.665994)
+
+[node name="27-inch-monitor-with-movable-mount6" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.24003, 1.2719, -1.39269)
+
+[node name="Computer7" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68451, 1.2719, -0.681728)
+
+[node name="ddskeyboard6" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2442, 1.2719, -0.420335)
+
+[node name="office-desk-with-drawers7" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.45496, 4.76837e-07, -4.5758)
+
+[node name="27-inch-monitor-with-movable-mount7" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.24003, 1.2719, -5.3025)
+
+[node name="Computer8" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68451, 1.2719, -4.59154)
+
+[node name="ddskeyboard7" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2442, 1.2719, -4.33014)
+
+[node name="office-desk-with-drawers8" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65924, 4.76837e-07, -4.5758)
+
+[node name="27-inch-monitor-with-movable-mount8" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.44431, 1.2719, -5.3025)
+
+[node name="Computer9" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.88879, 1.2719, -4.59154)
+
+[node name="ddskeyboard8" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.44848, 1.2719, -4.33014)
+
+[node name="office-desk-with-drawers9" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65924, 4.76837e-07, -8.19164)
+
+[node name="27-inch-monitor-with-movable-mount9" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.44431, 1.2719, -8.91834)
+
+[node name="Computer10" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.88879, 1.2719, -8.20737)
+
+[node name="ddskeyboard9" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.44848, 1.2719, -7.94598)
+
+[node name="office-desk-with-drawers10" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.42556, 4.76837e-07, -8.19164)
+
+[node name="27-inch-monitor-with-movable-mount10" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.21063, 1.2719, -8.91834)
+
+[node name="Computer11" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65511, 1.2719, -8.20737)
+
+[node name="ddskeyboard10" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2148, 1.2719, -7.94598)
+
+[node name="office-desk-with-drawers11" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.89147, 4.76837e-07, -6.46818)
+
+[node name="27-inch-monitor-with-movable-mount11" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.67435, 1.2719, -5.74214)
+
+[node name="Computer12" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.12098, 1.2719, -6.4578)
+
+[node name="ddskeyboard11" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.68146, 1.2719, -6.7175)
+
+[node name="office-desk-with-drawers12" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.56962, 4.76837e-07, -6.47955)
+
+[node name="27-inch-monitor-with-movable-mount12" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.3525, 1.2719, -5.7535)
+
+[node name="Computer13" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.79913, 1.2719, -6.46916)
+
+[node name="ddskeyboard12" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.35961, 1.2719, -6.72886)
+
+[node name="office-desk-with-drawers13" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.55782, 4.76837e-07, -2.56976)
+
+[node name="27-inch-monitor-with-movable-mount13" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.34069, 1.2719, -1.84371)
+
+[node name="Computer14" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.78732, 1.2719, -2.55937)
+
+[node name="ddskeyboard13" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.3478, 1.2719, -2.81907)
+
+[node name="office-desk-with-drawers14" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.82087, 4.76837e-07, -2.55857)
+
+[node name="27-inch-monitor-with-movable-mount14" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.60375, 1.2719, -1.83252)
+
+[node name="Computer15" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.05038, 1.2719, -2.54818)
+
+[node name="ddskeyboard14" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.61086, 1.2719, -2.80789)
+
+[node name="office-desk-with-drawers15" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.80986, 4.76837e-07, 1.08665)
+
+[node name="27-inch-monitor-with-movable-mount15" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.59274, 1.2719, 1.81269)
+
+[node name="Computer16" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.03937, 1.2719, 1.09703)
+
+[node name="ddskeyboard15" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.59985, 1.2719, 0.837332)
+
+[node name="office-desk-with-drawers16" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.6644, 4.76837e-07, 1.07582)
+
+[node name="27-inch-monitor-with-movable-mount16" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.44728, 1.2719, 1.80187)
+
+[node name="Computer17" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.8939, 1.2719, 1.08621)
+
+[node name="ddskeyboard16" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.45439, 1.2719, 0.826503)
+
+[node name="office-desk-with-drawers17" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.65259, 4.76837e-07, 4.98561)
+
+[node name="27-inch-monitor-with-movable-mount17" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.43547, 1.2719, 5.71166)
+
+[node name="Computer18" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.8821, 1.2719, 4.996)
+
+[node name="ddskeyboard17" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.44258, 1.2719, 4.73629)
+
+[node name="office-desk-with-drawers18" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.76866, 4.76837e-07, 4.99635)
+
+[node name="27-inch-monitor-with-movable-mount18" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.55154, 1.2719, 5.7224)
+
+[node name="Computer19" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.99817, 1.2719, 5.00674)
+
+[node name="ddskeyboard18" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.55865, 1.2719, 4.74703)
+
+[node name="office-desk-with-drawers19" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.75775, 4.76837e-07, 8.61217)
+
+[node name="27-inch-monitor-with-movable-mount19" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.54062, 1.2719, 9.33822)
+
+[node name="Computer20" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.98725, 1.2719, 8.62256)
+
+[node name="ddskeyboard19" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.54773, 1.2719, 8.36285)
+
+[node name="office-desk-with-drawers20" parent="NavigationRegion3D" instance=ExtResource("13_emqxm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.61228, 4.76837e-07, 8.60134)
+
+[node name="27-inch-monitor-with-movable-mount20" parent="NavigationRegion3D" instance=ExtResource("14_kjtda")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.39515, 1.2719, 9.32739)
+
+[node name="Computer21" parent="NavigationRegion3D" instance=ExtResource("15_eyx2m")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.84178, 1.2719, 8.61173)
+
+[node name="ddskeyboard20" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.40226, 1.2719, 8.35202)
+
+[node name="GridMap" type="GridMap" parent="NavigationRegion3D"]
+mesh_library = ExtResource("11_pfv60")
+cell_size = Vector3(2.56, 2.16, 5.12)
+bake_navigation = true
+data = {
+"cells": PackedInt32Array(65539, 65534, 1, 65539, 65535, 1, 65539, 0, 1, 65539, 1, 1, 131068, 1, 655361, 131068, 0, 655361, 131068, 65535, 655361, 131068, 65534, 655361)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.394915, 0)
+shape = SubResource("ConcavePolygonShape3D_ed6n8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+shape = SubResource("ConcavePolygonShape3D_mv7n6")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." groups=["ReflectionProbes"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00867462, 3.53318, -0.0290222)
+size = Vector3(19.7021, 7.3418, 19.942)
+box_projection = true
+interior = true
+
+[node name="NavigationLink3D" type="NavigationLink3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.60873)
+end_position = Vector3(0, 0, 3)
+
+[node name="NavigationLink3D2" type="NavigationLink3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.64157)
+end_position = Vector3(0, 0, -3)
+
+[node name="entityspawn" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.31256, 0, 1.18182)
+
+[node name="entityspawn2" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73539, 0, 1.18182)
+
+[node name="entityspawn7" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.31256, 0, 4.83899)
+
+[node name="entityspawn8" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73539, 0, 4.83899)
+
+[node name="entityspawn9" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.31256, 0, 8.56809)
+
+[node name="entityspawn10" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73539, 0, 8.56809)
+
+[node name="entityspawn11" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48032, 0, 6.67181)
+
+[node name="entityspawn12" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05749, 0, 6.67181)
+
+[node name="entityspawn13" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48032, 0, 2.97232)
+
+[node name="entityspawn14" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05749, 0, 2.97232)
+
+[node name="entityspawn15" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48032, 0, -0.626334)
+
+[node name="entityspawn16" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05749, 0, -0.626334)
+
+[node name="entityspawn17" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48032, 0, -4.51901)
+
+[node name="entityspawn18" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05749, 0, -4.51901)
+
+[node name="entityspawn19" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48032, 0, -8.44326)
+
+[node name="entityspawn20" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05749, 0, -8.44326)
+
+[node name="entityspawn21" type="Marker3D" parent="." groups=["AgentSpawn"]]
+
+[node name="entityspawn3" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73539, 0, -2.32024)
+
+[node name="entityspawn4" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.83878, 0, -2.32024)
+
+[node name="entityspawn5" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.83878, 0, -6.27002)
+
+[node name="entityspawn6" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2628, 0, -6.27002)
+
+[node name="playerspawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.42009, 0)
+
+[node name="Lamp2" parent="." instance=ExtResource("18_ia20v")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 6.601, 0)

@@ -3,6 +3,8 @@ extends Node
 ## Created by Yni, licensed under MIT License
 class_name AppManager
 
+var package_path: String = ""
+
 ## Called when the node enters the scene tree for the first time.
 func _ready():
 	Settings.touchscreen = DisplayServer.is_touchscreen_available()
@@ -13,19 +15,12 @@ func _ready():
 	#pass
 
 ## Loads the game from package
-func play(package_name: String, seed: String):
-	if package_name.is_empty() || package_name == null:
+func play(seed: String):
+	if package_path.is_empty() || package_path == null:
 		alert("Select resource pack to play. E.g. \"Site19\"")
 		return
 	$CanvasLayer/ColorRect.show()
-	var dir = DirAccess.open("res://ResourcePacks/" + package_name + "/")
-	if !dir:
-		# Load the game, if the package is missing
-		if !Settings.load_resource_pack(package_name + ".pck"):
-			alert("Pack not found in base dir. You need to download this pack from trusted source...")
-			$CanvasLayer/ColorRect.hide()
-			return
-	var game: GameCore = load("res://ResourcePacks/" + package_name + "/Scenes/Game.tscn").instantiate()
+	var game: GameCore = load(package_path + "/Scenes/Game.tscn").instantiate()
 	game.seed = seed
 	get_tree().root.add_child(game, true)
 	self.queue_free()

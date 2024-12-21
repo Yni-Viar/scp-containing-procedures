@@ -1,0 +1,153 @@
+[gd_scene load_steps=8 format=3 uid="uid://i5haaf1g1dh5"]
+
+[ext_resource type="Script" path="res://GodotMod/UserProfiles.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://d3lru236n27rm" path="res://GodotMod/ModList.tscn" id="3"]
+[ext_resource type="Theme" uid="uid://4k2un7nm7xc6" path="res://UITheme.tres" id="3_nqsx8"]
+[ext_resource type="FontFile" uid="uid://j45d6xc2rd07" path="res://Assets/Fonts/Home Video/HomeVideo-Regular.otf" id="4_n70uf"]
+[ext_resource type="FontFile" uid="uid://c8jcxghj24ekt" path="res://Assets/Fonts/JetBrainsMono/JetBrainsMono-Regular.ttf" id="5"]
+[ext_resource type="Script" path="res://GodotMod/PopupNewProfile.gd" id="6_bka7n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3b1m2"]
+
+[node name="UserProfilePopup" type="PanelContainer"]
+material = SubResource("ShaderMaterial_3b1m2")
+custom_minimum_size = Vector2(600, 480)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -86.5
+offset_right = 86.0
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="LabelSelectProfile" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_n70uf")
+text = "Select Profile"
+
+[node name="ProfileSelection" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ProfileSelect" type="OptionButton" parent="MarginContainer/VBoxContainer/ProfileSelection"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_nqsx8")
+theme_override_fonts/font = ExtResource("5")
+
+[node name="ButtonNewProfile" type="Button" parent="MarginContainer/VBoxContainer/ProfileSelection"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_nqsx8")
+theme_override_fonts/font = ExtResource("5")
+text = " + "
+
+[node name="ButtonDeleteProfile" type="Button" parent="MarginContainer/VBoxContainer/ProfileSelection"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_nqsx8")
+theme_override_fonts/font = ExtResource("5")
+text = " - "
+
+[node name="ProfileSettings" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/ProfileSettings"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ProfileSettings/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LabelProfileSettings" type="Label" parent="MarginContainer/VBoxContainer/ProfileSettings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_n70uf")
+text = "Profile Settings"
+
+[node name="UserProfileSections" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ProfileSettings/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ModList" parent="MarginContainer/VBoxContainer/ProfileSettings/ScrollContainer/VBoxContainer/UserProfileSections" instance=ExtResource("3")]
+layout_mode = 2
+
+[node name="InfoText" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5")
+
+[node name="PopupNewProfile" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("6_bka7n")
+
+[node name="MarginContainer" type="MarginContainer" parent="PopupNewProfile"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupNewProfile/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupNewProfile/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ProfileName" type="MarginContainer" parent="PopupNewProfile/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupNewProfile/MarginContainer/VBoxContainer/VBoxContainer/ProfileName"]
+layout_mode = 2
+
+[node name="LabelProfileName" type="Label" parent="PopupNewProfile/MarginContainer/VBoxContainer/VBoxContainer/ProfileName/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5")
+text = "Profile Name"
+
+[node name="InputProfileName" type="LineEdit" parent="PopupNewProfile/MarginContainer/VBoxContainer/VBoxContainer/ProfileName/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5")
+
+[node name="ButtonProfileNameSubmit" type="Button" parent="PopupNewProfile/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5")
+text = "OK"
+
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/ProfileSelection/ProfileSelect" to="." method="_on_ProfileSelect_item_selected"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ProfileSelection/ButtonNewProfile" to="." method="_on_ButtonNewProfile_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ProfileSelection/ButtonDeleteProfile" to="." method="_on_ButtonDeleteProfile_pressed"]
+[connection signal="mod_current_config_changed" from="MarginContainer/VBoxContainer/ProfileSettings/ScrollContainer/VBoxContainer/UserProfileSections/ModList" to="." method="_on_ModList_mod_current_config_changed"]
+[connection signal="mod_is_active_changed" from="MarginContainer/VBoxContainer/ProfileSettings/ScrollContainer/VBoxContainer/UserProfileSections/ModList" to="." method="_on_ModList_mod_is_active_changed"]
+[connection signal="pressed" from="PopupNewProfile/MarginContainer/VBoxContainer/VBoxContainer/ButtonProfileNameSubmit" to="." method="_on_ButtonProfileNameSubmit_pressed"]

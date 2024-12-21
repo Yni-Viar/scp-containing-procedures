@@ -11,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://b82a218to832v" path="res://PlayerController/PlayerClassResources/DClass.tres" id="8_rlaxo"]
 [ext_resource type="PackedScene" uid="uid://8ik28au1k20l" path="res://PlayerController/Player.tscn" id="9_sdft4"]
 [ext_resource type="Resource" uid="uid://kt10qm1d2rht" path="res://PlayerController/PlayerClassResources/MtfAgent.tres" id="10_g0fi8"]
-[ext_resource type="PackedScene" uid="uid://cmk1qm8xtuio8" path="res://ResourcePacks/Site19/DynamicObjects/InventoryItems/Prefabs/ItemScp018.tscn" id="11_46kds"]
+[ext_resource type="PackedScene" uid="uid://cmk1qm8xtuio8" path="res://mods-unpacked/YniViar-Site19/DynamicObjects/InventoryItems/Prefabs/ItemScp018.tscn" id="11_46kds"]
 [ext_resource type="Script" path="res://Scripts/ObjectSystem.gd" id="12_pyp3s"]
 [ext_resource type="PackedScene" uid="uid://0wmneehv5nxx" path="res://DynamicObjects/InventoryItems/Prefabs/ItemDisarmer.tscn" id="13_cn34n"]
 

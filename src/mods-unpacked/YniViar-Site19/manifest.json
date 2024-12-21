@@ -1,0 +1,19 @@
+{
+	"name": "Site19",
+	"namespace": "YniViar",
+	"version_number": "0.1.0",
+	"description": "Site-19 is one of the largest facilities of the SCP Foundation.",
+	"website_url": "https://yni-viar.github.io/",
+	"dependencies": [
+	],
+	"extra": {
+		"godot": {
+			"authors": ["YniViar"],
+			"tags": ["scp", "official"],
+			"description_rich": "",
+			"compatible_mod_loader_version": ["6.2.0"],
+			"compatible_game_version": ["0.1.0"],
+			"config_schema": {}
+		}
+	}
+}

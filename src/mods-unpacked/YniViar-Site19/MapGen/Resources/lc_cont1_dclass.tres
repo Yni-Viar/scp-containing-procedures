@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MapGenRoom" load_steps=7 format=3 uid="uid://wc1esgdjfh2u"]
+
+[ext_resource type="PackedScene" uid="uid://criloulyapm1r" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room1/lc_cont_1_dclass.tscn" id="1_3xdse"]
+[ext_resource type="Script" path="res://MapGen/MapGenRoom.gd" id="1_hsbfi"]
+[ext_resource type="Texture2D" uid="uid://bi4nebr7ijp27" path="res://mods-unpacked/YniViar-Site19/Assets/HUD/MapGen/room1_Dclass.png" id="1_j5iyu"]
+[ext_resource type="Texture2D" uid="uid://b0d5dhxqples1" path="res://mods-unpacked/YniViar-Site19/Assets/HUD/MapGen/room1_Dclass_180.png" id="2_vrg4d"]
+[ext_resource type="Texture2D" uid="uid://doh1ktwmjibr3" path="res://mods-unpacked/YniViar-Site19/Assets/HUD/MapGen/room1_Dclass_270.png" id="3_dorq8"]
+[ext_resource type="Texture2D" uid="uid://bm5gxfepjmpwa" path="res://mods-unpacked/YniViar-Site19/Assets/HUD/MapGen/room1_Dclass_90.png" id="4_7d6yf"]
+
+[resource]
+script = ExtResource("1_hsbfi")
+name = "lc_cont1_dclass"
+prefab = ExtResource("1_3xdse")
+icon_0_degrees = ExtResource("4_7d6yf")
+icon_90_degrees = ExtResource("1_j5iyu")
+icon_180_degrees = ExtResource("3_dorq8")
+icon_270_degrees = ExtResource("2_vrg4d")
+spawn_chance = 100.0

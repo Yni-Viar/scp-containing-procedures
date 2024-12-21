@@ -14,7 +14,7 @@ resource_remaps={}
 
 config/name="SCP: Containing Procedures"
 config/description="Contain the SCP and study them!"
-config/version="0.0.2"
+config/version="0.1.0"
 config/tags=PackedStringArray("game", "scp_foundation", "singleplayer")
 run/main_scene="res://Scenes/Main.tscn"
 config/use_custom_user_dir=true
@@ -26,6 +26,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
+ModLoaderStore="*res://addons/mod_loader/mod_loader_store.gd"
+ModLoader="*res://addons/mod_loader/mod_loader.gd"
 ResourceStorage="*res://Scripts/ResourceStorage.gd"
 GDsh="*res://GDsh/GDsh.gd"
 Settings="*res://Scripts/Settings.gd"
@@ -49,16 +51,10 @@ folder_colors={
 "res://Dialogues/": "orange",
 "res://DynamicObjects/": "yellow",
 "res://GDsh/": "blue",
+"res://GodotMod/": "green",
 "res://MapGen/": "green",
 "res://Modules/tgpy.default-gamemode/Scenes/": "orange",
 "res://PlayerController/": "red",
-"res://ResourcePacks/": "teal",
-"res://ResourcePacks/Site19/Assets/": "orange",
-"res://ResourcePacks/Site19/DynamicObjects/": "yellow",
-"res://ResourcePacks/Site19/MapGen/": "green",
-"res://ResourcePacks/Site19/PlayerController/": "red",
-"res://ResourcePacks/Site19/Scenes/": "orange",
-"res://ResourcePacks/Site19/Sounds/": "purple",
 "res://Scenes/": "orange",
 "res://Scripts/": "green",
 "res://Shaders/": "green",
@@ -67,7 +63,15 @@ folder_colors={
 "res://Translations/": "gray",
 "res://UI/": "orange",
 "res://addons/": "pink",
-"res://android/": "teal"
+"res://android/": "teal",
+"res://mods-unpacked/": "teal",
+"res://mods-unpacked/YniViar-Site19/Assets/": "orange",
+"res://mods-unpacked/YniViar-Site19/DynamicObjects/": "yellow",
+"res://mods-unpacked/YniViar-Site19/MapGen/": "green",
+"res://mods-unpacked/YniViar-Site19/PlayerController/": "red",
+"res://mods-unpacked/YniViar-Site19/Scenes/": "orange",
+"res://mods-unpacked/YniViar-Site19/Sounds/": "purple",
+"res://mods/": "teal"
 }
 
 [filesystem]

@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="MapGenZone" load_steps=18 format=3 uid="uid://7prvjngodfs1"]
+
+[ext_resource type="Script" path="res://MapGen/MapGenRoomResource.gd" id="1_mti3u"]
+[ext_resource type="Script" path="res://MapGen/MapGenRoom.gd" id="1_obfoh"]
+[ext_resource type="Resource" uid="uid://dkax2pgmsnpbr" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_room2C.tres" id="1_rpggd"]
+[ext_resource type="Resource" uid="uid://defw3e0yk60rh" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_room4.tres" id="2_665au"]
+[ext_resource type="Resource" uid="uid://b37rwv0xm0dm7" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_room2c_offices.tres" id="3_fsbel"]
+[ext_resource type="Resource" uid="uid://dto18wf3e4ol4" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_cont1_testroom.tres" id="3_oukqp"]
+[ext_resource type="PackedScene" uid="uid://q2tdo2cgx0jc" path="res://Assets/Rooms/passages/site_19_passage_small_cb.tscn" id="5_1dug7"]
+[ext_resource type="Resource" uid="uid://cjkhvveue1tae" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_room2.tres" id="5_gpbd2"]
+[ext_resource type="Resource" uid="uid://cs2tk6fwt6jl1" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_room2_vent.tres" id="6_ppfcp"]
+[ext_resource type="PackedScene" uid="uid://bd3hdgm2owxtu" path="res://Assets/Rooms/passages/site_19_passage_middle.tscn" id="6_wxx52"]
+[ext_resource type="PackedScene" uid="uid://d13gbq4kth043" path="res://Assets/Rooms/passages/site_19_passage_wide.tscn" id="7_oyk2h"]
+[ext_resource type="Resource" uid="uid://cyce2xtlyr7nk" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_cont1_173.tres" id="8_3udfn"]
+[ext_resource type="Resource" uid="uid://c3khhgpfxarm1" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_cont2_scps.tres" id="8_7fj7o"]
+[ext_resource type="Resource" uid="uid://wc1esgdjfh2u" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_cont1_dclass.tres" id="8_636qo"]
+[ext_resource type="Resource" uid="uid://bla6b2yt4icpi" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_room2_offices.tres" id="10_f6hik"]
+[ext_resource type="Resource" uid="uid://bx5nj144uqlqs" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_room3.tres" id="10_lyern"]
+[ext_resource type="Resource" uid="uid://dl83ef3lsmvh2" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_cont2_650.tres" id="14_uxfll"]
+
+[resource]
+script = ExtResource("1_mti3u")
+endrooms = Array[ExtResource("1_obfoh")]([ExtResource("3_oukqp")])
+endrooms_single = Array[ExtResource("1_obfoh")]([ExtResource("8_3udfn")])
+endrooms_single_large = Array[ExtResource("1_obfoh")]([ExtResource("8_636qo")])
+hallways = Array[ExtResource("1_obfoh")]([ExtResource("5_gpbd2"), ExtResource("6_ppfcp"), ExtResource("10_f6hik")])
+hallways_single = Array[ExtResource("1_obfoh")]([ExtResource("8_7fj7o"), ExtResource("14_uxfll")])
+hallways_single_large = Array[ExtResource("1_obfoh")]([])
+corners = Array[ExtResource("1_obfoh")]([ExtResource("1_rpggd")])
+corners_single = Array[ExtResource("1_obfoh")]([ExtResource("3_fsbel")])
+corners_single_large = Array[ExtResource("1_obfoh")]([])
+trooms = Array[ExtResource("1_obfoh")]([ExtResource("10_lyern")])
+trooms_single = Array[ExtResource("1_obfoh")]([])
+trooms_single_large = Array[ExtResource("1_obfoh")]([])
+crossrooms = Array[ExtResource("1_obfoh")]([ExtResource("2_665au")])
+crossrooms_single = Array[ExtResource("1_obfoh")]([])
+door_frames = Array[PackedScene]([ExtResource("5_1dug7"), ExtResource("6_wxx52"), ExtResource("7_oyk2h")])

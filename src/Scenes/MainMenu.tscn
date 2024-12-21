@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6010fhhdn46b"]
+[gd_scene load_steps=12 format=3 uid="uid://b6010fhhdn46b"]
 
 [ext_resource type="Script" path="res://Scripts/UI/MainMenu.gd" id="1_xwo58"]
 [ext_resource type="Texture2D" uid="uid://boboxmvoqy61t" path="res://Assets/Menu/MainMenuForeground.png" id="2_647vp"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="3_lej4w"]
 [ext_resource type="Theme" uid="uid://4k2un7nm7xc6" path="res://UITheme.tres" id="5_gi3lh"]
+[ext_resource type="PackedScene" uid="uid://i5haaf1g1dh5" path="res://GodotMod/UserProfiles.tscn" id="6_0a2ky"]
 [ext_resource type="PackedScene" uid="uid://bjbe75eis8tu6" path="res://Scenes/Settings.tscn" id="6_0nqn5"]
-[ext_resource type="Script" path="res://Scripts/UI/StartupPanel.gd" id="6_b7otj"]
+[ext_resource type="Script" path="res://GodotMod/ModListSimple.gd" id="6_k1n4w"]
+[ext_resource type="FontFile" uid="uid://j45d6xc2rd07" path="res://Assets/Fonts/Home Video/HomeVideo-Regular.otf" id="9_oobko"]
 [ext_resource type="Texture2D" uid="uid://cplgika3kesri" path="res://UI/back_button.png" id="10_h2lxg"]
 [ext_resource type="Texture2D" uid="uid://ccnlq2hm3wbsa" path="res://UI/back_button_disabled.png" id="11_uc1g4"]
 
@@ -77,57 +79,13 @@ text = "EXIT"
 [node name="Settings" parent="." instance=ExtResource("6_0nqn5")]
 visible = false
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.35
-anchor_top = -0.022
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -3.05176e-05
-offset_top = 15.84
-grow_horizontal = 0
-grow_vertical = 2
-script = ExtResource("6_b7otj")
+[node name="WelcomePanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="ZonesToSearch" type="ItemList" parent="Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.444
-offset_bottom = 0.319977
-grow_horizontal = 2
-
-[node name="Seed" type="LineEdit" parent="Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = -24.0
-offset_right = 160.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-placeholder_text = "Seed"
-
-[node name="Play" type="Button" parent="Panel"]
-layout_mode = 2
-anchor_left = 0.851
-anchor_top = 0.5
-anchor_right = 0.851
-anchor_bottom = 0.5
-offset_left = -116.032
-offset_top = -24.0
-offset_right = 115.968
-offset_bottom = 26.0
-theme = ExtResource("5_gi3lh")
-theme_override_font_sizes/font_size = 24
-text = "PLAY"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+[node name="RichTextLabel" type="RichTextLabel" parent="WelcomePanel"]
 custom_minimum_size = Vector2(0, 256)
 layout_mode = 1
 anchors_preset = 7
@@ -135,9 +93,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -416.0
-offset_top = -312.0
-offset_right = 416.0
+offset_left = 428.0
+offset_top = 368.0
+offset_right = 1260.0
+offset_bottom = 680.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/bold_italics_font_size = 20
@@ -153,6 +112,70 @@ text = "[b]v.0.1.0 (Alpha)[/b]
 - Reworked some rooms
 - The game is now playable, since the tasks subsystem got implemented. Currently, there is only 1 SCP-173 task...
 - Implemented gameovers."
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = -0.022
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.05176e-05
+offset_top = 15.84
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.711
+offset_bottom = 0.0799866
+script = ExtResource("6_k1n4w")
+
+[node name="Seed" type="LineEdit" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.606
+anchor_top = 0.944
+anchor_right = 0.606
+anchor_bottom = 0.944
+offset_left = -120.192
+offset_top = -23.6801
+offset_right = 119.808
+offset_bottom = 24.3199
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Seed"
+
+[node name="Play" type="Button" parent="Panel"]
+layout_mode = 2
+anchor_left = 0.885
+anchor_top = 0.943
+anchor_right = 0.885
+anchor_bottom = 0.943
+offset_left = -92.3201
+offset_top = -24.96
+offset_right = 91.6799
+offset_bottom = 25.04
+theme = ExtResource("5_gi3lh")
+theme_override_font_sizes/font_size = 24
+text = "PLAY"
+
+[node name="UserProfilePopup" parent="." instance=ExtResource("6_0a2ky")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 480.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="CreditsPanel" type="Panel" parent="."]
 visible = false
@@ -390,9 +413,26 @@ text = "[i]Sounds and music[/i]
 "
 fit_content = true
 
+[node name="NoAssetsWarn" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.622
+anchor_bottom = 0.622
+offset_top = -63.84
+offset_right = 448.0
+offset_bottom = 64.16
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.72666, 0.72666, 0, 1)
+theme_override_fonts/font = ExtResource("9_oobko")
+theme_override_font_sizes/font_size = 20
+text = "No asset packs have been detected!
+Please, download them from the
+official resources"
+
 [connection signal="pressed" from="Title/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Title/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Title/Exit" to="." method="_on_exit_pressed"]
-[connection signal="item_selected" from="Panel/ZonesToSearch" to="Panel" method="_on_zones_to_search_item_selected"]
+[connection signal="item_selected" from="Panel/ItemList" to="Panel/ItemList" method="_on_item_selected"]
 [connection signal="pressed" from="Panel/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CreditsPanel/CreditsBack" to="." method="_on_credits_back_pressed"]

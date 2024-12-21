@@ -15,6 +15,7 @@ dest_files=["res://.godot/imported/Tektur_SemiCondensed-Black.ttf-eeb15b1c5e37ac
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3lru236n27rm"]
+
+[ext_resource type="Script" path="res://GodotMod/ModList.gd" id="1"]
+[ext_resource type="PackedScene" path="res://GodotMod/components/IsActiveToggle.tscn" id="2"]
+[ext_resource type="FontFile" uid="uid://j45d6xc2rd07" path="res://Assets/Fonts/Home Video/HomeVideo-Regular.otf" id="3"]
+[ext_resource type="PackedScene" path="res://GodotMod/components/CurrentConfigSelect.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://GodotMod/components/ModIdLabel.tscn" id="5"]
+
+[node name="ModList" type="MarginContainer"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 1264.0
+offset_bottom = 704.0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1")
+mod_id_label_scene = ExtResource("5")
+is_active_toggle_scene = ExtResource("2")
+current_config_select_scene = ExtResource("4")
+
+[node name="Grid" type="GridContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 50
+columns = 3
+
+[node name="LabelModName" type="Label" parent="Grid"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 20
+text = "Module Name"
+
+[node name="LabelActiveState" type="Label" parent="Grid"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 20
+text = "active"
+
+[node name="LabelCurrentConfig" type="Label" parent="Grid"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 20
+text = "current config"

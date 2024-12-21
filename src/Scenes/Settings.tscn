@@ -240,26 +240,30 @@ max_value = 5.0
 step = 0.001
 value = 2.0
 
+[node name="AssetsLabel" type="Label" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page2"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "ASSETS"
+
+[node name="LoadAsset" type="Button" parent="SettingsPanel/ScrollContainer/HBoxContainer/Page2"]
+visible = false
+layout_mode = 2
+text = "LOAD_ASSET"
+
 [node name="SoundTest" type="AudioStreamPlayer" parent="SettingsPanel"]
 stream = ExtResource("4_n8hvh")
 
-[node name="Label" type="Label" parent="SettingsPanel"]
-visible = false
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -311.0
-offset_top = -47.0
-offset_bottom = 54.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Beginning with 0.6.1,
-the settings are auto-saving,
-when you toggle buttons.
-As for now, \"Save\" button is deprecated."
+[node name="FileDialog" type="FileDialog" parent="SettingsPanel"]
+title = "Open a File"
+position = Vector2i(32, 60)
+size = Vector2i(640, 480)
+theme = ExtResource("3_2qins")
+ok_button_text = "Open"
+dialog_hide_on_ok = true
+file_mode = 0
+access = 2
+filters = PackedStringArray("*pck")
 
 [connection signal="pressed" from="SettingsPanel/Back" to="SettingsPanel" method="_on_back_pressed"]
 [connection signal="item_selected" from="SettingsPanel/ScrollContainer/HBoxContainer/Page1/LanguageSet" to="SettingsPanel" method="_on_language_set_item_selected"]
@@ -280,3 +284,5 @@ As for now, \"Save\" button is deprecated."
 [connection signal="drag_ended" from="SettingsPanel/ScrollContainer/HBoxContainer/Page2/MusicSet" to="SettingsPanel" method="_on_music_set_drag_ended"]
 [connection signal="drag_ended" from="SettingsPanel/ScrollContainer/HBoxContainer/Page2/SoundSet" to="SettingsPanel" method="_on_sound_set_drag_ended"]
 [connection signal="drag_ended" from="SettingsPanel/ScrollContainer/HBoxContainer/Page2/MouseSensSet" to="SettingsPanel" method="_on_mouse_sens_set_drag_ended"]
+[connection signal="pressed" from="SettingsPanel/ScrollContainer/HBoxContainer/Page2/LoadAsset" to="SettingsPanel" method="_on_load_asset_pressed"]
+[connection signal="file_selected" from="SettingsPanel/FileDialog" to="SettingsPanel" method="_on_file_dialog_file_selected"]

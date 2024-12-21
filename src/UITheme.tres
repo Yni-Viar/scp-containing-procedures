@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=48 format=4 uid="uid://4k2un7nm7xc6"]
+[gd_resource type="Theme" load_steps=49 format=4 uid="uid://4k2un7nm7xc6"]
 
 [ext_resource type="Texture2D" uid="uid://bekswppq1xt0q" path="res://UI/checkbox_checked.png" id="1_87lyl"]
 [ext_resource type="Texture2D" uid="uid://p1j6j64jc3wd" path="res://UI/toggle_on.png" id="1_nhrs4"]
@@ -23,6 +23,10 @@
 [ext_resource type="StyleBox" uid="uid://dhj513crv55v4" path="res://UI/Window_Inactive.tres" id="22_5fj3l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25ss1"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
 bg_color = Color(0, 0, 0, 0.501961)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
@@ -30,6 +34,10 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7x8vx"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 4
 border_width_right = 4
@@ -40,6 +48,10 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_od5hp"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 4
 border_width_right = 4
@@ -49,6 +61,10 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1ivu"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
 bg_color = Color(0.0605303, 0.0605303, 0.0605303, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
@@ -56,6 +72,10 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tg2v8"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
 bg_color = Color(0.129412, 0.129412, 0.129412, 1)
 border_width_left = 4
 border_width_right = 4
@@ -2297,6 +2317,9 @@ content_margin_top = 4.0
 content_margin_right = 6.0
 content_margin_bottom = 4.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6n4hn"]
+bg_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtt1y"]
 bg_color = Color(0.517647, 0.85098, 1, 1)
 
@@ -2387,6 +2410,7 @@ CheckButton/styles/focus = SubResource("StyleBoxFlat_pufs0")
 CheckButton/styles/hover = SubResource("StyleBoxFlat_nm05y")
 CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_jpqen")
 CheckButton/styles/normal = SubResource("StyleBoxEmpty_jpqen")
+FileDialog/styles/panel = SubResource("StyleBoxFlat_6n4hn")
 HSlider/icons/grabber = ExtResource("16_kowog")
 HSlider/icons/grabber_disabled = ExtResource("17_yryu7")
 HSlider/icons/grabber_highlight = ExtResource("18_8bltl")
