@@ -125,6 +125,7 @@ func device_check():
 		$ScrollContainer/HBoxContainer/Page1/ResolutionLabel.hide()
 		$ScrollContainer/HBoxContainer/Page1/WindowSizeSet.hide()
 		$ScrollContainer/HBoxContainer/Page1/OverrideResolution.hide()
+		$FileDialog.root_subfolder = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
 	if OS.is_debug_build() && !OS.has_feature("editor") && OS.get_name() != "Web" && get_parent().get_parent().name == "MainMenu":
 		$ScrollContainer/HBoxContainer/Page2/AssetsLabel.show()
 		$ScrollContainer/HBoxContainer/Page2/LoadAsset.show()
@@ -224,6 +225,11 @@ func _on_load_asset_pressed() -> void:
 
 
 func _on_file_dialog_file_selected(path: String) -> void:
-	Settings.select_and_save(path)
-	if get_parent().get_parent().get_node_or_null("Panel") != null:
-		get_parent().get_parent().get_node("Panel").refresh()
+	if path.containsn(".zip"):
+		var d: DirAccess = DirAccess.open(ModLoaderSetupUtils.get_local_folder_dir())
+		d.copy(path, ModLoaderSetupUtils.get_local_folder_dir() + "/" + path.get_file())
+		get_tree().root.get_node("Main").alert("You need to restart the game to see the effects")
+		if OS.get_name() != "Android" || OS.get_name() != "Web":
+			OS.set_restart_on_exit(true)
+	else:
+		get_tree().root.get_node("Main").alert("error")

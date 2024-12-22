@@ -114,6 +114,3 @@ func save_resource(res):
 			#print("An error occurred when trying to access the path.")
 	#return packs
 #
-#func select_and_save(pack_path: String):
-	#var d = DirAccess.open(_check_dir)
-	#d.copy(pack_path, _check_dir + "/" + pack_path.get_file())

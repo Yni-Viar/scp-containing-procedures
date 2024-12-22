@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cqh6tjpsub0jn"]
+[gd_scene load_steps=21 format=3 uid="uid://cqh6tjpsub0jn"]
 
 [ext_resource type="Texture2D" uid="uid://cdjajvgo1o0ov" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/OfficeCeiling001_2K_Color.png" id="1_2sg0d"]
 [ext_resource type="Texture2D" uid="uid://di8wo3djqxdg5" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/OfficeCeiling001_2K_Metalness-OfficeCeiling001_2K_Roughness.png" id="2_yiyrl"]
@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://b8pg4uioakn4r" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Color.png" id="4_2jbgb"]
 [ext_resource type="Texture2D" uid="uid://dv0ipv0joknjs" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Roughness.png" id="5_x7djl"]
 [ext_resource type="Texture2D" uid="uid://dqs80ucj4ltoe" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_NormalGL.png" id="6_73q13"]
-[ext_resource type="MeshLibrary" uid="uid://3c3mdx2n53ak" path="res://Assets/Tiles/site_modular.tres" id="7_w77kx"]
+[ext_resource type="Script" path="res://Scripts/RandomizeWall.gd" id="8_54c2k"]
+[ext_resource type="PackedScene" uid="uid://dw5tp1m774hil" path="res://Assets/Rooms/passages/site_19_wall_cb.tscn" id="9_0kw1p"]
+[ext_resource type="PackedScene" uid="uid://dv0obl3bf2u6p" path="res://Assets/Rooms/passages/site_19_wall_lcz_3.tscn" id="10_7v5f8"]
+[ext_resource type="ArrayOccluder3D" uid="uid://dr12knj2qqt67" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room2/occ/lc_room_2_hallway.occ" id="11_wh6vo"]
 [ext_resource type="PackedScene" uid="uid://bvmbksyl1hdmd" path="res://Assets/OriginalModels/lamp_2_small.tscn" id="13_w3fo2"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_harou"]
@@ -122,15 +125,6 @@ visibility_range_end = 192.0
 mesh = SubResource("ArrayMesh_8qu4q")
 skeleton = NodePath("")
 
-[node name="GridMap" type="GridMap" parent="NavigationRegion3D"]
-mesh_library = ExtResource("7_w77kx")
-cell_size = Vector3(2.56, 2.16, 5.12)
-bake_navigation = true
-data = {
-"cells": PackedInt32Array(131070, 1, 655361, 131070, 0, 655361, 131070, 65535, 655361, 131070, 65534, 655361, 65537, 1, 1, 65537, 0, 1, 65537, 65535, 1, 65537, 65534, 1)
-}
-metadata/_editor_floor_ = Vector3(0, 1, 0)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.394915, 0)
 shape = SubResource("ConcavePolygonShape3D_d8lia")
@@ -157,3 +151,18 @@ end_position = Vector3(0, 0, -3)
 
 [node name="playerspawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37702, 0)
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.798, 0, -7.68)
+script = ExtResource("8_54c2k")
+walls_to_spawn = Array[PackedScene]([ExtResource("9_0kw1p"), ExtResource("10_7v5f8")])
+axis = 1
+
+[node name="Marker3D2" type="Marker3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.707, 0, 7.68)
+script = ExtResource("8_54c2k")
+walls_to_spawn = Array[PackedScene]([ExtResource("9_0kw1p"), ExtResource("10_7v5f8")])
+axis = 1
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("11_wh6vo")

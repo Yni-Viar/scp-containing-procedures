@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://dqfw02tqafmdr"]
+[gd_scene load_steps=44 format=4 uid="uid://dqfw02tqafmdr"]
 
 [ext_resource type="Texture2D" uid="uid://cdjajvgo1o0ov" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/OfficeCeiling001_2K_Color.png" id="1_iljnc"]
 [ext_resource type="Texture2D" uid="uid://di8wo3djqxdg5" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/OfficeCeiling001_2K_Metalness-OfficeCeiling001_2K_Roughness.png" id="2_t506a"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://delt0t2y8yrlr" path="res://Assets/ExternalModels/computer_2.tscn" id="18_ldxjb"]
 [ext_resource type="PackedScene" uid="uid://bf4jphfua16vt" path="res://Assets/ExternalModels/monitor.tscn" id="19_6kr4e"]
 [ext_resource type="PackedScene" uid="uid://dcq4vbbnd0ldc" path="res://Assets/ExternalModels/keyboard.tscn" id="20_f6x8d"]
+[ext_resource type="ArrayOccluder3D" uid="uid://fyrmxnabni25" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room2/occ/lc_cont_2_scps.occ" id="20_p7t15"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_xmxyv"]
 vertices = PackedVector3Array(-2.2383, 0.490586, -0.7383, -3.2383, 0.490586, -0.4883, -3.2383, 0.490586, 0.5117, -2.2383, 0.490586, 0.7617, 2.2617, 0.490586, 0.7617, 1.7617, 0.490586, -9.7383, -1.7383, 0.490586, -9.7383, -2.2383, 0.490586, -9.2383, 2.5117, 0.490586, -7.2383, 2.2617, 0.490586, -9.2383, 9.2617, 0.490586, -8.2383, 4.0117, 0.490586, -8.2383, 3.7617, 0.490586, -0.4883, 4.0117, 0.490586, 8.7617, 9.2617, 0.490586, 8.7617, -3.9883, 0.490586, -0.7383, -3.9883, 0.490586, 0.7617, -9.2383, 0.490586, 3.2617, -5.9883, 0.490586, 3.5117, -3.9883, 0.490586, -7.2383, -9.2383, 0.490586, -6.9883, -6.2383, 0.490586, 6.0117, -9.2383, 0.490586, 6.0117, -9.2383, 0.490586, 8.2617, -3.9883, 0.490586, 8.2617, -2.4883, 0.490586, 7.2617, -2.2383, 0.490586, 9.2617, -1.7383, 0.490586, 9.7617, 1.7617, 0.490586, 9.7617, 2.2617, 0.490586, 9.2617)
@@ -440,3 +441,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2399, 0, 6.58473)
 
 [node name="playerspawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37702, 0)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("20_p7t15")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://46htewkeotsw"]
+[gd_scene load_steps=34 format=4 uid="uid://46htewkeotsw"]
 
 [ext_resource type="Texture2D" uid="uid://b8pg4uioakn4r" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Color.png" id="1_rs0dq"]
 [ext_resource type="Texture2D" uid="uid://dv0ipv0joknjs" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Roughness.png" id="2_0penw"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://4vt75jeyrq3g" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/SheetMetal001_2K-PNG_NormalGL.png" id="9_1h7ho"]
 [ext_resource type="Texture2D" uid="uid://c7euhyglo1q1j" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/beige_wall_001_rough_2k.png" id="10_gy40b"]
 [ext_resource type="Texture2D" uid="uid://dwpt2xs1rrv1" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/beige_wall_001_nor_gl_2k.png" id="11_47hgu"]
+[ext_resource type="ArrayOccluder3D" uid="uid://dlx36g5xui4hi" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room2c/occ/lc_room_2c_corner.occ" id="13_73vuj"]
 [ext_resource type="PackedScene" uid="uid://bvmbksyl1hdmd" path="res://Assets/OriginalModels/lamp_2_small.tscn" id="13_hwmam"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_am87t"]
@@ -373,3 +374,6 @@ end_position = Vector3(3, 0, 0)
 
 [node name="playerspawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.954907, 2.37702, 1.90126)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("13_73vuj")

@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://cxmnvd5xm22h5" path="res://Assets/HUD/Touch/open_map_click.png" id="9_vl0ry"]
 [ext_resource type="Texture2D" uid="uid://k1uddjj347va" path="res://Assets/HUD/Touch/point_a_unit_click.png" id="10_kgdq5"]
 [ext_resource type="Texture2D" uid="uid://bcfqo37gvsf4d" path="res://Assets/HUD/Touch/open_map_disabled.png" id="10_rqfbe"]
-[ext_resource type="Script" path="res://MapGen/MapGenRoomResource.gd" id="10_yrip0"]
 [ext_resource type="Resource" uid="uid://7prvjngodfs1" path="res://mods-unpacked/YniViar-Site19/MapGen/site19.tres" id="11_j075c"]
 [ext_resource type="Texture2D" uid="uid://i7frmo7y2knr" path="res://Assets/HUD/Touch/point_a_unit_disabled.png" id="11_qnc31"]
 [ext_resource type="Script" path="res://Scripts/FPSCounter.gd" id="11_vy51m"]
@@ -30,6 +29,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/InventoryUI.gd" id="16_ukffn"]
 [ext_resource type="Theme" uid="uid://4k2un7nm7xc6" path="res://UITheme.tres" id="17_wwvuy"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="23_2c3ra"]
+[ext_resource type="Script" path="res://MapGen/MapGenZone.gd" id="26_g8onj"]
 [ext_resource type="Script" path="res://Scripts/FoundationTasks/FoundationTaskManager.gd" id="28_0euyq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xi0ky"]
@@ -390,8 +390,9 @@ text = "EXIT"
 
 [node name="FacilityGenerator" type="Node3D" parent="."]
 script = ExtResource("9_3ruab")
-rooms = Array[ExtResource("10_yrip0")]([ExtResource("11_j075c")])
+rooms = Array[ExtResource("26_g8onj")]([ExtResource("11_j075c")])
 large_rooms = true
+better_zone_generation = false
 
 [node name="Spectator" parent="." instance=ExtResource("14_jqsvl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 12.274, 32)

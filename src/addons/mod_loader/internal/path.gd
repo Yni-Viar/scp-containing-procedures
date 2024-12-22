@@ -23,7 +23,9 @@ static func get_game_install_dir() -> String:
 		game_install_directory = game_install_directory.get_base_dir().get_base_dir()
 		if game_install_directory.ends_with(".app"):
 			game_install_directory = game_install_directory.get_base_dir()
-
+	
+	elif OS.get_name() == "Android":
+		game_install_directory = "user://"
 	# Fix for running the game through the Godot editor (as the EXE path would be
 	# the editor's own EXE, which won't have any mod ZIPs)
 	# if OS.is_debug_build():
@@ -166,7 +168,7 @@ static func get_dir_paths_in_dir(src_dir_path: String) -> Array:
 
 # Get the path to the mods folder, with any applicable overrides applied
 static func get_path_to_mods() -> String:
-	var mods_folder_path := get_local_folder_dir("mods")
+	var mods_folder_path := get_local_folder_dir()
 	if ModLoaderStore:
 		if ModLoaderStore.ml_options.override_path_to_mods:
 			mods_folder_path = ModLoaderStore.ml_options.override_path_to_mods

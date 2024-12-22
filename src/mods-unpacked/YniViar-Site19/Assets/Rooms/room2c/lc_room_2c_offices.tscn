@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://bvludt3pcnunj"]
+[gd_scene load_steps=39 format=4 uid="uid://bvludt3pcnunj"]
 
 [ext_resource type="Texture2D" uid="uid://b8pg4uioakn4r" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Color.png" id="1_66sco"]
 [ext_resource type="Texture2D" uid="uid://dv0ipv0joknjs" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Roughness.png" id="2_ij273"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dcq4vbbnd0ldc" path="res://Assets/ExternalModels/keyboard.tscn" id="19_sou2j"]
 [ext_resource type="PackedScene" uid="uid://bmx15r6k1yni1" path="res://Assets/ExternalModels/SteelFrameShelves03.tscn" id="20_0424j"]
 [ext_resource type="PackedScene" uid="uid://3uxnw561tlh4" path="res://Assets/ExternalModels/plant.tscn" id="21_qf54h"]
+[ext_resource type="ArrayOccluder3D" uid="uid://b6mkhv28t4cgt" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room2c/occ/lc_room_2c_offices.occ" id="22_wtjjx"]
 [ext_resource type="PackedScene" uid="uid://brw1pbnyucy41" path="res://Assets/OriginalModels/omnidotplush.tscn" id="23_lb14e"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_mmbpc"]
@@ -319,3 +320,6 @@ transform = Transform3D(-0.445042, 0, 0.89551, 0, 1, 0, -0.89551, 0, -0.445042, 
 
 [node name="playerspawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.93648, 2.37702, 2.53712)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("22_wtjjx")

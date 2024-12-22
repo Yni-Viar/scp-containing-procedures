@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://d13gbq4kth043"]
+[gd_scene load_steps=8 format=4 uid="uid://d13gbq4kth043"]
 
 [ext_resource type="Texture2D" uid="uid://cv5cqhwy3nssg" path="res://Assets/Rooms/passages/LCZ_Modular/beige_wall_001_rough_2k.png" id="1_7g7y2"]
 [ext_resource type="Texture2D" uid="uid://oeg7v3jx04je" path="res://Assets/Rooms/passages/LCZ_Modular/beige_wall_001_nor_gl_2k.png" id="2_jdrch"]
+[ext_resource type="ArrayOccluder3D" uid="uid://bg6p11juq527p" path="res://Assets/Rooms/passages/site_19_passage_wide.occ" id="3_avrdp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dkio8"]
 resource_name = "lczwall"
@@ -60,3 +61,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_1f1il")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("3_avrdp")

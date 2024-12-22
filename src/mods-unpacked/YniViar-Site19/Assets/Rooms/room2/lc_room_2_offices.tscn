@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://chnnptw23qv0f"]
+[gd_scene load_steps=25 format=3 uid="uid://chnnptw23qv0f"]
 
 [ext_resource type="Texture2D" uid="uid://cdjajvgo1o0ov" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/OfficeCeiling001_2K_Color.png" id="1_3cdg6"]
 [ext_resource type="Texture2D" uid="uid://di8wo3djqxdg5" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/OfficeCeiling001_2K_Metalness-OfficeCeiling001_2K_Roughness.png" id="2_7lamc"]
@@ -6,10 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://b8pg4uioakn4r" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Color.png" id="4_khxi2"]
 [ext_resource type="Texture2D" uid="uid://dv0ipv0joknjs" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Roughness.png" id="5_l6ir2"]
 [ext_resource type="Texture2D" uid="uid://dqs80ucj4ltoe" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_NormalGL.png" id="6_220nd"]
-[ext_resource type="MeshLibrary" uid="uid://3c3mdx2n53ak" path="res://Assets/Tiles/site_modular.tres" id="11_pfv60"]
+[ext_resource type="Script" path="res://Scripts/RandomizeWall.gd" id="12_7jfsj"]
 [ext_resource type="PackedScene" uid="uid://dk6afsf7jh72a" path="res://Assets/ExternalModels/office_desk_with_drawers.tscn" id="13_emqxm"]
+[ext_resource type="PackedScene" uid="uid://dw5tp1m774hil" path="res://Assets/Rooms/passages/site_19_wall_cb.tscn" id="13_qcgay"]
+[ext_resource type="PackedScene" uid="uid://dv0obl3bf2u6p" path="res://Assets/Rooms/passages/site_19_wall_lcz_3.tscn" id="14_4nsqm"]
 [ext_resource type="PackedScene" uid="uid://bf4jphfua16vt" path="res://Assets/ExternalModels/monitor.tscn" id="14_kjtda"]
 [ext_resource type="PackedScene" uid="uid://delt0t2y8yrlr" path="res://Assets/ExternalModels/computer_2.tscn" id="15_eyx2m"]
+[ext_resource type="ArrayOccluder3D" uid="uid://bqodoc2f8xwgw" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room2/occ/lc_room_2_offices.occ" id="15_n3rpi"]
 [ext_resource type="PackedScene" uid="uid://dcq4vbbnd0ldc" path="res://Assets/ExternalModels/keyboard.tscn" id="16_qf7d4"]
 [ext_resource type="PackedScene" uid="uid://bvmbksyl1hdmd" path="res://Assets/OriginalModels/lamp_2_small.tscn" id="18_ia20v"]
 
@@ -366,15 +369,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.841
 [node name="ddskeyboard20" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.40226, 1.2719, 8.35202)
 
-[node name="GridMap" type="GridMap" parent="NavigationRegion3D"]
-mesh_library = ExtResource("11_pfv60")
-cell_size = Vector3(2.56, 2.16, 5.12)
-bake_navigation = true
-data = {
-"cells": PackedInt32Array(65539, 65534, 1, 65539, 65535, 1, 65539, 0, 1, 65539, 1, 1, 131068, 1, 655361, 131068, 0, 655361, 131068, 65535, 655361, 131068, 65534, 655361)
-}
-metadata/_editor_floor_ = Vector3(0, 1, 0)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.394915, 0)
 shape = SubResource("ConcavePolygonShape3D_ed6n8")
@@ -463,3 +457,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.42009, 0)
 
 [node name="Lamp2" parent="." instance=ExtResource("18_ia20v")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 6.601, 0)
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7, 0, -7.68)
+script = ExtResource("12_7jfsj")
+walls_to_spawn = Array[PackedScene]([ExtResource("13_qcgay"), ExtResource("14_4nsqm")])
+axis = 1
+
+[node name="Marker3D2" type="Marker3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.926, 0, 7.68)
+script = ExtResource("12_7jfsj")
+walls_to_spawn = Array[PackedScene]([ExtResource("13_qcgay"), ExtResource("14_4nsqm")])
+axis = 1
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("15_n3rpi")

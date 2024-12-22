@@ -263,7 +263,6 @@ ok_button_text = "Open"
 dialog_hide_on_ok = true
 file_mode = 0
 access = 2
-filters = PackedStringArray("*pck")
 
 [connection signal="pressed" from="SettingsPanel/Back" to="SettingsPanel" method="_on_back_pressed"]
 [connection signal="item_selected" from="SettingsPanel/ScrollContainer/HBoxContainer/Page1/LanguageSet" to="SettingsPanel" method="_on_language_set_item_selected"]

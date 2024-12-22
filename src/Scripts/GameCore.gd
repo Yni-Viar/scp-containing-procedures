@@ -25,6 +25,7 @@ func _process(delta):
 func quit():
 	Settings.first_start = true
 	get_tree().change_scene_to_file("res://Scenes/Main.tscn")
+	queue_free()
 
 func load_settings():
 	$WorldEnvironment.environment.ssao_enabled = Settings.setting_res.ssao
