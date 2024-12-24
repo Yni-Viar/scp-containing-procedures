@@ -82,3 +82,17 @@ func interact(value: String) -> void:
 					var collider = raycast.get_collider()
 					if collider is NpcSelection:
 						item.call("use", selected_pawn, collider.get_parent())
+
+func _on_vision_area_body_entered(body: Node3D) -> void:
+	if body is NpcSelection:
+		var npc = body.get_parent()
+		if npc is NpcPlayerScript:
+			# Unfortunately, a hack is needed, because Occlusion Culling cannot handle this.
+			npc.visible_on_screen = true
+
+func _on_vision_area_body_exited(body: Node3D) -> void:
+	if body is NpcSelection:
+		var npc = body.get_parent()
+		if npc is NpcPlayerScript:
+			# Unfortunately, a hack is needed, because Occlusion Culling cannot handle this.
+			npc.visible_on_screen = false

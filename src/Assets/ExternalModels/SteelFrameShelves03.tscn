@@ -1,11 +1,11 @@
 [gd_scene load_steps=18 format=4 uid="uid://bmx15r6k1yni1"]
 
-[ext_resource type="Texture2D" uid="uid://ckur8suft3hco" path="res://Assets/Models/SteelFrameShelves03_UlanCabanilla_CC0/textures/steel_frame_shelves_03_diff_2k.jpg" id="1_jth4a"]
-[ext_resource type="Texture2D" uid="uid://cdie3116i4yrk" path="res://Assets/Models/SteelFrameShelves03_UlanCabanilla_CC0/textures/steel_frame_shelves_03_arm_2k.jpg" id="2_ywlpt"]
-[ext_resource type="Texture2D" uid="uid://bcb74e2p6ydth" path="res://Assets/Models/SteelFrameShelves03_UlanCabanilla_CC0/textures/steel_frame_shelves_03_nor_gl_2k.jpg" id="3_im1ek"]
-[ext_resource type="Texture2D" uid="uid://f80g2tdrc66b" path="res://Assets/Models/SteelFrameShelves03_UlanCabanilla_CC0/textures/steel_frame_shelves_03_drawers_diff_2k.jpg" id="4_ntwim"]
-[ext_resource type="Texture2D" uid="uid://bcjfroy70vn1p" path="res://Assets/Models/SteelFrameShelves03_UlanCabanilla_CC0/textures/steel_frame_shelves_03_drawers_arm_2k.jpg" id="5_8f6yt"]
-[ext_resource type="Texture2D" uid="uid://dtcwj1hpxsyr2" path="res://Assets/Models/SteelFrameShelves03_UlanCabanilla_CC0/textures/steel_frame_shelves_03_drawers_nor_gl_2k.jpg" id="6_6afg7"]
+[ext_resource type="Texture2D" uid="uid://ckur8suft3hco" path="res://Assets/ExternalModels/SteelFrameShelves03_UlanCabanilla_CC0/textures/steel_frame_shelves_03_diff_2k.jpg" id="1_jth4a"]
+[ext_resource type="Texture2D" uid="uid://cdie3116i4yrk" path="res://Assets/ExternalModels/SteelFrameShelves03_UlanCabanilla_CC0/textures/steel_frame_shelves_03_arm_2k.jpg" id="2_ywlpt"]
+[ext_resource type="Texture2D" uid="uid://bcb74e2p6ydth" path="res://Assets/ExternalModels/SteelFrameShelves03_UlanCabanilla_CC0/textures/steel_frame_shelves_03_nor_gl_2k.jpg" id="3_im1ek"]
+[ext_resource type="Texture2D" uid="uid://f80g2tdrc66b" path="res://Assets/ExternalModels/SteelFrameShelves03_UlanCabanilla_CC0/textures/steel_frame_shelves_03_drawers_diff_2k.jpg" id="4_ntwim"]
+[ext_resource type="Texture2D" uid="uid://bcjfroy70vn1p" path="res://Assets/ExternalModels/SteelFrameShelves03_UlanCabanilla_CC0/textures/steel_frame_shelves_03_drawers_arm_2k.jpg" id="5_8f6yt"]
+[ext_resource type="Texture2D" uid="uid://dtcwj1hpxsyr2" path="res://Assets/ExternalModels/SteelFrameShelves03_UlanCabanilla_CC0/textures/steel_frame_shelves_03_drawers_nor_gl_2k.jpg" id="6_6afg7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jp37b"]
 resource_name = "steel_frame_shelves_03"
@@ -200,6 +200,7 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="steel_frame_shelves_03" type="MeshInstance3D" parent="Mesh"]
 ignore_occlusion_culling = true
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_utc1r")
 skeleton = NodePath("")
 
@@ -211,17 +212,20 @@ shape = SubResource("ConcavePolygonShape3D_2vc8u")
 [node name="steel_frame_shelves_03_drawer_01" type="MeshInstance3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.514684, 0.58449, 0.330426)
 ignore_occlusion_culling = true
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_qguxf")
 skeleton = NodePath("")
 
 [node name="steel_frame_shelves_03_drawer_02" type="MeshInstance3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.514684, 0.468432, 0.330426)
 ignore_occlusion_culling = true
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_34f04")
 skeleton = NodePath("")
 
 [node name="steel_frame_shelves_03_drawer_03" type="MeshInstance3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.514684, 0.350966, 0.330426)
 ignore_occlusion_culling = true
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_svsfp")
 skeleton = NodePath("")

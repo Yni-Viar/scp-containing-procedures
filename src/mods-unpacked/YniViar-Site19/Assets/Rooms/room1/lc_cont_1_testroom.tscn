@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://b61wqoib0cvdy"]
+[gd_scene load_steps=33 format=4 uid="uid://b61wqoib0cvdy"]
 
 [ext_resource type="Texture2D" uid="uid://c7euhyglo1q1j" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/beige_wall_001_rough_2k.png" id="1_s0dg4"]
 [ext_resource type="Texture2D" uid="uid://dwpt2xs1rrv1" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/beige_wall_001_nor_gl_2k.png" id="2_by3hs"]
@@ -9,9 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dv0ipv0joknjs" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Roughness.png" id="7_tooje"]
 [ext_resource type="Texture2D" uid="uid://dqs80ucj4ltoe" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_NormalGL.png" id="8_uawo1"]
 [ext_resource type="Script" path="res://Scripts/RandomizeWall.gd" id="11_q4i6c"]
-[ext_resource type="PackedScene" uid="uid://dw5tp1m774hil" path="res://Assets/Rooms/passages/site_19_wall_cb.tscn" id="12_w7510"]
-[ext_resource type="PackedScene" uid="uid://dv0obl3bf2u6p" path="res://Assets/Rooms/passages/site_19_wall_lcz_3.tscn" id="13_rnd86"]
-[ext_resource type="ArrayOccluder3D" uid="uid://cu24uxvtwetg2" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room1/occ/lc_cont_1_testroom.occ" id="14_bl4db"]
+[ext_resource type="PackedScene" uid="uid://dw5tp1m774hil" path="res://Assets/Rooms/passages/site_19_wall_cb.tscn" id="12_ymxtl"]
+[ext_resource type="PackedScene" uid="uid://dv0obl3bf2u6p" path="res://Assets/Rooms/passages/site_19_wall_lcz_3.tscn" id="13_k4rpx"]
 [ext_resource type="PackedScene" uid="uid://bvmbksyl1hdmd" path="res://Assets/OriginalModels/lamp_2_small.tscn" id="14_qw4rw"]
 [ext_resource type="PackedScene" uid="uid://dk6afsf7jh72a" path="res://Assets/ExternalModels/office_desk_with_drawers.tscn" id="15_2t1or"]
 
@@ -234,28 +233,28 @@ data = PackedVector3Array(-10, 0, 10.2383, 10, 0, -10.2383, 10, 0, 10.2383, -10,
 navigation_mesh = SubResource("NavigationMesh_kbo1f")
 
 [node name="Plane_003" type="MeshInstance3D" parent="NavigationRegion3D"]
-visibility_range_end = 192.0
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_4hb78")
 skeleton = NodePath("")
 
 [node name="Cube_001" type="MeshInstance3D" parent="NavigationRegion3D"]
-visibility_range_end = 192.0
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_ybs30")
 skeleton = NodePath("")
 
 [node name="DoorPath_002" type="MeshInstance3D" parent="NavigationRegion3D"]
-visibility_range_end = 192.0
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_cteq2")
 skeleton = NodePath("")
 
 [node name="Ceiling_001" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.468778, 0)
-visibility_range_end = 192.0
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_nvinr")
 skeleton = NodePath("")
 
 [node name="Floor" type="MeshInstance3D" parent="NavigationRegion3D"]
-visibility_range_end = 192.0
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_3hsf6")
 skeleton = NodePath("")
 
@@ -300,20 +299,15 @@ end_position = Vector3(0, 0, 3)
 [node name="entityspawn2" type="Marker3D" parent="." groups=["ScientistStaticSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.264, 0, -5.118)
 
-[node name="playerspawn" type="Marker3D" parent="."]
+[node name="playerspawn" type="Marker3D" parent="." groups=["PlayerSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37702, 0)
 
-[node name="Marker3D" type="Marker3D" parent="."]
+[node name="WallSpawner" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.528, 0, -7.68)
 script = ExtResource("11_q4i6c")
-walls_to_spawn = Array[PackedScene]([ExtResource("12_w7510"), ExtResource("13_rnd86")])
-axis = 1
+walls_to_spawn = Array[PackedScene]([ExtResource("12_ymxtl"), ExtResource("13_k4rpx")])
 
-[node name="Marker3D2" type="Marker3D" parent="."]
+[node name="WallSpawner2" type="Marker3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.559, 0, 7.68)
 script = ExtResource("11_q4i6c")
-walls_to_spawn = Array[PackedScene]([ExtResource("12_w7510"), ExtResource("13_rnd86")])
-axis = 1
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-occluder = ExtResource("14_bl4db")
+walls_to_spawn = Array[PackedScene]([ExtResource("12_ymxtl"), ExtResource("13_k4rpx")])

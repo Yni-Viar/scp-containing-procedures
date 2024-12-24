@@ -34,7 +34,6 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:site19_wall_cb_modern": {
-"generate/occluder": 1,
 "generate/physics": true
 }
 }

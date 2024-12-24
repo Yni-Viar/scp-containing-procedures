@@ -1,5 +1,9 @@
 # Changelog
 ## Pre-Alpha
+### v.0.1.1 (2024.12.25)
+- Fixed game hang, caused from Occlusion Culling overload.
+- Optimization.
+- Updated Main Menu.
 ### v.0.1.0 (2024.12.22)
 - You can now cuff players
 - Separated Site-19 content from the game core

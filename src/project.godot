@@ -14,7 +14,7 @@ resource_remaps={}
 
 config/name="SCP: Containing Procedures"
 config/description="Contain the SCP and study them!"
-config/version="0.1.0"
+config/version="0.1.1"
 config/tags=PackedStringArray("game", "scp_foundation", "singleplayer")
 run/main_scene="res://Scenes/Main.tscn"
 config/use_custom_user_dir=true
@@ -91,6 +91,7 @@ Lights=""
 GuardSpawn=""
 Scp650Spawn=""
 ScientistStaticSpawn=""
+PlayerSpawn=""
 
 [input]
 
@@ -254,7 +255,6 @@ renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 occlusion_culling/occlusion_rays_per_thread=256
 global_illumination/sdfgi/frames_to_update_lights=3
-occlusion_culling/use_occlusion_culling=true
 
 [threading]
 

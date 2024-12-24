@@ -33,10 +33,10 @@ func object_spawner(res: Resource, pos: Vector3):
 			if res is Item:
 				var item: ItemPickable = load(res.pickable_path).instantiate()
 				item.position = pos
-				add_child(item, true)
+				add_child(item)
 				items.append(item)
 		_:
-			printerr("Wrong type. Currently, only ENTITY is implemented...")
+			printerr("Wrong type. Currently, only ENTITY and ITEM is implemented...")
 
 func object_remover(name_of_object: String, post_mortem: bool = false):
 	match types:
@@ -51,4 +51,4 @@ func object_remover(name_of_object: String, post_mortem: bool = false):
 			items.erase(item)
 			item.queue_free()
 		_:
-			printerr("Wrong type. Currently, only ENTITY is implemented...")
+			printerr("Wrong type. Currently, only ENTITY and ITEM is implemented...")

@@ -133,16 +133,19 @@ shadow_mesh = SubResource("ArrayMesh_is5he")
 
 [node name="Case" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.323052, 0, 0, 0, 0.323052, 0, 0, 0, 0.323052, 0, 0.00355949, 0.00174991)
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_gp2f0")
 skeleton = NodePath("")
 
 [node name="Lamp" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.323052, 0, 0, 0, 0.323052, 0, 0, 0, 0.20465, 0, 0.00610747, 0.0464725)
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_qe64u")
 skeleton = NodePath("")
 
 [node name="Lamp_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.323052, 0, 0, 0, 0.323052, 0, 0, 0, 0.20465, 0, 0.00610747, -0.0404674)
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_00h50")
 skeleton = NodePath("")
 

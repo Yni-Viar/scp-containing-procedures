@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=4 uid="uid://dyg67wsc7o465"]
 
-[ext_resource type="Texture2D" uid="uid://buivicpa7u4ch" path="res://Assets/Models/SteelFrameShelves_JamesRayCock_CC0/textures/steel_frame_shelves_01_diff_2k.jpg" id="1_nbjd2"]
-[ext_resource type="Texture2D" uid="uid://cefe5ffb3ji0w" path="res://Assets/Models/SteelFrameShelves_JamesRayCock_CC0/textures/steel_frame_shelves_01_arm_2k.jpg" id="2_denqg"]
-[ext_resource type="Texture2D" uid="uid://dhkkke6kobnk" path="res://Assets/Models/SteelFrameShelves_JamesRayCock_CC0/textures/steel_frame_shelves_01_nor_gl_2k.jpg" id="3_4xfud"]
+[ext_resource type="Texture2D" uid="uid://buivicpa7u4ch" path="res://Assets/ExternalModels/SteelFrameShelves_JamesRayCock_CC0/textures/steel_frame_shelves_01_diff_2k.jpg" id="1_nbjd2"]
+[ext_resource type="Texture2D" uid="uid://cefe5ffb3ji0w" path="res://Assets/ExternalModels/SteelFrameShelves_JamesRayCock_CC0/textures/steel_frame_shelves_01_arm_2k.jpg" id="2_denqg"]
+[ext_resource type="Texture2D" uid="uid://dhkkke6kobnk" path="res://Assets/ExternalModels/SteelFrameShelves_JamesRayCock_CC0/textures/steel_frame_shelves_01_nor_gl_2k.jpg" id="3_4xfud"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jj0qy"]
 resource_name = "steel_frame_shelves_01"
@@ -57,6 +57,7 @@ data = PackedVector3Array(5.4844, 1.0427, -2.4065, 5.4872, 1.0548, -2.3787, 5.48
 
 [node name="steel_frame_shelves_01" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_k4t3t")
 skeleton = NodePath("")
 

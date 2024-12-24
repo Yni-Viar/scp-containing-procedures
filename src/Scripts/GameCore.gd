@@ -7,6 +7,8 @@ var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 @export var game_data: GameData
 @export var seed: String = ""
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$BackgroundMusic.stream = load(game_data.ambient_path)
@@ -24,8 +26,9 @@ func _process(delta):
 ## Quits from the game
 func quit():
 	Settings.first_start = true
-	get_tree().change_scene_to_file("res://Scenes/Main.tscn")
-	queue_free()
+	var main: Node = load("res://Scenes/Main.tscn").instantiate()
+	get_tree().root.add_child(main, true)
+	call_deferred("queue_free")
 
 func load_settings():
 	$WorldEnvironment.environment.ssao_enabled = Settings.setting_res.ssao
@@ -45,8 +48,11 @@ func load_settings():
 
 
 func _on_facility_generator_generated() -> void:
-	if get_node_or_null("FacilityGenerator/lc_cont1_testroom/playerspawn") != null:
-		$Spectator.global_position = get_node("FacilityGenerator/" + game_data.room_to_spawn + "/playerspawn").global_position
+	var player_spawns: Array[Node] = get_tree().get_nodes_in_group("PlayerSpawn")
+	if player_spawns.size() > 0:
+		var player_spawnpoint = player_spawns[rng.randi_range(0, player_spawns.size() - 1)]
+		if player_spawnpoint is Marker3D:
+			$Spectator.global_position = player_spawnpoint.global_position
 	startup_spawn()
 
 
@@ -56,8 +62,8 @@ func startup_spawn():
 		var used_spawns: Array[int] = []
 		if get_tree().get_nodes_in_group(puppet_res.spawn_point_group).size() == 0:
 			continue
-		for i in range(spawn_point_group.size()):
-			if i > puppet_res.initial_amount:
+		for i in range(puppet_res.initial_amount):
+			if i > spawn_point_group.size() - 1:
 				break
 			var random_number: int = rng.randi_range(0, spawn_point_group.size() - 1)
 			if used_spawns.has(random_number):
@@ -80,3 +86,6 @@ func alert(message: String):
 	var window: AcceptDialog = load("res://Assets/HUD/CustomAcceptDialog.tscn").instantiate()
 	window.dialog_text = message + "\n[ESC - Hide]"
 	add_child(window)
+
+func get_root_viewport() -> Viewport:
+	return get_viewport()

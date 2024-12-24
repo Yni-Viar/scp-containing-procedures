@@ -44,7 +44,12 @@ func _ready():
 
 
 func _on_play_pressed():
-	get_parent().get_parent().play($Panel/Seed.text)
+	if $Panel.visible:
+		$Panel.hide()
+		$WelcomePanel.show()
+	else:
+		$Panel.show()
+		$WelcomePanel.hide()
 
 
 func _on_settings_pressed():
@@ -61,3 +66,7 @@ func _on_exit_pressed():
 
 func _on_credits_back_pressed():
 	$CreditsPanel.hide()
+
+
+func _on_start_game_pressed() -> void:
+	get_parent().get_parent().play($Panel/Seed.text)

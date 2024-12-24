@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://46htewkeotsw"]
+[gd_scene load_steps=33 format=4 uid="uid://46htewkeotsw"]
 
 [ext_resource type="Texture2D" uid="uid://b8pg4uioakn4r" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Color.png" id="1_rs0dq"]
 [ext_resource type="Texture2D" uid="uid://dv0ipv0joknjs" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Roughness.png" id="2_0penw"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://4vt75jeyrq3g" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/SheetMetal001_2K-PNG_NormalGL.png" id="9_1h7ho"]
 [ext_resource type="Texture2D" uid="uid://c7euhyglo1q1j" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/beige_wall_001_rough_2k.png" id="10_gy40b"]
 [ext_resource type="Texture2D" uid="uid://dwpt2xs1rrv1" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/beige_wall_001_nor_gl_2k.png" id="11_47hgu"]
-[ext_resource type="ArrayOccluder3D" uid="uid://dlx36g5xui4hi" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room2c/occ/lc_room_2c_corner.occ" id="13_73vuj"]
 [ext_resource type="PackedScene" uid="uid://bvmbksyl1hdmd" path="res://Assets/OriginalModels/lamp_2_small.tscn" id="13_hwmam"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_am87t"]
@@ -310,25 +309,25 @@ data = PackedVector3Array(-2.4613, -0.0031, 9.9355, -8, 6.9969, 9.9355, -8, -0.0
 navigation_mesh = SubResource("NavigationMesh_am87t")
 
 [node name="Floor_002" type="MeshInstance3D" parent="NavigationRegion3D"]
-visibility_range_end = 192.0
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_imbs1")
 skeleton = NodePath("")
 
 [node name="Ceiling_001" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.390958, 0)
-visibility_range_end = 192.0
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_vb4f0")
 skeleton = NodePath("")
 
 [node name="LCZWallNeoCB2_006" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(0, 1, -4.37114e-08, 1, 0, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, -2.4311, 0.893586, 7.08189)
-visibility_range_end = 192.0
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_pvip3")
 skeleton = NodePath("")
 
 [node name="LCZWallNeoCB2_005" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(0, 0, -1, 1, 0, 0, 0, -1, 0, 6.92585, 0.893586, 2.58291)
-visibility_range_end = 192.0
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_h5vwv")
 skeleton = NodePath("")
 
@@ -372,8 +371,5 @@ end_position = Vector3(0, 0, 3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.52403, 0, -0.147345)
 end_position = Vector3(3, 0, 0)
 
-[node name="playerspawn" type="Marker3D" parent="."]
+[node name="playerspawn" type="Marker3D" parent="." groups=["PlayerSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.954907, 2.37702, 1.90126)
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-occluder = ExtResource("13_73vuj")

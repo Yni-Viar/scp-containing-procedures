@@ -70,10 +70,3 @@ collision_mask = 7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.145, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
-
-[node name="Optimizator" type="VisibleOnScreenNotifier3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32056, 0)
-aabb = AABB(-0.37751, -1.31971, -0.379407, 0.755021, 2.63942, 0.758815)
-
-[connection signal="screen_entered" from="Optimizator" to="." method="_on_optimizator_screen_entered"]
-[connection signal="screen_exited" from="Optimizator" to="." method="_on_optimizator_screen_exited"]

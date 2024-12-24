@@ -130,10 +130,3 @@ func hold_still():
 	wandering = false
 	await get_tree().create_timer(15.0).timeout
 	wandering = puppet_class.enable_wander
-
-func _on_optimizator_screen_entered() -> void:
-	visible_on_screen = true
-
-
-func _on_optimizator_screen_exited() -> void:
-	visible_on_screen = false

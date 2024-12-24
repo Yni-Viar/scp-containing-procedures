@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://qneqldi123li"]
+[gd_scene load_steps=57 format=4 uid="uid://qneqldi123li"]
 
 [ext_resource type="Texture2D" uid="uid://c7euhyglo1q1j" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/beige_wall_001_rough_2k.png" id="1_q4o7k"]
 [ext_resource type="Texture2D" uid="uid://dwpt2xs1rrv1" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/beige_wall_001_nor_gl_2k.png" id="2_aft7k"]
@@ -19,9 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://c1bmwla273g6e" path="res://Assets/Doors/Gate/Metal032_2K_NormalGL.png" id="19_qae0u"]
 [ext_resource type="Script" path="res://Scripts/ButtonSystem/DoorQuickOpener.gd" id="20_0q7v2"]
 [ext_resource type="Script" path="res://Scripts/RandomizeWall.gd" id="21_nrr7r"]
-[ext_resource type="PackedScene" uid="uid://dw5tp1m774hil" path="res://Assets/Rooms/passages/site_19_wall_cb.tscn" id="22_4a8lj"]
+[ext_resource type="PackedScene" uid="uid://dw5tp1m774hil" path="res://Assets/Rooms/passages/site_19_wall_cb.tscn" id="22_80s76"]
 [ext_resource type="Script" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room1/TaskScript/Scp173Task.gd" id="23_kfeuy"]
-[ext_resource type="ArrayOccluder3D" uid="uid://dfp02n7h3to3s" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room1/occ/lc_cont_1_173.occ" id="23_ory6x"]
 [ext_resource type="Script" path="res://Scripts/ScpAcceptableArea.gd" id="23_qadag"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_3jjqi"]
@@ -418,29 +417,29 @@ size = Vector3(17.3027, 7.33582, 20.0781)
 navigation_mesh = SubResource("NavigationMesh_3jjqi")
 
 [node name="DoorPath_002" type="MeshInstance3D" parent="NavigationRegion3D"]
-visibility_range_end = 192.0
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_xii8r")
 skeleton = NodePath("")
 
 [node name="Ceiling_001" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.468778, 0)
-visibility_range_end = 192.0
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_iqpwe")
 skeleton = NodePath("")
 
 [node name="Floor" type="MeshInstance3D" parent="NavigationRegion3D"]
-visibility_range_end = 192.0
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_vmp8e")
 skeleton = NodePath("")
 
 [node name="Cube_001" type="MeshInstance3D" parent="NavigationRegion3D"]
-visibility_range_end = 192.0
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_g3pji")
 skeleton = NodePath("")
 
 [node name="Cube" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99813, 0, -0.0653232)
-visibility_range_end = 192.0
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_up7sm")
 skeleton = NodePath("")
 
@@ -452,6 +451,7 @@ close_door_sounds = Array[String](["res://Sounds/Door/DoorClose.ogg"])
 
 [node name="Frame" type="MeshInstance3D" parent="NavigationRegion3D/GateFrame"]
 transform = Transform3D(1.12118, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_psdqn")
 skeleton = NodePath("")
 
@@ -463,6 +463,7 @@ shape = SubResource("ConcavePolygonShape3D_b7s75")
 
 [node name="Cube_001" type="MeshInstance3D" parent="NavigationRegion3D/GateFrame"]
 transform = Transform3D(1.12118, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_46j31")
 skeleton = NodePath("")
 
@@ -554,7 +555,7 @@ origin_offset = Vector3(0, 0, 4.7168)
 box_projection = true
 interior = true
 
-[node name="playerspawn" type="Marker3D" parent="."]
+[node name="playerspawn" type="Marker3D" parent="." groups=["PlayerSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37702, 5.97172)
 
 [node name="TaskArea" type="Area3D" parent="."]
@@ -566,14 +567,10 @@ script = ExtResource("23_kfeuy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.471771, 3.16791, 0.0439453)
 shape = SubResource("BoxShape3D_oh6dj")
 
-[node name="Marker3D" type="Marker3D" parent="."]
+[node name="WallSpawner" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.897, 0, -7.68)
 script = ExtResource("21_nrr7r")
-walls_to_spawn = Array[PackedScene]([ExtResource("22_4a8lj")])
-axis = 1
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-occluder = ExtResource("23_ory6x")
+walls_to_spawn = Array[PackedScene]([ExtResource("22_80s76")])
 
 [connection signal="body_entered" from="ScpAcceptableArea" to="ScpAcceptableArea" method="_on_body_entered"]
 [connection signal="body_entered" from="ScpAcceptableArea" to="TaskArea" method="_on_scp_acceptable_area_body_entered"]

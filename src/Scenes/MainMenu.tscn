@@ -58,6 +58,12 @@ theme_override_font_sizes/font_size = 48
 text = "SCP: Containing
 Procedures"
 
+[node name="Play" type="Button" parent="Title"]
+layout_mode = 2
+theme = ExtResource("5_gi3lh")
+theme_override_font_sizes/font_size = 24
+text = "PLAY"
+
 [node name="Settings" type="Button" parent="Title"]
 layout_mode = 2
 theme = ExtResource("5_gi3lh")
@@ -80,40 +86,36 @@ text = "EXIT"
 visible = false
 
 [node name="WelcomePanel" type="Panel" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = -0.011
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.05176e-05
+offset_top = 7.92
 
 [node name="RichTextLabel" type="RichTextLabel" parent="WelcomePanel"]
 custom_minimum_size = Vector2(0, 256)
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 428.0
-offset_top = 368.0
-offset_right = 1260.0
-offset_bottom = 680.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 theme_override_font_sizes/bold_italics_font_size = 20
 theme_override_font_sizes/italics_font_size = 20
 theme_override_font_sizes/mono_font_size = 20
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 20
 bbcode_enabled = true
-text = "[b]v.0.1.0 (Alpha)[/b]
-- You can now cuff players
-- Separated Site-19 content from the game core
-- Added wandering to humans (no longer stay still)
-- Reworked some rooms
-- The game is now playable, since the tasks subsystem got implemented. Currently, there is only 1 SCP-173 task...
-- Implemented gameovers."
+text = "[b]v.0.1.1 (Alpha)[/b]
+- Fixed game hang, caused from Occlusion Culling overload.
+- Optimization.
+- Updated Main Menu."
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.35
@@ -148,19 +150,15 @@ grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "Seed"
 
-[node name="Play" type="Button" parent="Panel"]
-layout_mode = 2
-anchor_left = 0.885
-anchor_top = 0.943
-anchor_right = 0.885
-anchor_bottom = 0.943
-offset_left = -92.3201
-offset_top = -24.96
-offset_right = 91.6799
-offset_bottom = 25.04
+[node name="StartGame" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 656.0
+offset_right = 816.0
+offset_bottom = 704.0
 theme = ExtResource("5_gi3lh")
 theme_override_font_sizes/font_size = 24
-text = "PLAY"
+text = "START_GAME"
 
 [node name="UserProfilePopup" parent="." instance=ExtResource("6_0a2ky")]
 visible = false
@@ -430,9 +428,10 @@ text = "No asset packs have been detected!
 Please, download them from the
 official resources"
 
+[connection signal="pressed" from="Title/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Title/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Title/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Title/Exit" to="." method="_on_exit_pressed"]
 [connection signal="item_selected" from="Panel/ItemList" to="Panel/ItemList" method="_on_item_selected"]
-[connection signal="pressed" from="Panel/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Panel/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="CreditsPanel/CreditsBack" to="." method="_on_credits_back_pressed"]

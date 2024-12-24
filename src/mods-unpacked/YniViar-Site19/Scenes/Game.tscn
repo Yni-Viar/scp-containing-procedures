@@ -396,11 +396,6 @@ better_zone_generation = false
 
 [node name="Spectator" parent="." instance=ExtResource("14_jqsvl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 12.274, 32)
-default_velocity = null
-speed_scale = null
-boost_speed_multiplier = null
-max_speed = null
-min_speed = null
 
 [node name="Items" type="Node3D" parent="."]
 script = ExtResource("9_qwyor")

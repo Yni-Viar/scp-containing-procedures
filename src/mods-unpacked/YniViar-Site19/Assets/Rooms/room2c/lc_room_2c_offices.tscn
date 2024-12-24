@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://bvludt3pcnunj"]
+[gd_scene load_steps=38 format=4 uid="uid://bvludt3pcnunj"]
 
 [ext_resource type="Texture2D" uid="uid://b8pg4uioakn4r" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Color.png" id="1_66sco"]
 [ext_resource type="Texture2D" uid="uid://dv0ipv0joknjs" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/Tiles107_2K_Roughness.png" id="2_ij273"]
@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://dcq4vbbnd0ldc" path="res://Assets/ExternalModels/keyboard.tscn" id="19_sou2j"]
 [ext_resource type="PackedScene" uid="uid://bmx15r6k1yni1" path="res://Assets/ExternalModels/SteelFrameShelves03.tscn" id="20_0424j"]
 [ext_resource type="PackedScene" uid="uid://3uxnw561tlh4" path="res://Assets/ExternalModels/plant.tscn" id="21_qf54h"]
-[ext_resource type="ArrayOccluder3D" uid="uid://b6mkhv28t4cgt" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room2c/occ/lc_room_2c_offices.occ" id="22_wtjjx"]
 [ext_resource type="PackedScene" uid="uid://brw1pbnyucy41" path="res://Assets/OriginalModels/omnidotplush.tscn" id="23_lb14e"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_mmbpc"]
@@ -237,19 +236,19 @@ data = PackedVector3Array(-2.4613, -0.0031, 9.9355, -8, 6.9969, 9.9355, -8, -0.0
 navigation_mesh = SubResource("NavigationMesh_mmbpc")
 
 [node name="Floor_002" type="MeshInstance3D" parent="NavigationRegion3D"]
-visibility_range_end = 192.0
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_f0rp5")
 skeleton = NodePath("")
 
 [node name="Ceiling_001" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.390958, 0)
-visibility_range_end = 192.0
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_l0pa0")
 skeleton = NodePath("")
 
 [node name="LCZWallNeoCB2_006" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(0, 1, -4.37114e-08, 1, 0, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, -2.4311, 0.893586, 7.08189)
-visibility_range_end = 192.0
+visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_khhj1")
 skeleton = NodePath("")
 
@@ -318,8 +317,5 @@ transform = Transform3D(-0.707107, -6.18172e-08, 0.707107, 8.74228e-08, -1, 0, 0
 [node name="omnidotplush" parent="." instance=ExtResource("23_lb14e")]
 transform = Transform3D(-0.445042, 0, 0.89551, 0, 1, 0, -0.89551, 0, -0.445042, 8.67718, 2.66903, 3.42026)
 
-[node name="playerspawn" type="Marker3D" parent="."]
+[node name="playerspawn" type="Marker3D" parent="." groups=["PlayerSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.93648, 2.37702, 2.53712)
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-occluder = ExtResource("22_wtjjx")
