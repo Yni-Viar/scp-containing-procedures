@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="PuppetClass" load_steps=3 format=3 uid="uid://b78x487lxutqy"]
+[gd_resource type="Resource" script_class="PuppetClass" load_steps=4 format=3 uid="uid://b78x487lxutqy"]
 
+[ext_resource type="Script" path="res://DynamicObjects/PlayerInventory/Item.gd" id="1_cj66y"]
 [ext_resource type="PackedScene" uid="uid://bj1cu304tkb42" path="res://mods-unpacked/YniViar-Site19/PlayerController/PlayerClassPrefab/scp650.tscn" id="1_oww2b"]
 [ext_resource type="Script" path="res://PlayerController/PlayerClassResources/PuppetResource.gd" id="2_g8omf"]
 
@@ -9,7 +10,7 @@ puppet_class_name = "SCP-650"
 speed = 0.0
 prefab = ExtResource("1_oww2b")
 spawn_point_group = "Scp650Spawn"
-initial_amount = 0
+initial_amount = 1
 automatic = true
 footstep_sounds = {}
 fraction = 2
@@ -17,3 +18,5 @@ apply_height_bugfix = false
 enable_wander = false
 inventory_item_size = 0
 health = 1000.0
+team = 0
+initial_items = Array[ExtResource("1_cj66y")]([])

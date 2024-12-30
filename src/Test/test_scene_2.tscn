@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://djb7rqh6152e8"]
+[gd_scene load_steps=19 format=3 uid="uid://djb7rqh6152e8"]
 
 [ext_resource type="Script" path="res://Scripts/UI/PlayerUI.gd" id="1_espdi"]
 [ext_resource type="Texture2D" uid="uid://bmw4fxmnmwhov" path="res://Assets/HUD/arrow.png" id="2_u4lmr"]
@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://b5pka5jiu0eq6" path="res://Assets/HUD/healthbar_filled.png" id="5_evs0n"]
 [ext_resource type="Script" path="res://Scripts/FPSCounter.gd" id="6_ly23t"]
 [ext_resource type="PackedScene" uid="uid://bkjiahck42ear" path="res://PlayerController/NPCScene.tscn" id="7_74x4d"]
+[ext_resource type="Script" path="res://Scripts/UI/InventoryUI.gd" id="7_gnqih"]
 [ext_resource type="Resource" uid="uid://b82a218to832v" path="res://PlayerController/PlayerClassResources/DClass.tres" id="8_u06mf"]
+[ext_resource type="Resource" uid="uid://dtxvxmwsol0hf" path="res://PlayerController/PlayerClassResources/Guard.tres" id="9_drytk"]
 [ext_resource type="PackedScene" uid="uid://8ik28au1k20l" path="res://PlayerController/Player.tscn" id="9_y5hnx"]
 [ext_resource type="PackedScene" uid="uid://lwpadfmeew0q" path="res://Assets/Doors/gate.tscn" id="10_n3m7c"]
 
@@ -33,7 +35,7 @@ size = Vector2(5, 5)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7uxud"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
-[node name="Node3D" type="Node3D"]
+[node name="Game" type="Node3D"]
 
 [node name="PlayerUI" type="Control" parent="."]
 layout_mode = 3
@@ -110,6 +112,53 @@ offset_left = -320.0
 offset_right = 320.0
 offset_bottom = 256.0
 grow_horizontal = 2
+
+[node name="InventoryUI" type="Control" parent="PlayerUI"]
+visible = false
+layout_mode = 1
+anchor_left = 0.296
+anchor_top = 0.144
+anchor_right = 0.704
+anchor_bottom = 0.856
+offset_left = 0.119995
+offset_top = 0.319992
+offset_right = -0.120056
+offset_bottom = -0.320068
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="PlayerUI/InventoryUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.922
+offset_bottom = -0.0640259
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_gnqih")
+
+[node name="UseItem" type="Button" parent="PlayerUI/InventoryUI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 197.0
+grow_vertical = 0
+text = "USE_ITEM"
+
+[node name="RemoveItem" type="Button" parent="PlayerUI/InventoryUI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -197.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "REMOVE_ITEM"
 
 [node name="PauseMenu" type="Control" parent="PlayerUI"]
 visible = false
@@ -189,10 +238,10 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_7uxud")
 
 [node name="NpcScene" parent="." instance=ExtResource("7_74x4d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19772, 1.10689, -0.768868)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.198, 0, -0.769)
 puppet_class = ExtResource("8_u06mf")
 
-[node name="Player" parent="." instance=ExtResource("9_y5hnx")]
+[node name="Spectator" parent="." instance=ExtResource("9_y5hnx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59206, 3.02249, 3.99167)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -201,4 +250,13 @@ transform = Transform3D(1, 0, 0, 0, -0.337276, 0.941406, 0, -0.941406, -0.337276
 [node name="GateFrame" parent="." instance=ExtResource("10_n3m7c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0418878, 0.0923289, 2.41796)
 
+[node name="NpcScene2" parent="." instance=ExtResource("7_74x4d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581432, 0, 5.72546)
+puppet_class = ExtResource("9_drytk")
+
+[connection signal="item_clicked" from="PlayerUI/InventoryUI/ItemList" to="PlayerUI/InventoryUI/ItemList" method="_on_item_clicked"]
+[connection signal="button_down" from="PlayerUI/InventoryUI/UseItem" to="PlayerUI/InventoryUI/ItemList" method="_on_use_item_button_down"]
+[connection signal="button_up" from="PlayerUI/InventoryUI/UseItem" to="PlayerUI/InventoryUI/ItemList" method="_on_button_up"]
+[connection signal="button_down" from="PlayerUI/InventoryUI/RemoveItem" to="PlayerUI/InventoryUI/ItemList" method="_on_remove_item_button_down"]
+[connection signal="button_up" from="PlayerUI/InventoryUI/RemoveItem" to="PlayerUI/InventoryUI/ItemList" method="_on_button_up"]
 [connection signal="pressed" from="PlayerUI/PauseMenu/Panel/ExitButton" to="PlayerUI" method="_on_exit_button_pressed"]

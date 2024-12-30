@@ -15,7 +15,7 @@ func use(player: Node3D, target_player: Node3D) -> void:
 	elif target_player is NpcPlayerScript && player is NpcPlayerScript:
 		var inv: Inventory = target_player.get_node("Inventory")
 		for i in range(inv.inventory_storage.size()):
-			inv.remove_item(i, true)
+			inv.remove_item(i, false)
 		var head_mesh: HumanPuppetScript = player.get_node("Puppet")
 		var human_mesh: BasePuppetScript = target_player.get_node("Puppet")
 		if human_mesh is HumanPuppetScript:

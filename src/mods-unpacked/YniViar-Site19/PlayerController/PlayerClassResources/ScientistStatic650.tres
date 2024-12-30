@@ -10,7 +10,7 @@ puppet_class_name = "SCIENCE_PERSONNEL"
 speed = 3.0
 prefab = ExtResource("2_od6fh")
 spawn_point_group = "Scientist650Spawn"
-initial_amount = 2
+initial_amount = 3
 automatic = false
 footstep_sounds = {
 "run": PackedStringArray("res://Sounds/Character/Human/Step/Run1.ogg", "res://Sounds/Character/Human/Step/Run2.ogg", "res://Sounds/Character/Human/Step/Run3.ogg", "res://Sounds/Character/Human/Step/Run4.ogg", "res://Sounds/Character/Human/Step/Run5.ogg", "res://Sounds/Character/Human/Step/Run6.ogg", "res://Sounds/Character/Human/Step/Run7.ogg", "res://Sounds/Character/Human/Step/Run8.ogg"),

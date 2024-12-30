@@ -26,7 +26,7 @@ func on_start() -> void:
 func _physics_process(delta: float) -> void:
 	scp_173_blink(delta)
 	# If is watching, set velocity to zero, else - go to player.
-	if (is_blinking && watching_puppets.size() > 0 && current_human != null) || (watching_puppets.size() == 0 && current_human != null):
+	if ((is_blinking && watching_puppets.size() > 0 && current_human != null) || (watching_puppets.size() == 0 && current_human != null)) && !freeze:
 		scp_173_movement()
 		if raycast.is_colliding():
 			var collider = raycast.get_collider()
@@ -44,7 +44,7 @@ func scp_173_blink(delta: float):
 	# If blink timer > 0 - then wait
 	if blink_timer > 0:
 		blink_timer -= delta
-	else:
+	elif !freeze:
 		is_blinking = true
 		movement_reset = false
 		# Navigate to the human near you

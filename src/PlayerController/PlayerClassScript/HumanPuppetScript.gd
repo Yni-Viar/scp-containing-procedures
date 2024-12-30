@@ -12,8 +12,8 @@ enum SecondaryState {NONE, ITEM, CUFFED}
 var cuffed_players: Array[NpcPlayerScript] = []
 var raycast: RayCast3D
 var vision_entity: Array = []
-var cuffed_follow_timeout: bool = false
 var has_animtree: bool = false
+var update_timer = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func on_start():
@@ -83,6 +83,9 @@ func _physics_process(delta: float) -> void:
 			for entity in vision_entity:
 				entity.watching_puppets.clear()
 			vision_entity.clear()
+	# Cuffed players mechanic
+	if cuffed_players.size() > 0:
+		target_follow(delta)
 	on_update_human(delta)
 
 func on_update_human(delta):
@@ -100,9 +103,11 @@ func footstep(key: String):
 	get_parent().get_node("WalkSounds").stream = load(get_parent().puppet_class.footstep_sounds[key][rng.randi_range(0, get_parent().puppet_class.footstep_sounds[key].size() - 1)])
 	get_parent().get_node("WalkSounds").play()
 
-func target_follow():
-	cuffed_follow_timeout = true
-	for player in cuffed_players:
-		player.set_movement_target(global_position, true)
-	await get_tree().create_timer(2.5).timeout
-	cuffed_follow_timeout = false
+## Follow the players, if cuffed
+func target_follow(delta: float):
+	if update_timer > 0:
+		update_timer -= delta
+	else:
+		for player in cuffed_players:
+			player.set_movement_target(get_parent().global_position, true)
+		update_timer = 1.0

@@ -28,7 +28,10 @@ func _on_body_exited(body: Node3D) -> void:
 
 func _on_scp_acceptable_area_body_entered(body: Node3D) -> void:
 	if body is NpcSelection:
-		if body.get_parent().puppet_class.team == 2:
+		if body.get_parent().puppet_class.puppet_class_name == "SCP-131": # 131
+			d_class_entered_amount += 1
+			# in future, calling 131 will grant additional points
+		if body.get_parent().puppet_class.team == 2: # d-class
 			d_class_entered_amount += 1
 		if d_class_entered_amount >= 2 && foundation_amount >= 2:
 			get_tree().root.get_node("Game/FoundationTask").do_task("S19_CLEAN_173")
