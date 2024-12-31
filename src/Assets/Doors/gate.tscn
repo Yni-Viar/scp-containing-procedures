@@ -137,6 +137,7 @@ open_door_sounds = Array[String](["res://Sounds/Door/DoorOpen.ogg"])
 close_door_sounds = Array[String](["res://Sounds/Door/DoorClose.ogg"])
 
 [node name="Frame" type="MeshInstance3D" parent="."]
+visibility_range_end = 192.0
 mesh = SubResource("ArrayMesh_psdqn")
 skeleton = NodePath("")
 
@@ -147,6 +148,7 @@ script = ExtResource("4_8usph")
 shape = SubResource("ConcavePolygonShape3D_b7s75")
 
 [node name="Cube_001" type="MeshInstance3D" parent="."]
+visibility_range_end = 192.0
 mesh = SubResource("ArrayMesh_46j31")
 skeleton = NodePath("")
 
