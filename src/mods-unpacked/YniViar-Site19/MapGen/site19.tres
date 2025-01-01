@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MapGenZone" load_steps=18 format=3 uid="uid://7prvjngodfs1"]
+[gd_resource type="Resource" script_class="MapGenZone" load_steps=19 format=3 uid="uid://7prvjngodfs1"]
 
 [ext_resource type="Script" path="res://MapGen/MapGenRoom.gd" id="1_obfoh"]
 [ext_resource type="Resource" uid="uid://dkax2pgmsnpbr" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_room2C.tres" id="1_rpggd"]
@@ -15,13 +15,14 @@
 [ext_resource type="Resource" uid="uid://wc1esgdjfh2u" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_cont1_dclass.tres" id="8_636qo"]
 [ext_resource type="Resource" uid="uid://bla6b2yt4icpi" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_room2_offices.tres" id="10_f6hik"]
 [ext_resource type="Resource" uid="uid://bx5nj144uqlqs" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_room3.tres" id="10_lyern"]
+[ext_resource type="Resource" uid="uid://bvhgxkroofef6" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_cont1_049.tres" id="10_ymb8x"]
 [ext_resource type="Resource" uid="uid://dl83ef3lsmvh2" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_cont2_650.tres" id="14_uxfll"]
 [ext_resource type="Script" path="res://MapGen/MapGenZone.gd" id="16_mfp5j"]
 
 [resource]
 script = ExtResource("16_mfp5j")
 endrooms = Array[ExtResource("1_obfoh")]([ExtResource("3_oukqp")])
-endrooms_single = Array[ExtResource("1_obfoh")]([ExtResource("8_3udfn")])
+endrooms_single = Array[ExtResource("1_obfoh")]([ExtResource("8_3udfn"), ExtResource("10_ymb8x")])
 endrooms_single_large = Array[ExtResource("1_obfoh")]([ExtResource("8_636qo")])
 hallways = Array[ExtResource("1_obfoh")]([ExtResource("5_gpbd2"), ExtResource("6_ppfcp"), ExtResource("10_f6hik")])
 hallways_single = Array[ExtResource("1_obfoh")]([ExtResource("8_7fj7o"), ExtResource("14_uxfll")])

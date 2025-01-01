@@ -18,7 +18,7 @@ func update_targets(delta: float) -> void:
 		timer -= delta
 	else:
 		if active_puppets.size() > 0:
-			get_parent().set_movement_target(active_puppets[0].global_position, true)
+			get_parent().set_movement_target(active_puppets[0].global_position, true, false)
 			if get_parent().get_node("NavigationAgent3D").is_target_reachable():
 				get_parent().automatic = true
 				active_puppets[0].get_parent().get_node("Puppet").freeze = true

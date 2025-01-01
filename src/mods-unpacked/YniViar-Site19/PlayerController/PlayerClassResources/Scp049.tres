@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PuppetClass" load_steps=4 format=3 uid="uid://dlv7nrmerxyik"]
+
+[ext_resource type="Script" path="res://DynamicObjects/PlayerInventory/Item.gd" id="1_xvxhf"]
+[ext_resource type="PackedScene" uid="uid://gbupm65g618p" path="res://mods-unpacked/YniViar-Site19/PlayerController/PlayerClassPrefab/scp049.tscn" id="2_ja16n"]
+[ext_resource type="Script" path="res://PlayerController/PlayerClassResources/PuppetResource.gd" id="3_8dgtt"]
+
+[resource]
+script = ExtResource("3_8dgtt")
+puppet_class_name = "SCP-049"
+speed = 1.8
+prefab = ExtResource("2_ja16n")
+spawn_point_group = "Scp049Spawn"
+initial_amount = 1
+automatic = false
+footstep_sounds = {}
+fraction = 1
+apply_height_bugfix = true
+enable_wander = true
+inventory_item_size = 0
+health = 1700.0
+team = 0
+initial_items = Array[ExtResource("1_xvxhf")]([])

@@ -11,9 +11,10 @@ In a nutshell - this is a SCP Facility simulator.
 - [x] SCP-650 npc and Containment Chamber
 - [x] Foundation tasks and gameover
 - [ ] Score
-- [ ] SCP-049 npc and Containment Chamber
+- [x] SCP-049 npc and Containment Chamber
+- [ ] SCP 049-2
 - [ ] SCP-914 minigame
-- [ ] SCP-131 npc
+- [x] SCP-131 npc
 - [ ] Web platform support (for avoiding some Godot bugs, such as Nahimic audio driver)
 - [ ] Items: food, water, SCP-109, SCP-241, SCP-1079, SCP-348, SCP-832.
 - [ ] SCP-999 npc

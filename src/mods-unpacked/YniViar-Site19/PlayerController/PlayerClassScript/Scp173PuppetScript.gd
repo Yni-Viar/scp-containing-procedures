@@ -58,7 +58,7 @@ func scp_173_blink(delta: float):
 ## Movement control
 func scp_173_movement():
 	if state == States.IDLE && !movement_reset:
-		get_parent().set_movement_target(current_human.global_position + current_human.global_transform.basis.z * 2, true)
+		get_parent().set_movement_target(current_human.global_position + current_human.global_transform.basis.z * 2, true, false)
 		movement_reset = true
 ## Set face on spawn
 func set_face():

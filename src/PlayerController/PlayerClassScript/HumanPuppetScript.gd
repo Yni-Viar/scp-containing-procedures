@@ -109,5 +109,5 @@ func target_follow(delta: float):
 		update_timer -= delta
 	else:
 		for player in cuffed_players:
-			player.set_movement_target(get_parent().global_position, true)
+			player.set_movement_target(get_parent().global_position, true, false)
 		update_timer = 1.0
