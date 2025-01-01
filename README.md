@@ -23,6 +23,7 @@ In a nutshell - this is a SCP Facility simulator.
 - [ ] Chaos Insurgency event, MTF call + exit
 
 ## License:
-This projects is dual-licensed.
+Made in 2024-2025 by Yni Viar.
+This project is dual-licensed.
 If you are using code for non-SCP usage, feel free to use under [MIT License](/LICENSE.MIT)
 If you are using code for SCP Foundation usage, use them under [GNU GPL 3 License](/LICENSE.GPL), as it is required by SCP Foundation content usage.
