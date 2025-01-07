@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://b6pe0x6gfhnb"]
+[gd_scene load_steps=48 format=4 uid="uid://b6pe0x6gfhnb"]
 
 [ext_resource type="PackedScene" uid="uid://bvmbksyl1hdmd" path="res://Assets/OriginalModels/lamp_2_small.tscn" id="1_7jq5v"]
 [ext_resource type="Texture2D" uid="uid://cdjajvgo1o0ov" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/OfficeCeiling001_2K_Color.png" id="2_v0jl3"]
@@ -20,9 +20,10 @@
 [ext_resource type="PackedScene" uid="uid://dw5tp1m774hil" path="res://Assets/Rooms/passages/site_19_wall_cb.tscn" id="14_26r2f"]
 [ext_resource type="PackedScene" uid="uid://cuvcqapwqdj2t" path="res://Assets/ExternalModels/wooden_table.tscn" id="14_wq0kf"]
 [ext_resource type="PackedScene" uid="uid://dv0obl3bf2u6p" path="res://Assets/Rooms/passages/site_19_wall_lcz_3.tscn" id="15_427ew"]
-[ext_resource type="PackedScene" uid="uid://bf4jphfua16vt" path="res://Assets/ExternalModels/monitor.tscn" id="21_aywt1"]
-[ext_resource type="PackedScene" uid="uid://delt0t2y8yrlr" path="res://Assets/ExternalModels/computer_2.tscn" id="22_s7gry"]
-[ext_resource type="PackedScene" uid="uid://dcq4vbbnd0ldc" path="res://Assets/ExternalModels/keyboard.tscn" id="23_40f2p"]
+[ext_resource type="PackedScene" uid="uid://di3gqd5xgsob7" path="res://Assets/ExternalModels/laptop.tscn" id="23_nhe32"]
+[ext_resource type="Script" path="res://Scripts/ScpAcceptableArea.gd" id="24_0v0hj"]
+[ext_resource type="ArrayOccluder3D" uid="uid://cjcmk1jdaexmm" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room1/occ/lc_cont_1_049.occ" id="24_5rmb0"]
+[ext_resource type="Script" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room1/TaskScript/Scp049Task.gd" id="25_wci3m"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_iwb35"]
 vertices = PackedVector3Array(-6.9783, 0.47564, -1.99, -6.4783, 0.47564, -0.49, -4.4783, 0.47564, -0.74, -4.4783, 0.47564, -8.74, -7.4783, 0.47564, -9.24, -7.2283, 0.47564, -4.99, -8.2283, 0.47564, -4.74, -8.2283, 0.47564, -1.99, -3.9783, 0.47564, -8.99, 1.5217, 0.47564, -9.24, -2.4783, 0.47564, -9.24, -1.9783, 0.47564, -8.74, 1.2717, 0.47564, 0.26, -1.9783, 0.47564, 0.26, 3.2717, 0.47564, -9.24, 3.2717, 0.47564, 9.76, 8.0217, 0.47564, 9.76, 8.0217, 0.47564, -9.24, -3.9783, 0.47564, 4.26, -3.9783, 0.47564, 2.01, -4.4783, 0.47564, 3.51, -5.2283, 0.47564, 6.26, -3.9783, 0.47564, 6.01, -3.7283, 0.47564, 5.26, -6.4783, 0.47564, 6.01, -8.2283, 0.47564, 3.51, -8.2283, 0.47564, 5.76, -2.7283, 0.47564, 4.51, -2.4783, 0.47564, 5.51, -2.4783, 0.47564, 9.76, 1.5217, 0.47564, 9.76, -2.4783, 0.47564, 0.51, -6.7283, 0.47564, 9.76, -5.2283, 0.47564, 9.76, -5.2283, 1.97564, 1.26, -5.7283, 1.97564, 1.26, -5.9783, 1.97564, 2.01, -5.2283, 1.97564, 2.51, -7.4783, 1.97564, 2.51, -7.4783, 1.97564, 2.01)
@@ -247,7 +248,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_j70d1")
 
 [sub_resource type="BoxMesh" id="BoxMesh_a5xqf"]
-size = Vector3(0.9, 10.24, 20.48)
+size = Vector3(0.5, 10.24, 20.48)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jnj83"]
 data = PackedVector3Array(-10, 6.9961, 10, 10, 6.9961, -10, -10, 6.9961, -10, -10, 6.9961, 10, 10, 6.9961, 10, 10, 6.9961, -10)
@@ -263,6 +264,9 @@ data = PackedVector3Array(6.7718, -0.16, -4.1254, 14.4882, 0.1599, -4.1254, 6.77
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ae35c"]
 data = PackedVector3Array(6.7719, -0.16, -4.1255, 14.4881, 0.16, -4.1255, 6.7719, 0.16, -4.1255, 6.7719, -0.16, -4.1255, 14.4881, -0.16, -4.1255, 14.4881, 0.16, -4.1255, 6.7719, -0.16, -10.3072, 14.4881, 0.16, -10.3072, 6.7719, 0.16, -10.3072, 6.7719, -0.16, -10.3072, 14.4881, -0.16, -10.3072, 14.4881, 0.16, -10.3072, -3.8648, 0.16, -4.0524, 6.7719, 0.16, -0.0002, -3.8648, 0.16, 0, -3.8648, 0.16, -4.0524, 6.7719, 0.16, -4.1255, 6.7719, 0.16, -0.0002, 6.7719, 0.16, -10.3072, 14.4881, 0.16, -4.1255, 6.7719, 0.16, -4.1255, 6.7719, 0.16, -10.3072, 14.4881, 0.16, -10.3072, 14.4881, 0.16, -4.1255, -3.8648, 0.16, -10.3072, 6.7719, 0.16, -4.1255, -3.8648, 0.16, -4.0524, -3.8648, 0.16, -10.3072, 6.7719, 0.16, -10.3072, 6.7719, 0.16, -4.1255, -3.8596, 0.16, 0, 6.7719, -0.16, -0.0002, -3.8596, -0.16, 0, -3.8596, 0.16, 0, 6.7719, 0.16, -0.0002, 6.7719, -0.16, -0.0002, -3.8596, -0.16, 0, 6.7719, -0.16, -4.1255, -3.8596, -0.16, -4.0529, -3.8596, -0.16, 0, 6.7719, -0.16, -0.0002, 6.7719, -0.16, -4.1255, 14.4881, 0.16, -4.1255, 16.3527, -0.16, -4.1255, 14.4881, -0.16, -4.1255, 14.4881, 0.16, -4.1255, 16.3527, 0.16, -4.1255, 16.3527, -0.16, -4.1255, 6.7719, -0.16, -4.1255, 14.4881, -0.16, -10.3072, 6.7719, -0.16, -10.3072, 6.7719, -0.16, -4.1255, 14.4881, -0.16, -4.1255, 14.4881, -0.16, -10.3072, 16.3527, -0.16, -4.1255, 16.3527, 0.16, -0.0002, 16.3527, 0.16, -4.1255, 16.3527, -0.16, -4.1255, 16.3527, -0.16, -0.0002, 16.3527, 0.16, -0.0002, 16.3527, -0.16, -4.1255, 16.3527, 0.16, -10.3072, 16.3527, -0.16, -10.3072, 16.3527, -0.16, -4.1255, 16.3527, 0.16, -4.1255, 16.3527, 0.16, -10.3072, 14.4881, -0.16, -4.1255, 16.3527, -0.16, -10.3072, 14.4881, -0.16, -10.3072, 14.4881, -0.16, -4.1255, 16.3527, -0.16, -4.1255, 16.3527, -0.16, -10.3072, 14.4881, 0.16, -10.3072, 16.3527, 0.16, -4.1255, 14.4881, 0.16, -4.1255, 14.4881, 0.16, -10.3072, 16.3527, 0.16, -10.3072, 16.3527, 0.16, -4.1255, 14.4881, 0.16, -4.1255, 16.3527, 0.16, -0.0002, 14.4881, 0.16, -0.0002, 14.4881, 0.16, -4.1255, 16.3527, 0.16, -4.1255, 16.3527, 0.16, -0.0002, 14.4881, -0.16, -10.3072, 16.3527, 0.16, -10.3072, 14.4881, 0.16, -10.3072, 14.4881, -0.16, -10.3072, 16.3527, -0.16, -10.3072, 16.3527, 0.16, -10.3072, 14.4881, -0.16, -0.0002, 16.3527, -0.16, -4.1255, 14.4881, -0.16, -4.1255, 14.4881, -0.16, -0.0002, 16.3527, -0.16, -0.0002, 16.3527, -0.16, -4.1255, 14.4881, 0.16, -0.0002, 16.3527, -0.16, -0.0002, 14.4881, -0.16, -0.0002, 14.4881, 0.16, -0.0002, 16.3527, 0.16, -0.0002, 16.3527, -0.16, -0.0002, 6.7719, 0.16, -0.0002, 6.7719, -0.16, -4.1255, 6.7719, -0.16, -0.0002, 6.7719, 0.16, -0.0002, 6.7719, 0.16, -4.1255, 6.7719, -0.16, -4.1255, 14.4881, -0.16, -4.1255, 14.4881, 0.16, -0.0002, 14.4881, -0.16, -0.0002, 14.4881, -0.16, -4.1255, 14.4881, 0.16, -4.1255, 14.4881, 0.16, -0.0002, 6.7719, -0.16, -10.3072, -3.8596, -0.16, -4.0529, 6.7719, -0.16, -4.1255, 6.7719, -0.16, -10.3072, -3.8541, -0.16, -10.3072, -3.8596, -0.16, -4.0529, -3.8648, 0.16, -4.0524, -3.8541, -0.16, -10.3072, -3.8648, 0.16, -10.3072, -3.8596, -0.16, -4.0529, -3.8596, 0.16, 0, -3.8596, -0.16, 0, -3.8648, 0.16, -4.0524, -3.8596, -0.16, -4.0529, -3.8541, -0.16, -10.3072, -3.8596, 0.16, 0, -3.8648, 0.16, -4.0524, -3.8648, 0.16, 0, -3.8648, 0.16, -4.0524, -3.8596, 0.16, 0, -3.8596, -0.16, -4.0529, 6.7719, -0.16, -10.3072, -3.8648, 0.16, -10.3072, -3.8541, -0.16, -10.3072, 6.7719, -0.16, -10.3072, 6.7719, 0.16, -10.3072, -3.8648, 0.16, -10.3072)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7i2rc"]
+size = Vector3(19.4811, 8.08122, 19.822)
 
 [node name="lc_cont1_049" type="StaticBody3D"]
 
@@ -298,13 +302,13 @@ mesh = SubResource("ArrayMesh_lgipv")
 skeleton = NodePath("")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.36231, 4.84564, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.76054, 4.84564, 0)
 visible = false
 mesh = SubResource("BoxMesh_a5xqf")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.18064, 4.84564, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.73817, 4.84564, 0)
 visible = false
 mesh = SubResource("BoxMesh_a5xqf")
 skeleton = NodePath("../..")
@@ -379,15 +383,6 @@ shape = SubResource("ConcavePolygonShape3D_nmlc0")
 transform = Transform3D(1.19209e-07, 1, -3.57628e-07, 1.19209e-07, -3.57628e-07, -1, -1, 1.19209e-07, -1.19209e-07, 2.38425, 0, 6.36016)
 shape = SubResource("ConcavePolygonShape3D_ae35c")
 
-[node name="27-inch-monitor-with-movable-mount" parent="." instance=ExtResource("21_aywt1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6247, 1.49345, 1.64376)
-
-[node name="Computer2" parent="." instance=ExtResource("22_s7gry")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2414, 1.49345, 2.19816)
-
-[node name="ddskeyboard" parent="." instance=ExtResource("23_40f2p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7535, 1.49345, 2.30771)
-
 [node name="NavigationLink3D" type="NavigationLink3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.60873)
 end_position = Vector3(0, 0, 3)
@@ -400,3 +395,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.50744, 0, 4.74251)
 
 [node name="playerspawn" type="Marker3D" parent="." groups=["PlayerSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.51229, 2.37702, 8.11936)
+
+[node name="ScpAcceptableArea" type="Area3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("24_0v0hj")
+scp_to_check = "SCP-049"
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="ScpAcceptableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34386, 3.50917, 0.00427246)
+shape = SubResource("BoxShape3D_7i2rc")
+
+[node name="TaskArea" type="Area3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("25_wci3m")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="TaskArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34386, 3.50917, 0.00427246)
+shape = SubResource("BoxShape3D_7i2rc")
+
+[node name="laptop" parent="." instance=ExtResource("23_nhe32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.14419, 1.4575, 2.35321)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("24_5rmb0")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." groups=["ReflectionProbes"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0165076, 3.53318, -0.0290222)
+size = Vector3(18.9001, 7.3418, 19.942)
+box_projection = true
+interior = true
+
+[connection signal="body_entered" from="ScpAcceptableArea" to="ScpAcceptableArea" method="_on_body_entered"]
+[connection signal="body_exited" from="ScpAcceptableArea" to="ScpAcceptableArea" method="_on_body_exited"]
+[connection signal="body_entered" from="TaskArea" to="TaskArea" method="_on_body_entered"]
+[connection signal="body_exited" from="TaskArea" to="TaskArea" method="_on_body_exited"]

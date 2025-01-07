@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dqpe1yrgg8hl4"]
+
+[ext_resource type="Script" path="res://DynamicObjects/PlayerInventory/Item.gd" id="1_xbxtl"]
+[ext_resource type="Texture2D" uid="uid://p6lt4wxdsips" path="res://mods-unpacked/YniViar-Site19/DynamicObjects/InventoryItems/Icons/SCP109.png" id="2_r6k0t"]
+
+[resource]
+script = ExtResource("1_xbxtl")
+id = 2
+name = "SCP-109"
+texture = ExtResource("2_r6k0t")
+pickable_path = "res://mods-unpacked/YniViar-Site19/DynamicObjects/InventoryItems/Prefabs/ItemScp109.tscn"
+pickup_sound_path = ""
+usage = 0
+upgrade_rough = Array[int]([])
+upgrade_coarse = Array[int]([])
+upgrade_one_to_one = Array[int]([])
+upgrade_fine = Array[int]([])
+upgrade_very_fine = Array[int]([])

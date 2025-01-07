@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://chnnptw23qv0f"]
+[gd_scene load_steps=26 format=3 uid="uid://chnnptw23qv0f"]
 
 [ext_resource type="Texture2D" uid="uid://cdjajvgo1o0ov" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/OfficeCeiling001_2K_Color.png" id="1_3cdg6"]
 [ext_resource type="Texture2D" uid="uid://di8wo3djqxdg5" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/OfficeCeiling001_2K_Metalness-OfficeCeiling001_2K_Roughness.png" id="2_7lamc"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dv0obl3bf2u6p" path="res://Assets/Rooms/passages/site_19_wall_lcz_3.tscn" id="14_j7ni2"]
 [ext_resource type="PackedScene" uid="uid://bf4jphfua16vt" path="res://Assets/ExternalModels/monitor.tscn" id="14_kjtda"]
 [ext_resource type="PackedScene" uid="uid://delt0t2y8yrlr" path="res://Assets/ExternalModels/computer_2.tscn" id="15_eyx2m"]
+[ext_resource type="ArrayOccluder3D" uid="uid://yxt4uffvfhvu" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room2/occ/lc_room_2_offices.occ" id="15_i4c5p"]
 [ext_resource type="PackedScene" uid="uid://dcq4vbbnd0ldc" path="res://Assets/ExternalModels/keyboard.tscn" id="16_qf7d4"]
 [ext_resource type="PackedScene" uid="uid://bvmbksyl1hdmd" path="res://Assets/OriginalModels/lamp_2_small.tscn" id="18_ia20v"]
 
@@ -105,6 +106,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nwhm4")
+
+[sub_resource type="BoxMesh" id="BoxMesh_thssk"]
+size = Vector3(0.5, 10.24, 20.48)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ed6n8"]
 data = PackedVector3Array(-10, 6.9961, 10, 10, 6.9961, -10, -10, 6.9961, -10, -10, 6.9961, 10, 10, 6.9961, 10, 10, 6.9961, -10)
@@ -368,6 +372,18 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.841
 [node name="ddskeyboard20" parent="NavigationRegion3D" instance=ExtResource("16_qf7d4")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.40226, 1.2719, 8.35202)
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.81213, 4.84564, 0)
+visible = false
+mesh = SubResource("BoxMesh_thssk")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.56946, 4.84564, 0)
+visible = false
+mesh = SubResource("BoxMesh_thssk")
+skeleton = NodePath("../../..")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.394915, 0)
 shape = SubResource("ConcavePolygonShape3D_ed6n8")
@@ -466,3 +482,6 @@ walls_to_spawn = Array[PackedScene]([ExtResource("13_kinbq"), ExtResource("14_j7
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.926, 0, 7.68)
 script = ExtResource("12_7jfsj")
 walls_to_spawn = Array[PackedScene]([ExtResource("13_kinbq"), ExtResource("14_j7ni2")])
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("15_i4c5p")

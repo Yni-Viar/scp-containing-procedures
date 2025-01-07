@@ -1,12 +1,15 @@
 extends BasePuppetScript
 ## SCP-049 puppet script
 ## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
+class_name Scp049PlayerScript
+
+signal cured(puppet_team: int)
 
 enum Mood {NORMAL, AGGRESSIVE, CURING}
 
 @export var mood: Mood = Mood.NORMAL
 
-var timer: float = 15.0
+var timer: float = 0.0
 var chase_timer = 1.0
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 var current_anim: String = ""
@@ -30,6 +33,18 @@ func _physics_process(delta: float) -> void:
 				set_state("049_Running")
 		if mood == Mood.AGGRESSIVE:
 			scp_049_chase(delta)
+			if raycast.is_colliding():
+				var collider = raycast.get_collider()
+				if collider is NpcSelection:
+					var selected_pawn = collider.get_pawn()
+					if selected_pawn.fraction == 0:
+						get_tree().root.get_node("Game/NPCs").object_remover(selected_pawn.name)
+						cured.emit(selected_pawn.puppet_class.team)
+						active_puppets.erase(current_human)
+						if active_puppets.size() == 0:
+							mood = Mood.NORMAL
+						else:
+							current_human = active_puppets[rng.randi_range(0, active_puppets.size() - 1)]
 	
 	scp_049_mood_setter(delta)
 
@@ -44,11 +59,13 @@ func scp_049_mood_setter(delta: float) -> void:
 		match mood:
 			Mood.NORMAL:
 				get_parent().wandering = true
+				get_parent().automatic = false
 				get_parent().character_speed = 1.8
 			Mood.AGGRESSIVE:
 				get_parent().wandering = false
-				get_parent().character_speed = 3
-				if active_puppets.size() > 0 && !active_puppets.has(current_human):
+				get_parent().automatic = true
+				get_parent().character_speed = 3.0
+				if active_puppets.size() > 0:
 					current_human = active_puppets[rng.randi_range(0, active_puppets.size() - 1)]
 				else:
 					current_human = null
@@ -59,17 +76,6 @@ func scp_049_chase(delta: float):
 		chase_timer -= delta
 	else:
 		get_parent().set_movement_target(current_human.global_position, false, true)
-		if raycast.is_colliding():
-			var collider = raycast.get_collider()
-			if collider is NpcSelection:
-				var selected_pawn = collider.get_pawn()
-				if selected_pawn.fraction == 0:
-					get_tree().root.get_node("Game/NPCs").object_remover(selected_pawn.name)
-					active_puppets.erase(current_human)
-					if active_puppets.size() == 0:
-						mood = Mood.NORMAL
-					else:
-						current_human = active_puppets[rng.randi_range(0, active_puppets.size() - 1)]
 		chase_timer = 1.0
 
 ## Animation state

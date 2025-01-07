@@ -1,6 +1,7 @@
 extends BasePuppetScript
 ## SCP-131 puppet script
 ## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
+class_name Scp131PlayerScript
 
 var timer: float = 5.0
 

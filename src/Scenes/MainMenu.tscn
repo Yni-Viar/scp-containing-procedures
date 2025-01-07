@@ -109,10 +109,13 @@ theme_override_font_sizes/mono_font_size = 20
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 20
 bbcode_enabled = true
-text = "[b]v.0.1.1 (Alpha)[/b]
-- Fixed game hang, caused from Occlusion Culling overload.
-- Optimization.
-- Updated Main Menu."
+text = "[b]v.0.2.0 (Alpha)[/b]
+- Added SCP-049 (without SCP-049-2)
+- Added SCP-266
+- Added SCP-109 item (currently cannot use or obtain)
+- Re-added occlusion culling (for better performance) with optimizations
+- Replaced the 3rd party Free Look Camera with an in-house one, also the player is colliding with walls, so they cannot be out of playable area anymore.
+- Enabled \"Better map generation\" for minimizing the chance to get impassable generation."
 
 [node name="Panel" type="Panel" parent="."]
 visible = false
@@ -303,23 +306,6 @@ bbcode_enabled = true
 text = "[b]Code:[/b]"
 fit_content = true
 
-[node name="CreditsCode3" type="RichTextLabel" parent="CreditsPanel/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(1234, 0)
-layout_mode = 2
-theme_override_font_sizes/bold_italics_font_size = 24
-theme_override_font_sizes/italics_font_size = 24
-theme_override_font_sizes/mono_font_size = 24
-theme_override_font_sizes/normal_font_size = 24
-theme_override_font_sizes/bold_font_size = 24
-bbcode_enabled = true
-text = "[i]Free look camera (license - MIT License)[/i]
-
-Copyright © 2022 Marc Nahr
-
-
-"
-fit_content = true
-
 [node name="CreditsCode4" type="RichTextLabel" parent="CreditsPanel/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1234, 0)
 layout_mode = 2
@@ -348,6 +334,22 @@ bbcode_enabled = true
 text = "[i]Touchscreen controls (License - MIT)[/i]
 
 - Made by Marco Fazio
+
+"
+fit_content = true
+
+[node name="CreditsCode6" type="RichTextLabel" parent="CreditsPanel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1234, 0)
+layout_mode = 2
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[i]Fireball shader (used for SCP-266 in Site-19 package) (License - MIT)[/i]
+
+- Made by Thundergecko8
 
 "
 fit_content = true
@@ -397,6 +399,7 @@ SCP-173 model is made by Aruspice (model, textures), Shakles (rig, animation), P
 SCP-650 model is made by Shadowscale(model, textures)
 SCP-131 - Aruspice (model, textures), Shakles (rig, animation)
 SCP-049 - Aruspice (model, textures), Shakles (rig, animation), PixelPuffin (concept art)
+Vintage Portable Heater model is made by GameDev Nick (https://sketchfab.com/GameDevNick)
 
 Also there are some CC0 assets.
 "

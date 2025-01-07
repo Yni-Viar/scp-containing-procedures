@@ -201,6 +201,8 @@ mesh = SubResource("ArrayMesh_0ucr4")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube_003"]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_003/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_8sbjv")
@@ -211,9 +213,11 @@ ignore_occlusion_culling = true
 visibility_range_end = 256.0
 mesh = SubResource("ArrayMesh_5csk6")
 skeleton = NodePath("")
-script = ExtResource("8_wsaeu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube_001"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("8_wsaeu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_001/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.482748, 1.60924, -0.0183105)
@@ -224,9 +228,11 @@ ignore_occlusion_culling = true
 visibility_range_end = 256.0
 mesh = SubResource("ArrayMesh_1p7uw")
 skeleton = NodePath("")
-script = ExtResource("8_wsaeu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube_002"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("8_wsaeu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_002/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.482748, 1.60924, -0.0183105)

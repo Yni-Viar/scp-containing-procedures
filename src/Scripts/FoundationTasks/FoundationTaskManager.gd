@@ -52,3 +52,9 @@ func secure_contain_protect(contained: bool, scp_name: String):
 		trigger_event(load("res://Assets/Tasks/ContainmentBreach.tres"), 2)
 	else:
 		do_task("EVENT_CB")
+
+func has_task(task_name: String) -> bool:
+	for task in all_tasks:
+		if task.internal_name == task_name:
+			return true
+	return false

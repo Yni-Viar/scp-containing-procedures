@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://qneqldi123li"]
+[gd_scene load_steps=59 format=4 uid="uid://qneqldi123li"]
 
 [ext_resource type="Texture2D" uid="uid://c7euhyglo1q1j" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/beige_wall_001_rough_2k.png" id="1_q4o7k"]
 [ext_resource type="Texture2D" uid="uid://dwpt2xs1rrv1" path="res://mods-unpacked/YniViar-Site19/Assets/RoomAssets/LCZ3.5/beige_wall_001_nor_gl_2k.png" id="2_aft7k"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://Scripts/RandomizeWall.gd" id="21_nrr7r"]
 [ext_resource type="PackedScene" uid="uid://dw5tp1m774hil" path="res://Assets/Rooms/passages/site_19_wall_cb.tscn" id="22_80s76"]
 [ext_resource type="Script" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room1/TaskScript/Scp173Task.gd" id="23_kfeuy"]
+[ext_resource type="ArrayOccluder3D" uid="uid://b4ppof4fi11q3" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room1/occ/lc_cont_1_173.occ" id="23_p1igm"]
 [ext_resource type="Script" path="res://Scripts/ScpAcceptableArea.gd" id="23_qadag"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_3jjqi"]
@@ -411,6 +412,9 @@ size = Vector3(11.2874, 6.84119, 9.11816)
 [sub_resource type="BoxShape3D" id="BoxShape3D_oh6dj"]
 size = Vector3(17.3027, 7.33582, 20.0781)
 
+[sub_resource type="BoxMesh" id="BoxMesh_24pmw"]
+size = Vector3(0.5, 10.24, 20.48)
+
 [node name="lc_cont1_173" type="StaticBody3D"]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
@@ -571,6 +575,14 @@ shape = SubResource("BoxShape3D_oh6dj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.897, 0, -7.68)
 script = ExtResource("21_nrr7r")
 walls_to_spawn = Array[PackedScene]([ExtResource("22_80s76")])
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94317, 4.84564, 0)
+mesh = SubResource("BoxMesh_24pmw")
+skeleton = NodePath("../..")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("23_p1igm")
 
 [connection signal="body_entered" from="ScpAcceptableArea" to="ScpAcceptableArea" method="_on_body_entered"]
 [connection signal="body_entered" from="ScpAcceptableArea" to="TaskArea" method="_on_scp_acceptable_area_body_entered"]

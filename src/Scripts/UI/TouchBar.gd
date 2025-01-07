@@ -2,7 +2,7 @@ extends Panel
 ## Touch screen controls
 ## Created by Yni, licensed under MIT License
 
-var player_head: FreeLookCamera
+var player_head: FlyPlayerScript
 
 func _ready() -> void:
 	player_head = get_node("/root/Game/Spectator")

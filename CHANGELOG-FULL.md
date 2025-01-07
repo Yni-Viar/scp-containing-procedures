@@ -1,4 +1,12 @@
 # Changelog
+## Alpha
+### v.0.2.0 (2025.01.07)
+- Added SCP-049 (without SCP-049-2)
+- Added SCP-266
+- Added SCP-109 item (currently cannot use or obtain)
+- Re-added occlusion culling (for better performance) with optimizations
+- Replaced the 3rd party Free Look Camera with an in-house one, also the player is colliding with walls, so they cannot be out of playable area anymore.
+- Enabled "Better map generation" for minimizing the chance to get impassable generation.
 ## Pre-Alpha
 ### v.0.1.1 (2024.12.25)
 - Fixed game hang, caused from Occlusion Culling overload.

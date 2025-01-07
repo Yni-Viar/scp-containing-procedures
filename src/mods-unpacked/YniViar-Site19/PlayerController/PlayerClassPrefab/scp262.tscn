@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7d1bx470mft0"]
+
+[ext_resource type="Script" path="res://mods-unpacked/YniViar-Site19/PlayerController/PlayerClassScript/Scp262PuppetScript.gd" id="1_04thu"]
+[ext_resource type="Shader" path="res://Shaders/Scp266Shader/flame.gdshader" id="1_mb5ss"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_rwaq8"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wqal5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qecfv"]
+noise = SubResource("FastNoiseLite_wqal5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqta1"]
+render_priority = 0
+shader = ExtResource("1_mb5ss")
+shader_parameter/time_speed = 1.0
+shader_parameter/spin = 0.0
+shader_parameter/flame_brightness = 0.6
+shader_parameter/color_intensity = 0.0
+shader_parameter/horizontal_frequency = 1.0
+shader_parameter/vertical_frequency = 1.0
+shader_parameter/size = -0.3
+shader_parameter/core_size = 1.0
+shader_parameter/color1 = Color(0.286, 0.22, 0.733, 1)
+shader_parameter/color2 = Color(0.580729, 0.563633, 0.874877, 1)
+shader_parameter/color3 = Color(0.917845, 0.926136, 0.9782, 1)
+shader_parameter/color4 = Color(1, 1, 1, 1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_qecfv")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dkklk"]
+radius = 5.43704
+
+[node name="Puppet" type="Node3D"]
+script = ExtResource("1_04thu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18368, 0)
+visibility_range_end = 32.0
+visibility_range_end_margin = 24.0
+mesh = SubResource("SphereMesh_rwaq8")
+surface_material_override/0 = SubResource("ShaderMaterial_qqta1")
+
+[node name="WarmDetector" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.16558, 0)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WarmDetector"]
+shape = SubResource("SphereShape3D_dkklk")
+
+[connection signal="body_entered" from="WarmDetector" to="." method="_on_warm_detector_body_entered"]
+[connection signal="body_exited" from="WarmDetector" to="." method="_on_warm_detector_body_exited"]

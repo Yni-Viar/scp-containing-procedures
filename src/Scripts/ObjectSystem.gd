@@ -3,6 +3,9 @@ extends Node3D
 ## Created by Yni, licensed under MIT License (inspired from Xandromeda's script for SCP:SO)
 class_name ObjectSystem
 
+signal object_added(item: Node3D)
+signal object_removed(item: Node3D)
+
 enum Types {ENTITY, ITEM, MAPOBJECT}
 
 @export var types: Types = Types.ENTITY
@@ -42,13 +45,16 @@ func object_remover(name_of_object: String, post_mortem: bool = false):
 	match types:
 		0:
 			var npc: NpcPlayerScript = get_node(name_of_object)
+			object_removed.emit(npc)
 			items.erase(npc)
 			npc.queue_free()
 			if post_mortem:
 				return("Ragdolls are not implemented")
 		1:
 			var item: ItemPickable = get_node(name_of_object)
+			object_removed.emit(item)
 			items.erase(item)
 			item.queue_free()
 		_:
 			printerr("Wrong type. Currently, only ENTITY and ITEM is implemented...")
+	

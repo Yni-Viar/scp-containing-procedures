@@ -25,3 +25,11 @@ func _on_tap_with_item_button_down() -> void:
 
 func _on_tap_with_item_button_up() -> void:
 	Input.action_release("interact_alt")
+
+
+func _on_inventory_button_down() -> void:
+	Input.action_press("inventory_open")
+
+
+func _on_inventory_button_up() -> void:
+	Input.action_release("inventory_open")

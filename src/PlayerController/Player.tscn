@@ -1,25 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://8ik28au1k20l"]
 
-[ext_resource type="Script" path="res://PlayerController/FreeLookCamera_MITLicense/FreeLookCamera.gd" id="1_jlrjq"]
+[ext_resource type="Script" path="res://PlayerController/FlyPlayerScript.gd" id="1_niwgq"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0pr1y"]
-radius = 12.2365
-height = 50.6483
+[sub_resource type="SphereShape3D" id="SphereShape3D_w7oyh"]
 
-[node name="Spectator" type="Camera3D"]
-script = ExtResource("1_jlrjq")
+[node name="Spectator" type="CharacterBody3D"]
+script = ExtResource("1_niwgq")
+
+[node name="Camera3D" type="Camera3D" parent="."]
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -64)
 collision_mask = 7
 
-[node name="VisionArea" type="Area3D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="VisionArea"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.035815, -24.4602)
-shape = SubResource("CapsuleShape3D_0pr1y")
-
-[connection signal="body_entered" from="VisionArea" to="." method="_on_vision_area_body_entered"]
-[connection signal="body_exited" from="VisionArea" to="." method="_on_vision_area_body_exited"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_w7oyh")

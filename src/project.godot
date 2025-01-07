@@ -57,6 +57,7 @@ folder_colors={
 "res://PlayerController/": "red",
 "res://Scenes/": "orange",
 "res://Scripts/": "green",
+"res://Scripts/FoundationTasks/": "red",
 "res://Shaders/": "green",
 "res://Sounds/": "purple",
 "res://Test/": "gray",
@@ -94,6 +95,7 @@ ScientistStaticSpawn=""
 PlayerSpawn=""
 Scp131Spawn=""
 Scp049Spawn=""
+Scp262Spawn=""
 
 [input]
 
@@ -257,6 +259,7 @@ renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 occlusion_culling/occlusion_rays_per_thread=256
 global_illumination/sdfgi/frames_to_update_lights=3
+occlusion_culling/use_occlusion_culling=true
 
 [threading]
 

@@ -1,6 +1,7 @@
 extends VisionScpPuppetScript
 ## SCP-650 puppet script
 ## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
+class_name Scp650PlayerScript
 
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 @export var wait_seconds: float = 5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://mu7j26by23js"]
+[gd_scene load_steps=36 format=3 uid="uid://mu7j26by23js"]
 
 [ext_resource type="Script" path="res://Scripts/GameCore.gd" id="1_w6bkb"]
 [ext_resource type="Resource" uid="uid://dtootndbrxot5" path="res://mods-unpacked/YniViar-Site19/gamedata.tres" id="2_w817j"]
@@ -24,8 +24,11 @@
 [ext_resource type="PackedScene" uid="uid://o6rnnciwmwvn" path="res://GDsh/InGameConsole.tscn" id="13_30ago"]
 [ext_resource type="Texture2D" uid="uid://bvtr04ysk4jcq" path="res://Assets/HUD/Touch/interact_with_item_click.png" id="13_33s0i"]
 [ext_resource type="Texture2D" uid="uid://dc0d4vk4qiie1" path="res://Assets/HUD/Touch/interact_with_item_disabled.png" id="14_5ocpi"]
+[ext_resource type="Texture2D" uid="uid://b28sqvedbs3td" path="res://Assets/HUD/Touch/inventory.png" id="14_gbscv"]
 [ext_resource type="PackedScene" uid="uid://8ik28au1k20l" path="res://PlayerController/Player.tscn" id="14_jqsvl"]
+[ext_resource type="Texture2D" uid="uid://dicyig8ufflap" path="res://Assets/HUD/Touch/inventory_click.png" id="15_7b4g4"]
 [ext_resource type="Script" path="res://MapGen/Extensions/MapGenHud.gd" id="16_2k31s"]
+[ext_resource type="Texture2D" uid="uid://c05r00ja6fyw8" path="res://Assets/HUD/Touch/inventory_disabled.png" id="16_iuwqm"]
 [ext_resource type="Script" path="res://Scripts/UI/InventoryUI.gd" id="16_ukffn"]
 [ext_resource type="Theme" uid="uid://4k2un7nm7xc6" path="res://UITheme.tres" id="17_wwvuy"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="23_2c3ra"]
@@ -161,6 +164,14 @@ texture_pressed = ExtResource("9_vl0ry")
 texture_hover = ExtResource("8_131gn")
 texture_disabled = ExtResource("10_rqfbe")
 texture_focused = ExtResource("8_131gn")
+
+[node name="Inventory" type="TextureButton" parent="PlayerUI/TouchUI/UIPanel"]
+layout_mode = 2
+texture_normal = ExtResource("14_gbscv")
+texture_pressed = ExtResource("15_7b4g4")
+texture_hover = ExtResource("14_gbscv")
+texture_disabled = ExtResource("16_iuwqm")
+texture_focused = ExtResource("14_gbscv")
 
 [node name="TapWithItem" type="TextureButton" parent="PlayerUI/TouchUI/UIPanel"]
 layout_mode = 2
@@ -392,7 +403,7 @@ text = "EXIT"
 script = ExtResource("9_3ruab")
 rooms = Array[ExtResource("26_g8onj")]([ExtResource("11_j075c")])
 large_rooms = true
-better_zone_generation = false
+better_zone_generation_waiter = 2
 
 [node name="Spectator" parent="." instance=ExtResource("14_jqsvl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 12.274, 32)
@@ -423,6 +434,8 @@ visible = false
 [connection signal="task_done" from="FoundationTask" to="PlayerUI" method="_on_foundation_task_task_done"]
 [connection signal="button_down" from="PlayerUI/TouchUI/UIPanel/Map" to="PlayerUI/TouchUI/UIPanel" method="_on_map_button_down"]
 [connection signal="button_up" from="PlayerUI/TouchUI/UIPanel/Map" to="PlayerUI/TouchUI/UIPanel" method="_on_map_button_up"]
+[connection signal="button_down" from="PlayerUI/TouchUI/UIPanel/Inventory" to="PlayerUI/TouchUI/UIPanel" method="_on_inventory_button_down"]
+[connection signal="button_up" from="PlayerUI/TouchUI/UIPanel/Inventory" to="PlayerUI/TouchUI/UIPanel" method="_on_inventory_button_up"]
 [connection signal="button_down" from="PlayerUI/TouchUI/UIPanel/TapWithItem" to="PlayerUI/TouchUI/UIPanel" method="_on_tap_with_item_button_down"]
 [connection signal="button_up" from="PlayerUI/TouchUI/UIPanel/TapWithItem" to="PlayerUI/TouchUI/UIPanel" method="_on_tap_with_item_button_up"]
 [connection signal="button_down" from="PlayerUI/TouchUI/UIPanel/Tap" to="PlayerUI/TouchUI/UIPanel" method="_on_tap_button_down"]
