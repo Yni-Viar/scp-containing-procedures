@@ -126,7 +126,7 @@ func device_check():
 		$ScrollContainer/HBoxContainer/Page1/WindowSizeSet.hide()
 		$ScrollContainer/HBoxContainer/Page1/OverrideResolution.hide()
 		$FileDialog.root_subfolder = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
-	if OS.is_debug_build() && !OS.has_feature("editor") && OS.get_name() != "Web" && get_parent().get_parent().name == "MainMenu":
+	if OS.is_debug_build() && !OS.has_feature("editor") && OS.get_name() != "Web" && get_parent().get_parent().name == "MainMenu" && OS.get_name() != "Android": # Godot issue
 		$ScrollContainer/HBoxContainer/Page2/AssetsLabel.show()
 		$ScrollContainer/HBoxContainer/Page2/LoadAsset.show()
 	if RenderingServer.get_rendering_device() != null:

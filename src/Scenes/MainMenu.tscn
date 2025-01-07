@@ -109,13 +109,8 @@ theme_override_font_sizes/mono_font_size = 20
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 20
 bbcode_enabled = true
-text = "[b]v.0.2.0 (Alpha)[/b]
-- Added SCP-049 (without SCP-049-2)
-- Added SCP-266
-- Added SCP-109 item (currently cannot use or obtain)
-- Re-added occlusion culling (for better performance) with optimizations
-- Replaced the 3rd party Free Look Camera with an in-house one, also the player is colliding with walls, so they cannot be out of playable area anymore.
-- Enabled \"Better map generation\" for minimizing the chance to get impassable generation."
+text = "[b]v.0.2.1 (Alpha)[/b]
+- Android bugfixes: revert package separation for this platform, also disable external mod loading..."
 
 [node name="Panel" type="Panel" parent="."]
 visible = false
