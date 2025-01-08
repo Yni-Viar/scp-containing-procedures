@@ -68,10 +68,8 @@ func input_values(state: String):
 			if !special_screen:
 				$WinCondition.show()
 				special_screen = true
-				await get_tree().create_timer(0.5).timeout
-				get_tree().paused = true
 
-
+# For exiting through pause menu
 func _on_exit_button_pressed():
 	get_tree().root.get_node("Game").quit()
 
@@ -96,3 +94,7 @@ func _on_foundation_task_task_done() -> void:
 
 func _on_continue_button_pressed() -> void:
 	$PauseMenu.hide()
+
+# For exiting after ending
+func _on_end_button_pressed() -> void:
+	get_tree().root.get_node("Game").quit()

@@ -14,7 +14,7 @@ resource_remaps={}
 
 config/name="SCP: Containing Procedures"
 config/description="Contain the SCP and study them!"
-config/version="0.2.1"
+config/version="0.2.1.1"
 config/tags=PackedStringArray("game", "scp_foundation", "singleplayer")
 run/main_scene="res://Scenes/Main.tscn"
 config/use_custom_user_dir=true

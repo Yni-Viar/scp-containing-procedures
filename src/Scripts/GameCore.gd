@@ -22,6 +22,7 @@ func _ready():
 
 func set_world():
 	# Set world name
+	world_name = "World: "
 	for i in range(11):
 		if i != 3 && i != 7:
 			var create_char: bool = bool(rng.randi_range(0, 1))

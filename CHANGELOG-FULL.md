@@ -1,5 +1,7 @@
 # Changelog
 ## Alpha
+### v.0.2.1.1 (2025.01.08)
+- Fix the game unresponsive after game over/win condition
 ### v.0.2.1 (2025.01.08)
 - Android bugfixes: revert package separation for this platform, also disable external mod loading...
 - Implemented going back on touchscreens (and Android)
