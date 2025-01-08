@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://mu7j26by23js"]
+[gd_scene load_steps=38 format=3 uid="uid://mu7j26by23js"]
 
 [ext_resource type="Script" path="res://Scripts/GameCore.gd" id="1_w6bkb"]
 [ext_resource type="Resource" uid="uid://dtootndbrxot5" path="res://mods-unpacked/YniViar-Site19/gamedata.tres" id="2_w817j"]
@@ -32,7 +32,9 @@
 [ext_resource type="Script" path="res://Scripts/UI/InventoryUI.gd" id="16_ukffn"]
 [ext_resource type="Theme" uid="uid://4k2un7nm7xc6" path="res://UITheme.tres" id="17_wwvuy"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="23_2c3ra"]
+[ext_resource type="Texture2D" uid="uid://i517a0qhnukf" path="res://UI/back_button_small.png" id="25_ybn7c"]
 [ext_resource type="Script" path="res://MapGen/MapGenZone.gd" id="26_g8onj"]
+[ext_resource type="Texture2D" uid="uid://boy7mjqt2opnw" path="res://UI/back_button_disabled_small.png" id="26_nryt2"]
 [ext_resource type="Script" path="res://Scripts/FoundationTasks/FoundationTaskManager.gd" id="28_0euyq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xi0ky"]
@@ -75,11 +77,28 @@ grow_vertical = 2
 texture = ExtResource("7_bwdaw")
 
 [node name="Counter" type="Label" parent="PlayerUI"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
 offset_right = 40.0
-offset_bottom = 26.0
+grow_vertical = 0
 text = "FPS"
 script = ExtResource("11_vy51m")
+
+[node name="WorldName" type="Label" parent="PlayerUI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -448.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("23_2c3ra")
+theme_override_font_sizes/font_size = 32
+text = "World"
+horizontal_alignment = 2
 
 [node name="BossContainer" type="VBoxContainer" parent="PlayerUI"]
 layout_mode = 1
@@ -198,6 +217,16 @@ offset_top = -40.0
 offset_right = 40.0
 grow_vertical = 0
 script = ExtResource("12_08sny")
+
+[node name="Back" type="TextureButton" parent="PlayerUI/TouchUI"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+texture_normal = ExtResource("25_ybn7c")
+texture_pressed = ExtResource("25_ybn7c")
+texture_hover = ExtResource("25_ybn7c")
+texture_disabled = ExtResource("26_nryt2")
+texture_focused = ExtResource("25_ybn7c")
 
 [node name="DesktopUI" type="Control" parent="PlayerUI"]
 visible = false
@@ -345,6 +374,14 @@ offset_right = 111.008
 offset_bottom = 23.144
 text = "EXIT"
 
+[node name="ContinueButton" type="Button" parent="PlayerUI/PauseMenu/Panel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 640.0
+offset_right = 264.0
+offset_bottom = 688.0
+text = "CONTINUE"
+
 [node name="WinCondition" type="Panel" parent="PlayerUI"]
 visible = false
 layout_mode = 1
@@ -440,6 +477,7 @@ visible = false
 [connection signal="button_up" from="PlayerUI/TouchUI/UIPanel/TapWithItem" to="PlayerUI/TouchUI/UIPanel" method="_on_tap_with_item_button_up"]
 [connection signal="button_down" from="PlayerUI/TouchUI/UIPanel/Tap" to="PlayerUI/TouchUI/UIPanel" method="_on_tap_button_down"]
 [connection signal="button_up" from="PlayerUI/TouchUI/UIPanel/Tap" to="PlayerUI/TouchUI/UIPanel" method="_on_tap_button_up"]
+[connection signal="button_down" from="PlayerUI/TouchUI/Back" to="PlayerUI/TouchUI" method="_on_back_button_down"]
 [connection signal="item_clicked" from="PlayerUI/InventoryUI/ItemList" to="PlayerUI/InventoryUI/ItemList" method="_on_item_clicked"]
 [connection signal="button_down" from="PlayerUI/InventoryUI/UseItem" to="PlayerUI/InventoryUI/ItemList" method="_on_use_item_button_down"]
 [connection signal="button_up" from="PlayerUI/InventoryUI/UseItem" to="PlayerUI/InventoryUI/ItemList" method="_on_button_up"]
@@ -447,6 +485,7 @@ visible = false
 [connection signal="button_up" from="PlayerUI/InventoryUI/RemoveItem" to="PlayerUI/InventoryUI/ItemList" method="_on_button_up"]
 [connection signal="button_down" from="PlayerUI/Map/CloseButton" to="PlayerUI/Map" method="_on_close_button_button_down"]
 [connection signal="pressed" from="PlayerUI/PauseMenu/Panel/ExitButton" to="PlayerUI" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="PlayerUI/PauseMenu/Panel/ContinueButton" to="PlayerUI" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="PlayerUI/WinCondition/ExitButton" to="PlayerUI" method="_on_exit_button_pressed"]
 [connection signal="generated" from="FacilityGenerator" to="." method="_on_facility_generator_generated"]
 [connection signal="generated" from="FacilityGenerator" to="PlayerUI/Map" method="_on_facility_generator_generated"]

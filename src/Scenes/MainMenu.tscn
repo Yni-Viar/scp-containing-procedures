@@ -110,7 +110,10 @@ theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 20
 bbcode_enabled = true
 text = "[b]v.0.2.1 (Alpha)[/b]
-- Android bugfixes: revert package separation for this platform, also disable external mod loading..."
+- Android bugfixes: revert package separation for this platform, also disable external mod loading...
+- Implemented going back on touchscreens (and Android)
+- SCP-131 has now canon names and have an unique spawn point, thus preventing duplicate spawn
+- Added world name generator."
 
 [node name="Panel" type="Panel" parent="."]
 visible = false

@@ -8,3 +8,7 @@ func _ready() -> void:
 		show()
 	set_process(false)
 	set_physics_process(false)
+
+
+func _on_back_button_down() -> void:
+	get_parent().get_node("PauseMenu").show()

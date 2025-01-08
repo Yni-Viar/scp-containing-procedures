@@ -92,3 +92,7 @@ func _on_foundation_task_task_done() -> void:
 				get_parent().finish_game(0, "You did all tasks. Foundation is proud of you.")
 			2: # gameover
 				get_parent().finish_game(1, "You prevented a catastrophe. Some personnel was lost, but other survived.")
+
+
+func _on_continue_button_pressed() -> void:
+	$PauseMenu.hide()

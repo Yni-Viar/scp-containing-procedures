@@ -24,8 +24,8 @@ static func get_game_install_dir() -> String:
 		if game_install_directory.ends_with(".app"):
 			game_install_directory = game_install_directory.get_base_dir()
 	
-	elif OS.get_name() == "Android":
-		game_install_directory = "user://"
+	#elif OS.get_name() == "Android":
+		#game_install_directory = "user://"
 	# Fix for running the game through the Godot editor (as the EXE path would be
 	# the editor's own EXE, which won't have any mod ZIPs)
 	# if OS.is_debug_build():

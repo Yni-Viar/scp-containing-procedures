@@ -69,7 +69,7 @@ func _init() -> void:
 	# Load user profiles into ModLoaderStore
 	var _success_user_profile_load := ModLoaderUserProfile._load()
 
-	if OS.has_feature("editor"):
+	if OS.has_feature("editor") || OS.get_name() == "Android": ## Override Godot bug on Android (but the modding is disabled now :( )
 		var path := _ModLoaderPath.get_unpacked_mods_dir_path()
 		for mod_dir in DirAccess.get_directories_at(path):
 			var manifest_path := path.path_join(mod_dir).path_join("manifest.json")

@@ -6,18 +6,32 @@ class_name GameCore
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 @export var game_data: GameData
 @export var seed: String = ""
-
+@export var world_name: String = ""
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_world()
 	$BackgroundMusic.stream = load(game_data.ambient_path)
 	$BackgroundMusic.play()
 	load_settings()
 	if !(seed.is_empty() || seed == null):
 		$FacilityGenerator.rng_seed = hash(seed)
 	$FacilityGenerator.prepare_generation()
+	$PlayerUI/WorldName.text = world_name
 
+func set_world():
+	# Set world name
+	for i in range(11):
+		if i != 3 && i != 7:
+			var create_char: bool = bool(rng.randi_range(0, 1))
+			if create_char:
+				world_name += char(rng.randi_range(0, 25) + 66)
+			else:
+				world_name += str(rng.randi_range(0, 9))
+		else:
+			world_name += "-"
+	# Other world-dependent spawn will be made for later versions
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

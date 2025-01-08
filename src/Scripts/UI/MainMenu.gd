@@ -17,7 +17,6 @@ func _ready():
 	if OS.get_name() != "Android":
 		get_window().size = Settings.window_size[Settings.setting_res.ui_window_size]
 	else:
-		$Title/Exit.hide()
 		if OS.is_debug_build():
 			OS.request_permissions()
 	

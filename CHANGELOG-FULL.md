@@ -1,5 +1,10 @@
 # Changelog
 ## Alpha
+### v.0.2.1 (2025.01.08)
+- Android bugfixes: revert package separation for this platform, also disable external mod loading...
+- Implemented going back on touchscreens (and Android)
+- SCP-131 has now canon names and have an unique spawn point, thus preventing duplicate spawn
+- Added world name generator.
 ### v.0.2.0 (2025.01.07)
 - Added SCP-049 (without SCP-049-2)
 - Added SCP-266

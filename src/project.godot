@@ -93,9 +93,10 @@ GuardSpawn=""
 Scp650Spawn=""
 ScientistStaticSpawn=""
 PlayerSpawn=""
-Scp131Spawn=""
 Scp049Spawn=""
 Scp262Spawn=""
+Scp131BSpawn=""
+Scp131ASpawn=""
 
 [input]
 
