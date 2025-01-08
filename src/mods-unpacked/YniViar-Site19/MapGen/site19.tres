@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://bla6b2yt4icpi" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_room2_offices.tres" id="10_f6hik"]
 [ext_resource type="Resource" uid="uid://bx5nj144uqlqs" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_room3.tres" id="10_lyern"]
 [ext_resource type="Resource" uid="uid://bvhgxkroofef6" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_cont1_049.tres" id="10_ymb8x"]
-[ext_resource type="Resource" uid="uid://c0ixi7xcabhnv" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_cont1_262.tres" id="11_oybi3"]
+[ext_resource type="Resource" uid="uid://c0ixi7xcabhnv" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_cont1_266.tres" id="11_oybi3"]
 [ext_resource type="Resource" uid="uid://dl83ef3lsmvh2" path="res://mods-unpacked/YniViar-Site19/MapGen/Resources/lc_cont2_650.tres" id="14_uxfll"]
 [ext_resource type="Script" path="res://MapGen/MapGenZone.gd" id="16_mfp5j"]
 

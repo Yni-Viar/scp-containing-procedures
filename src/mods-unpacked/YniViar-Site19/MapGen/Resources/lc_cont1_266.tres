@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MapGenRoom" load_steps=7 format=3 uid="uid://c0ixi7xcabhnv"]
+
+[ext_resource type="Texture2D" uid="uid://dqd1voucfkatq" path="res://mods-unpacked/YniViar-Site19/Assets/HUD/MapGen/room1_266_90.png" id="1_mc1wn"]
+[ext_resource type="Texture2D" uid="uid://d2jqibn21j3wb" path="res://mods-unpacked/YniViar-Site19/Assets/HUD/MapGen/room1_266_270.png" id="2_ytss3"]
+[ext_resource type="Texture2D" uid="uid://dqmld1lhm5ai2" path="res://mods-unpacked/YniViar-Site19/Assets/HUD/MapGen/room1_266_180.png" id="3_muxhi"]
+[ext_resource type="Texture2D" uid="uid://bjcf5ngyjs4p5" path="res://mods-unpacked/YniViar-Site19/Assets/HUD/MapGen/room1_266.png" id="4_0x330"]
+[ext_resource type="PackedScene" uid="uid://bgipoyev2p6e3" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room1/lc_cont_1_266.tscn" id="5_eydrd"]
+[ext_resource type="Script" path="res://MapGen/MapGenRoom.gd" id="6_h2742"]
+
+[resource]
+script = ExtResource("6_h2742")
+name = "lc_cont1_266"
+prefab = ExtResource("5_eydrd")
+icon_0_degrees = ExtResource("1_mc1wn")
+icon_90_degrees = ExtResource("4_0x330")
+icon_180_degrees = ExtResource("2_ytss3")
+icon_270_degrees = ExtResource("3_muxhi")
+spawn_chance = 100.0

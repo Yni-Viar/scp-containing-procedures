@@ -1,7 +1,7 @@
 extends BasePuppetScript
-## SCP-262 puppet script
+## SCP-266 puppet script
 ## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
-class_name Scp262PlayerScript
+class_name Scp266PlayerScript
 
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 var heat_targets: Array[Node3D] = []

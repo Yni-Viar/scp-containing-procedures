@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b7d1bx470mft0"]
 
-[ext_resource type="Script" path="res://mods-unpacked/YniViar-Site19/PlayerController/PlayerClassScript/Scp262PuppetScript.gd" id="1_04thu"]
+[ext_resource type="Script" path="res://mods-unpacked/YniViar-Site19/PlayerController/PlayerClassScript/Scp266PuppetScript.gd" id="1_04thu"]
 [ext_resource type="Shader" path="res://Shaders/Scp266Shader/flame.gdshader" id="1_mb5ss"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_rwaq8"]

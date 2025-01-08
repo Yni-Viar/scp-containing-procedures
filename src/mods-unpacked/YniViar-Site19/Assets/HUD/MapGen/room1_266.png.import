@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqd1voucfkatq"
-path="res://.godot/imported/room1_262_90.png-ea6b841d85004408ea887dd450fb38ae.ctex"
+uid="uid://bjcf5ngyjs4p5"
+path="res://.godot/imported/room1_266.png-dceb6af1fc5c39b400f09685502aaddc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/YniViar-Site19/Assets/HUD/MapGen/room1_262_90.png"
-dest_files=["res://.godot/imported/room1_262_90.png-ea6b841d85004408ea887dd450fb38ae.ctex"]
+source_file="res://mods-unpacked/YniViar-Site19/Assets/HUD/MapGen/room1_266.png"
+dest_files=["res://.godot/imported/room1_266.png-dceb6af1fc5c39b400f09685502aaddc.ctex"]
 
 [params]
 

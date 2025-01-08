@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dv0obl3bf2u6p" path="res://Assets/Rooms/passages/site_19_wall_lcz_3.tscn" id="17_b6asy"]
 [ext_resource type="ArrayOccluder3D" uid="uid://b3ylmk88lwv2v" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room1/occ/lc_cont_1_262.occ" id="18_y2xif"]
 [ext_resource type="Script" path="res://Scripts/ScpAcceptableArea.gd" id="19_o810h"]
-[ext_resource type="Script" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room1/TaskScript/Scp262Task.gd" id="20_p7i6b"]
+[ext_resource type="Script" path="res://mods-unpacked/YniViar-Site19/Assets/Rooms/room1/TaskScript/Scp266Task.gd" id="20_p7i6b"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ht70p"]
 vertices = PackedVector3Array(-8.2283, 0.47564, 0.76, -8.2283, 0.47564, 5.26, -5.4783, 0.47564, 5.26, 1.0217, 0.47564, -8.74, 1.7717, 0.47564, -8.99, -5.9783, 0.47564, -9.24, -6.9783, 0.47564, -7.24, -7.9783, 0.47564, -6.74, 1.0217, 0.47564, 0.0100002, 3.2717, 0.47564, 0.26, 6.2717, 0.47564, 1.26, 6.7717, 0.47564, 0.51, 8.0217, 0.47564, 0.51, 8.0217, 0.47564, -9.24, 3.2717, 0.47564, -9.24, 8.0217, 0.47564, 9.76, 8.0217, 0.47564, 8.01, 6.2717, 0.47564, 7.76, -4.2283, 0.47564, 6.26, -4.2283, 0.47564, 9.76, 7.2717, 1.97564, 1.51, 7.2717, 1.97564, 7.01, 8.0217, 1.97564, 7.01, 8.0217, 1.97564, 1.51, -9.7283, 0.47564, 9.76, -5.7283, 0.47564, 9.76, -5.7283, 0.47564, 6.76, -9.7283, 0.47564, 6.51)

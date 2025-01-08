@@ -109,8 +109,8 @@ theme_override_font_sizes/mono_font_size = 20
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 20
 bbcode_enabled = true
-text = "[b]v.0.2.1.1 (Alpha)[/b]
-- Fix the game unresponsive after game over/win condition"
+text = "[b]v.0.2.1.2 (Alpha)[/b]
+- I mistook with this Will'O the Wisp name - it was 266, NOT 262"
 
 [node name="Panel" type="Panel" parent="."]
 visible = false

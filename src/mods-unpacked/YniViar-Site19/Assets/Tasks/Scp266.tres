@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="FoundationTaskResource" load_steps=2 format=3 uid="uid://src61s4akwnk"]
+
+[ext_resource type="Script" path="res://Scripts/FoundationTasks/FoundationTaskResource.gd" id="1_utk7p"]
+
+[resource]
+script = ExtResource("1_utk7p")
+internal_name = "S19_TEST_266"
+public_name = "Test SCP-266 on Class-D."
